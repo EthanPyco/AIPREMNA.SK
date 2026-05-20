@@ -4,7 +4,7 @@ Welcome to the **aipremna** power guide! This playbook is designed exclusively f
 
 ---
 
-## ⚡ 1. Transforming Raw Lesson Text into Slide Layouts
+##  1. Transforming Raw Lesson Text into Slide Layouts
 
 Instead of manually copying and pasting text from a textbook into separate PowerPoint slides, teachers can use AI to instantly slice their teaching material into structured, slide-ready chunks.
 
@@ -18,7 +18,7 @@ Always provide your **verified lesson facts first**, then command the AI to act 
 
 ---
 
-## 🎭 2. The Dynamic Duo: Creating Slide Text & Teacher Scripts Together
+##  2. The Dynamic Duo: Creating Slide Text & Teacher Scripts Together
 A great presentation strikes a perfect balance between what students *see* on the screen and what you *say* out loud. Don't write these separately—let AI generate both simultaneously!
 
 ###  Pro-Tactics for Success
@@ -33,7 +33,7 @@ A great presentation strikes a perfect balance between what students *see* on th
 > **Visual Bullet Points:** [Max 3 short bullet points for the screen]
 > **Teacher's Spoken Script:** [A 3-sentence explanation of what I should say to the class while they look at this slide]"*
 
-## 🤖 3. Creating Automated Slide Outlines (Text-to-Slide Conversion)
+##  3. Creating Automated Slide Outlines (Text-to-Slide Conversion)
 
 AI tools (like Claude, Microsoft Copilot, NotebookLM, or Gemini) can take a specific type of text formatting and turn it into a finished presentation layout with one click. You can use AI to format your thoughts perfectly for these tools.
 
@@ -51,9 +51,9 @@ AI tools (like Claude, Microsoft Copilot, NotebookLM, or Gemini) can take a spec
 
 ##  Watch & Learn
  
-### 🎥 Videos
+###  Videos
 * 🔗 [How to Create Slide Presentations with Claude](https://youtu.be/4KC7Vn4txkA?si=TM8i0nZ66Jb6KnNf)
 * 🔗 [How to Prompt Copilot to Make Presentations in PowerPoint](https://youtu.be/Zofdeofpj1w?si=reCjilbJ9QTMUu-d)
 
-### 📰 Articles
+###  Articles
 * 🔗 [AI PowerPoint Generator – Microsoft](https://www.microsoft.com/sk-sk/microsoft-365/powerpoint/ai-powerpoint-generator)
