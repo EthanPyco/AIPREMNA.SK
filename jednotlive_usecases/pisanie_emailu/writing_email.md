@@ -61,3 +61,20 @@ AI is exceptionally good at helping you stay professional when you're feeling st
 
 **Try this prompt:**
 > "I received this email from a parent [Paste Email Body]. I am feeling a bit frustrated, but I want to reply **professionally and calmly**. Help me draft a response that addresses their concerns about [Issue] while maintaining a positive relationship."
+
+---
+
+## ✅ How to Know You Have Understood the Guide Correctly
+
+After going through this guide, a teacher should be able to verify that they have not only read the instructions, but also tried using them in practice. You should be able to:
+
+*   create an AI prompt that clearly defines the **recipient, topic, goal of the email, and desired tone**,
+*   distinguish when it is appropriate to use a formal, concise, empathetic, or encouraging tone,
+*   generate at least one email draft with AI for a parent, colleague, or school administrator,
+*   improve the first email draft by giving follow-up instructions, such as shortening it, changing the tone, or rewriting it in a more personal style,
+*   check whether the AI invented incorrect facts, dates, names, or circumstances,
+*   judge whether the final email sounds natural and matches your own communication style,
+*   remove or anonymize sensitive student information before using an AI tool,
+*   decide whether the email is ready to send or still needs human editing,
+*   use AI for a more difficult reply while keeping the final message professional, calm, and respectful,
+*   explain why an AI-generated email draft should not be sent automatically without a teacher’s review.
