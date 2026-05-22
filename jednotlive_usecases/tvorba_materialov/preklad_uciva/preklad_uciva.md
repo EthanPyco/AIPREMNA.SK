@@ -1,67 +1,59 @@
-## Preklad učebných materiálov pomocou AI: Príručka pre učiteľov
+# Preklad učebných materiálov pomocou AI: Príručka pre učiteľov
 
-Ako učiteľ môžete využiť generatívnu AI na efektívny preklad učebných osnov, plánov lekcií a vzdelávacích materiálov z cudzieho jazyka do vášho rodného jazyka, pričom zachováte odbornú správnosť a pedagogický zámer.
+## Goal
+Táto príručka umožňuje učiteľom efektívne prekladať vzdelávacie materiály z akéhokoľvek jazyka pri zachovaní odbornej správnosti a pedagogického zámeru. Zabezpečuje, aby preložený obsah zostal prirodzený, kultúrne relevantný a vhodný pre študentov, čím šetrí hodiny manuálneho prepisovania.
 
-### 🛠️ Odporúčané nástroje AI
-
-* **DeepL:** Známy pre vysokokvalitné a prirodzene znejúce preklady, najmä pre európske jazyky.
-* **Gemini / ChatGPT / Claude:** Vynikajúce na preklad s ohľadom na kontext, čo vám umožňuje špecifikovať cieľovú skupinu a predmet.
-* **Google Translate:** Dobrý na rýchly, informatívny preklad, ale vyžaduje si pozornejšiu kontrolu pri zložitom vzdelávacom obsahu.
-
----
-
-## 🔄 Postup krok za krokom
-
-Aby ste zabezpečili, že preložený materiál zostane pedagogicky hodnotný, použite tento **pracovný postup prekladu s ohľadom na kontext**.
-
-```
-[Nahrať dokument] ➔ [Krok 1: Kontextualizácia] ➔ [Krok 2: Preklad] ➔ [Krok 3: Korektúra a lokalizácia] ➔ [Kontrola učiteľom]
-```
-
-### Krok 1: Poskytnite kontext a terminológiu
-
-Pred prekladom poskytnite umelej inteligencii kontext predmetu a akúkoľvek špecifickú terminológiu, ktorá musí byť preložená presne.
-
-> **Prompt:**
-> „Chystám sa poskytnúť dokument s učebnými osnovami o [predmet, napr. biológia]. Predtým, ako ho preložíš, chcem, aby si identifikoval kľúčové odborné termíny.
-> Pre každý termín nájdi najpresnejší ekvivalent v [rodný jazyk]. Uisti sa, že sú v súlade so štandardnou vzdelávacou terminológiou používanou na stredných školách.“
-
-### Krok 2: Vykonajte kontextuálny preklad
-
-Teraz požiadajte AI, aby preložila celý text s použitím terminológie stanovenej v 1. kroku.
-
-> **Prompt:**
-> „Teraz prelož priložený dokument do [rodný jazyk].
-> Zabezpeč, aby preklad:
-> * Používal odbornú terminológiu, ktorú sme identifikovali.
-> * Zachovával profesionálny a vzdelávací tón.
-> * Zachovával pôvodné formátovanie (nadpisy, odrážky, tabuľky).
-> * Bol prispôsobený pre študentov vo veku [vek, napr. 14 – 16 rokov].“
-
-### Krok 3: Upravte pre prirodzený tok a zrozumiteľnosť
-
-Nakoniec požiadajte AI, aby zabezpečila, že preložený text nepôsobí ako „robotický“ preklad.
-
-> **Prompt:**
-> „Skontroluj preložený text. Prepíš všetky vety, ktoré v [rodný jazyk] znejú neprirodzene alebo príliš doslovne. Cieľom je, aby dokument pôsobil tak, akoby ho pôvodne napísal pedagóg, pre ktorého je daný jazyk materinský.“
-
-## ⚠️ Kontrolný zoznam „Človek v slučke“
-
-Preklady môžu niekedy stratiť nuansy alebo nesprávne interpretovať idiomy. Pred použitím overte výsledok podľa týchto kritérií:
-
-* **Odborná presnosť:** Vyjadruje preklad presne vedecké alebo historické pojmy, alebo použil všeobecné slovo, ktoré mení význam?
-* **Tón a úroveň jazyka:** Je jazyk vhodný pre vašich študentov? (napr. nie je príliš formálny alebo neformálny?)
-* **Kultúrna citlivosť:** Sú príklady alebo metafory použité v pôvodnom texte stále relevantné a vhodné v kultúrnom kontexte cieľového jazyka?
-* **Integrita formátovania:** Neporušil proces prekladu tabuľky, zoznamy alebo matematické vzorce?
+### 🛠️ Odporúčané AI nástroje
+* **DeepL:** Najlepší pre prirodzene znejúce a vysokokvalitné preklady vo väčšine európskych jazykov.
+* **ChatGPT / Claude:** Vynikajúce na preklady s ohľadom na kontext, kde môžete špecifikovať úroveň ročníka, predmet a tón.
+* **Google Translate:** Užitočný na rýchly informatívny preklad alebo pri práci s menej častými jazykovými pármi.
 
 ---
 
-## 🚀 Voliteľné rozšírenie: Vytváranie bilingválnych zdrojov
+## 🔄 Pracovný postup krok za krokom
 
-AI môžete použiť na vytvorenie materiálov, ktoré podporujú študentov učiace sa v cudzom jazyku tým, že zobrazíte oba jazyky vedľa seba.
+`[Kontextualizácia] ➔ [Identifikácia terminológie] ➔ [Kontextuálny preklad] ➔ [Úprava] ➔ [Záverečná kontrola]`
 
-**Vyskúšajte tieto následné prompty:**
+### Krok 1: Kontextualizácia
+Poskytnite AI informácie o predmete (napr. fyzika, dejepis) a cieľovej skupine (napr. študenti 2. ročníka SŠ), aby ste nastavili správny tón a zložitosť.
 
-* *„Vytvor bilingválny glosár 10 najdôležitejších termínov z tohto dokumentu, pričom termín v [pôvodný jazyk] bude vľavo a termín v [rodný jazyk] vpravo.“*
-* *„Vygeneruj súbor 5 otázok na porozumenie v [rodný jazyk] na základe preloženého textu a poskytni kľúč odpovedí v oboch jazykoch.“*
-* *„Sformátuj preložený text do dvojstĺpcového rozloženia, s pôvodnou angličtinou vľavo a prekladom do [rodný jazyk] vpravo pre jednoduchšie porovnanie.“*
+### Krok 2: Identifikácia terminológie
+Identifikujte a vopred preložte kľúčové odborné termíny alebo koncepty, aby ste zabezpečili ich konzistentnosť a presnosť v celom dokumente.
+
+### Krok 3: Kontextuálny preklad
+Vykonajte úplný preklad textu alebo dokumentu s použitím stanoveného kontextu, terminológie a požiadaviek na formátovanie.
+
+### Krok 4: Úprava a lokalizácia
+Upravte výstup tak, aby znel, akoby ho pôvodne napísal rodený hovorca – pedagóg, a prispôsobte ho miestnym idiómom a vzdelávacím štandardom.
+
+---
+
+## ✍️ Efektívne promptovanie
+
+### Šablóna promptu:
+> "Som učiteľ predmetu [Predmet]. Prelož tento [Zdrojový materiál] z [Zdrojový jazyk] do [Cieľový jazyk] pre študentov [Ročník/Úroveň]. Použi túto špecifickú terminológiu: [Zoznam termínov]. Štýl: [Edukačný/Profesionálny]."
+
+### Príklad promptu:
+> "Som učiteľ biológie. Prelož tento plán lekcie o bunkovom dýchaní z angličtiny do slovenčiny pre študentov vo veku 14 – 16 rokov. Uisti sa, že používa štandardnú slovenskú stredoškolskú biologickú terminológiu. Zachovaj pôvodnú štruktúru tabuliek a odrážok. Štýl: Akademický, ale prístupný."
+
+---
+
+## ⚠️ Kontrolný zoznam "Human-in-the-Loop"
+* **Odborná presnosť:** Použila AI pri preklade všeobecné slová pre špecifické vedecké alebo historické pojmy, ktoré menia význam?
+* **Tón a úroveň jazyka:** Je jazyk vhodný pre vek vašich študentov – ani príliš formálny, ani príliš detský?
+* **Kultúrna citlivosť:** Sú príklady, idiómy alebo metafory zo zdrojového jazyka stále relevantné alebo vhodné v cieľovej kultúre?
+* **Súkromie:** Nevkladajte materiály obsahujúce citlivé informácie o študentoch, súkromné školské záznamy alebo identifikovateľné osobné údaje.
+
+---
+
+## ✅ Ako vedieť, že ste správne pochopili túto príručku
+Na konci tejto príručky by ste mali vedieť:
+* Preložiť viacstranový plán lekcie pri zachovaní komplexného formátovania (tabuľky, zoznamy).
+* Vytvoriť bilingválny glosár pre konkrétny celok pomocou AI.
+* Upraviť doslovný alebo "robotický" preklad na prirodzený, pedagogicky správny text.
+
+---
+
+## 🚀 Voliteľné rozšírenie
+* **Bilingválne zdroje:** Vytvorte dvojstĺpcové verzie materiálov na podporu študentov učiace sa v cudzom jazyku.
+* **Medzikultúrna adaptácia:** Požiadajte AI, aby navrhla miestne príklady, regionálne prípadové štúdie alebo variácie pre preložený obsah.

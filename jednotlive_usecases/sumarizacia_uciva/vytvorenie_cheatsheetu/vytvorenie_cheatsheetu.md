@@ -1,69 +1,58 @@
-## Generátor ťahákov poháňaný AI: Sprievodca pre učiteľov
+# Generátor ťahákov pomocou AI: Príručka pre učiteľov
 
-Ako učiteľ môžete využiť generatívnu AI na rýchlu premenu obsiahlych učebných osnov, poznámok z prednášok, PDF súborov alebo kapitol z učebníc na vysoko efektívne a stručné študijné prehľady (ťaháky) pre študentov.
+## Goal
+Táto príručka umožňuje učiteľom transformovať obsiahle učebnice, PDF súbory alebo poznámky z prednášok na vysoko efektívne a prehľadné študijné pomôcky. Pomáha študentom zamerať sa na kľúčové informácie a zároveň šetrí učiteľom hodiny manuálneho formátovania.
 
 ### 🛠️ Odporúčané AI nástroje
-
-* **Gemini / ChatGPT / Claude:** Vynikajúce na extrakciu textu, sumarizáciu a prepisovanie.
-* **NotebookLM:** Ideálne, ak máte viacero veľkých PDF súborov alebo celú kapitolu z učebnice, keďže vytvára súkromný AI model založený výhradne na vami nahraných dokumentoch.
+* **NotebookLM:** Najlepší na spracovanie viacerých veľkých dokumentov alebo celých kapitol učebníc s vysokou presnosťou zdrojov.
+* **ChatGPT / Claude / Gemini:** Vynikajúce na extrakciu textu, sumarizáciu a štrukturálne formátovanie.
 
 ---
 
 ## 🔄 Pracovný postup krok za krokom
 
-Ak chcete dosiahnuť najlepšie výsledky, nežiadajte AI, aby urobila všetko naraz. Na spresnenie kvality použite **postupný (vrstvený) proces zadávania príkazov**.
+`[Nahranie zdroja] ➔ [Extrakcia konceptov] ➔ [Formátovanie] ➔ [Úprava úrovne čítania] ➔ [Záverečná kontrola]`
 
-```
-[Nahrať dokument] ➔ [Krok 1: Extrahovať] ➔ [Krok 2: Formátovať] ➔ [Krok 3: Zjednodušiť] ➔ [Kontrola učiteľom]
+### Krok 1: Príprava zdroja
+Nahrajte dokumenty s učebnými osnovami, PDF súbory alebo vložte poznámky z prednášok do nástroja AI.
 
-```
+### Krok 2: Extrakcia
+Použite cielený prompt na identifikáciu hlavných konceptov, kľúčovej terminológie a základných vzorcov alebo pravidiel.
 
-### Krok 1: Extrakcia hlavných konceptov
+### Krok 3: Formátovanie
+Inštruujte AI, aby usporiadala extrahované dáta do kompaktného, prehľadného rozloženia pomocou tabuliek, odrážok a tučných nadpisov.
 
-Nahrajte svoj dokument s učebnými osnovami alebo skopírujte svoje poznámky a ako prvé spustite tento príkaz (prompt), aby ste vytvorili základ:
-
-> **Príkaz (Prompt):** "Prečítaj si tento priložený dokument s učebnými osnovami. Extrahuj a vypíš nasledujúce prvky a rozdeľ ich podľa dôležitosti:
-> * Hlavné témy a kľúčové koncepty
-> * Dôležitú terminológiu a definície
-> * Základné vzorce, syntax alebo pravidlá, ktoré si študenti musia zapamätať."
-> 
-> 
-
-### Krok 2: Generovanie rozvrhnutia ťaháku
-
-Keď vám AI poskytne nespracované dáta, požiadajte ju, aby ich naformátovala do podoby vhodnej pre študentov:
-
-> **Príkaz (Prompt):** "Na základe extrahovaných informácií vytvor stručný ťahák pripravený na tlač.
-> Uisti sa, že spĺňa tieto požiadavky:
-> * Je veľmi kompaktný, prehľadný a ľahko čitateľný
-> * Využíva tučné nadpisy, odrážky a tabuľky na rýchlu orientáciu
-> * Obsahuje praktické príklady a upozorňuje na najčastejšie chyby/chytáky
-> * Vynecháva omáčku; zameriava sa *výhradne* na informácie s vysokou hodnotou pre skúšku."
-> 
-> 
-
-### Krok 3: Prispôsobenie úrovne čítania
-
-Na záver sa uistite, že tón reči je vhodný pre vašu triedu:
-
-> **Príkaz (Prompt):** "Teraz uprav celý tento výstup pre študentov vo veku 16 – 18 rokov. Zjednoduš akýkoľvek príliš akademický žargón, použi stručné vysvetlenia a uisti sa, že tón je povzbudzujúci, no priamy."
-
-## ⚠️ Kontrolný zoznam pre overenie človekom („Human-in-the-Loop“)
-
-AI môže halucinovať alebo veci prísliš zjednodušiť. Pred tlačou vždy overte výstup podľa týchto kritérií:
-
-* **Súlad s učebnými osnovami:** Zahrnula AI témy mimo osnov, alebo vynechala konkrétne kľúčové slovo predpísané štandardmi?
-* **Kontrola presnosti:** Sú vzorce, matematické symboly alebo syntax kódu na 100 % správne?
-* **Kontextová vhodnosť:** Sú vygenerované príklady relevantné pre váš konkrétny región alebo kritériá hodnotenia?
+### Krok 4: Kalibrácia
+Upravte jazyk a zložitosť tak, aby zodpovedali konkrétnemu veku a úrovni pochopenia vašich študentov.
 
 ---
 
-## 🚀 Voliteľné rozšírenie: Vytvorenie sady na opakovanie
+## ✍️ Efektívne promptovanie
 
-Keď už AI pracuje v kontexte vašich učebných osnov a ťaháku, môžete okamžite vygenerovať doplnkové študijné materiály.
+### Šablóna promptu:
+> "Som učiteľ predmetu [Predmet]. Pomocou poskytnutého textu vyextrahuj [Kľúčové prvky: napr. vzorce, dátumy, definície]. Naformátuj ich do [Rozloženie: napr. jednostranová tabuľka, odrážkový zoznam] pre študentov [Ročník/Úroveň]. Štýl: [Kompaktný/Prehľadný]."
 
-**Vyskúšajte tieto rýchle nadväzujúce príkazy v tom istom chate:**
+### Príklad promptu:
+> "Som učiteľ chémie. Z priloženej kapitoly o atómovej štruktúre vyextrahuj všetky dôležité vzorce a periodické trendy. Naformátuj ich do stručného, vytlačiteľného jednostranového ťaháka s tučnými nadpismi a rýchlou referenčnou tabuľkou. Uisti sa, že je napísaný pre študentov vo veku 16 – 18 rokov."
 
-* *"Vytvor 5 úloh s výberom odpovede (multiple-choice) a 3 úlohy s krátkou odpoveďou, ktoré priamo preveria materiál z tohto ťaháku. Prilož aj kľúč správnych odpovedí."*
-* *"Vygeneruj zoznam 10 zadaní pre digitálne kartičky (Flashcards - Predná/Zadná strana) na základe časti so slovnou zásobou."*
-* *"Navrhni 10-minútovú úvodnú aktivitu na precvičenie vybavovania pamäte (retrieval practice), ktorú môžem použiť na začiatku budúcej hodiny."*
+---
+
+## ⚠️ Kontrolný zoznam "Human-in-the-Loop"
+* **Súlad s osnovami:** Uistite sa, že AI nevynechala kľúčové slová predpísané osnovami ani nezahrnula irelevantné témy.
+* **Kontrola presnosti:** Manuálne overte všetky matematické symboly, vzorce a syntax kódu.
+* **Vizuálna prehľadnosť:** Skontrolujte, či je rozloženie skutočne "prehľadné na prvý pohľad" pre študentov.
+* **Súkromie:** Nenahrávajte dokumenty obsahujúce citlivé údaje o študentoch ani interné školské záznamy.
+
+---
+
+## ✅ Ako vedieť, že ste správne pochopili túto príručku
+Na konci tejto príručky by ste mali vedieť:
+* Úspešne vyextrahovať kľúčové koncepty z viacstranového dokumentu pomocou AI.
+* Naformátovať surové dáta do štruktúrovanej, vytlačiteľnej študijnej príručky.
+* Kalibrovať výstup tak, aby zodpovedal konkrétnej vekovej skupine študentov.
+
+---
+
+## 🚀 Voliteľné rozšírenie
+* **Sada na opakovanie:** Použite ťahák na vygenerovanie kartičiek (flashcards) alebo úloh s výberom odpovede v tom istom chate.
+* **Interaktívna verzia:** Požiadajte AI, aby vytvorila verziu s "doplňovaním prázdnych miest" na precvičenie aktívneho vyvolávania informácií.

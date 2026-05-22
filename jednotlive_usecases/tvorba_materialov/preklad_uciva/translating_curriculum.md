@@ -1,67 +1,59 @@
-## AI-Powered Curriculum Translation: A Guide for Teachers
+# AI-Powered Curriculum Translation: A Guide for Teachers
 
-As a teacher, you can use generative AI to efficiently translate curriculum papers, lesson plans, and educational materials from a foreign language into your native language while preserving technical accuracy and pedagogical intent.
+## Goal
+This guide enables teachers to efficiently translate educational materials from any language while preserving technical accuracy and pedagogical intent. It ensures that translated content remains natural, culturally relevant, and student-appropriate, saving hours of manual rewriting.
 
 ### 🛠️ Recommended AI Tools
-
-* **DeepL:** Renowned for high-quality, natural-sounding translations, especially for European languages.
-* **Gemini / ChatGPT / Claude:** Excellent for context-aware translation, allowing you to specify the target audience and subject matter.
-* **Google Translate:** Good for quick gist-level translation, but requires more careful review for complex educational content.
+* **DeepL:** Best for natural-sounding, high-quality translation across major European languages.
+* **ChatGPT / Claude:** Excellent for context-aware translations where you can specify grade level, subject matter, and tone.
+* **Google Translate:** Useful for quick gist-level translation or when working with rarer language pairs.
 
 ---
 
 ## 🔄 The Step-by-Step Workflow
 
-To ensure the translated material remains educationally sound, use this **context-aware translation workflow**.
+`[Contextualization] ➔ [Terminology Identification] ➔ [Context-Aware Translation] ➔ [Refinement] ➔ [Final Review]`
 
-```
-[Upload Document] ➔ [Step 1: Contextualize] ➔ [Step 2: Translate] ➔ [Step 3: Refine & Localize] ➔ [Teacher Review]
-```
+### Step 1: Contextualization
+Provide the AI with the subject (e.g., Physics, History) and the target audience (e.g., 10th-grade students) to set the correct tone and complexity.
 
-### Step 1: Provide Context and Terminology
+### Step 2: Terminology Identification
+Identify and pre-translate key technical terms or concepts to ensure they remain consistent and accurate throughout the document.
 
-Before translating, give the AI the context of the subject and any specific terminology that must be translated precisely.
+### Step 3: Context-Aware Translation
+Perform the full translation of the text or document using the established context, terminology, and formatting requirements.
 
-> **Prompt:**
-> "I am going to provide a curriculum document about [Subject, e.g., Biology]. Before you translate it, I want you to identify the core technical terms.
-> For each term, find the most accurate equivalent in [Native Language]. Ensure they align with standard educational terminology used in high schools."
-
-### Step 2: Perform Contextual Translation
-
-Now, ask the AI to translate the full text, using the terminology established in Step 1.
-
-> **Prompt:**
-> "Now, translate the attached document into [Native Language]. 
-> Ensure the translation:
-> * Uses the technical terminology we identified.
-> * Maintains a professional and educational tone.
-> * Preserves the original formatting (headings, bullet points, tables).
-> * Is adapted for students aged [Age Range, e.g., 14–16]."
-
-### Step 3: Refine for Natural Flow and Clarity
-
-Finally, ask the AI to ensure the translated text doesn't feel like a "robotic" translation.
-
-> **Prompt:**
-> "Review the translated text. Rewrite any sentences that sound unnatural or too literal in [Native Language]. The goal is for the document to read as if it were originally written by a native-speaking educator in that language."
-
-## ⚠️ The "Human-in-the-Loop" Review Checklist
-
-Translations can sometimes lose nuances or misinterpret idioms. Verify the output against these criteria:
-
-* **Conceptual Accuracy:** Does the translation accurately convey the scientific or historical concepts, or did it use a generic word that changes the meaning?
-* **Tone and Register:** Is the language appropriate for your students? (e.g., is it too formal or too informal?)
-* **Cultural Sensitivity:** Are examples or metaphors used in the original text still relevant and appropriate in the target language's cultural context?
-* **Formatting Integrity:** Did the translation process break any tables, lists, or mathematical formulas?
+### Step 4: Refinement & Localization
+Refine the output to ensure it sounds like it was originally written by a native educator, adjusting for local idioms and educational standards.
 
 ---
 
-## 🚀 Optional Extension: Creating Bilingual Resources
+## ✍️ Effective Prompting
 
-You can use the AI to create materials that support language learners by showing both languages side-by-side.
+### Prompt Template:
+> "I am a [Subject] teacher. Translate this [Source Material] from [Source Language] to [Target Language] for [Grade Level] students. Use this specific terminology: [List of terms]. Style: [Educational/Professional]."
 
-**Try these follow-up prompts:**
+### Example Prompt:
+> "I am a Biology teacher. Translate this lesson plan about cellular respiration from English to Slovak for 14-16-year-old students. Ensure it uses standard Slovak high school biology terminology. Maintain the original table structure and bullet points. Style: Academic but accessible."
 
-* *"Create a bilingual glossary of the 10 most important terms from this document, with the [Source Language] term on the left and the [Native Language] term on the right."*
-* *"Generate a set of 5 comprehension questions in [Native Language] based on the translated text, providing an answer key in both languages."*
-* *"Format the translated text into a two-column layout, with the original English on the left and the [Native Language] translation on the right for easier comparison."*
+---
+
+## ⚠️ The "Human-in-the-Loop" Review Checklist
+* **Conceptual Accuracy:** Did the translation use generic words for specific scientific or historical concepts that change the meaning?
+* **Tone & Register:** Is the language appropriate for your students' age—neither too formal nor too childish?
+* **Cultural Sensitivity:** Are examples, idioms, or metaphors from the source language still relevant or appropriate in the target culture?
+* **Privacy Warning:** Do not input materials containing sensitive student information, private school records, or identifiable personal data.
+
+---
+
+## ✅ How to Know You Have Understood This Guide
+By the end of this guide, you should be able to:
+* Translate a multi-page lesson plan while maintaining complex formatting like tables and lists.
+* Create a bilingual glossary for a specific unit using an AI-driven workflow.
+* Refine a literal or "robotic" translation into a natural, educationally sound text.
+
+---
+
+## 🚀 Optional Extension
+* **Bilingual Resources:** Create side-by-side (two-column) versions of the materials to support ESL/EFL students.
+* **Cross-Cultural Adaptation:** Ask the AI to suggest local examples, regional case studies, or variations for the translated content.

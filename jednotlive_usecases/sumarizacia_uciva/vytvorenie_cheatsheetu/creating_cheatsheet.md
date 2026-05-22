@@ -1,70 +1,58 @@
-## AI-Powered Cheat Sheet Generator: A Guide for Teachers
+# AI-Powered Cheat Sheet Generator: A Guide for Teachers
 
-As a teacher, you can use generative AI to quickly convert dense curriculum papers, lecture notes, PDFs, or textbook chapters into high-impact, concise student cheat sheets.
+## Goal
+This guide enables teachers to transform dense textbooks, PDFs, or lecture notes into high-impact, scannable study aids. It helps students focus on high-yield information while saving teachers hours of manual formatting.
 
 ### 🛠️ Recommended AI Tools
-
-* **Gemini / ChatGPT / Claude:** Excellent for text extraction, summarizing, and rewriting.
-* **NotebookLM:** Ideal if you have multiple large PDFs or a whole textbook chapter, as it builds a private AI model solely based on your uploaded documents.
+* **NotebookLM:** Best for processing multiple large documents or full textbook chapters with high source grounding.
+* **ChatGPT / Claude / Gemini:** Excellent for text extraction, summarizing, and structural formatting.
 
 ---
 
 ## 🔄 The Step-by-Step Workflow
 
-To get the best results, avoid asking the AI to do everything at once. Use a **layered prompting workflow** to refine the quality.
+`[Source Upload] ➔ [Concept Extraction] ➔ [Formatting] ➔ [Reading Level Adjustment] ➔ [Final Review]`
 
-```
-[Upload Document] ➔ [Step 1: Extract] ➔ [Step 2: Format] ➔ [Step 3: Simplify] ➔ [Teacher Review]
+### Step 1: Source Preparation
+Upload your curriculum documents, PDFs, or paste lecture notes into the AI tool.
 
-```
+### Step 2: Extraction
+Use a targeted prompt to identify core concepts, key terminology, and essential formulas or rules.
 
-### Step 1: Extract Core Concepts
+### Step 3: Formatting
+Instruct the AI to organize the extracted data into a compact, scannable layout using tables, bullet points, and bold headings.
 
-Upload your curriculum document or paste your notes, and run this prompt first to establish the foundation:
-
-> **Prompt:** > "Read this attached curriculum document. Extract and list the following elements, grouping them by level of importance:
-> * Major topics and core concepts
-> * Key terminology and definitions
-> * Essential formulas, syntax, or rules that students must memorize."
-> 
-> 
-
-### Step 2: Generate the Cheat Sheet Layout
-
-Once the AI gives you the raw data, ask it to format it for student consumption:
-
-> **Prompt:** > "Using the extracted information, design a concise, printable cheat sheet.
-> Ensure it follows these requirements:
-> * Highly compact, scannable, and readable
-> * Uses bold headings, bullet points, and quick-reference tables
-> * Includes practical examples and highlights common mistakes/pitfalls
-> * Filters out fluff; focus *only* on high-yield exam information."
-> 
-> 
-
-### Step 3: Calibrate the Reading Level
-
-Finally, ensure the tone is appropriate for your classroom:
-
-> **Prompt:** > "Now, adapt this entire output for students aged 16–18. Simplify any overly academic jargon, use concise explanations, and ensure the tone is encouraging yet direct."
-
-
-## ⚠️ The "Human-in-the-Loop" Review Checklist
-
-AI can hallucinate or oversimplify. Before printing, always verify the output against these criteria:
-
-* **Curriculum Alignment:** Did the AI include unauthorized topics, or miss a specific board-mandated keyword?
-* **Accuracy Check:** Are the formulas, math symbols, or code syntax 100% correct?
-* **Contextual Appropriateness:** Are the generated examples relevant to your specific region or grading rubric?
+### Step 4: Calibration
+Refine the language and complexity to match your students' specific age and comprehension level.
 
 ---
 
-## 🚀 Optional Extension: Creating a Revision Suite
+## ✍️ Effective Prompting
 
-Once the AI holds the context of your curriculum and cheat sheet, you can instantly generate complementary study materials.
+### Prompt Template:
+> "I am a [Subject] teacher. Using the provided text, extract [Core Elements: e.g., formulas, dates, definitions]. Format them into a [Layout: e.g., one-page table, bulleted list] for [Grade Level] students. Style: [Compact/Scannable]."
 
-**Try these quick follow-up prompts in the same chat session:**
+### Example Prompt:
+> "I am a Chemistry teacher. From the attached chapter on Atomic Structure, extract all essential formulas and periodic trends. Format them into a concise, printable one-page cheat sheet with bold headings and a quick-reference table. Ensure it is written for 16-18-year-old students."
 
-* *"Create 5 multiple-choice questions and 3 short-answer questions directly testing the material on this cheat sheet. Include an answer key."*
-* *"Generate a list of 10 digital flashcard prompts (Front/Back) based on the vocabulary section."*
-* *"Design a 10-minute retrieval practice starter task I can use at the beginning of next lesson."*
+---
+
+## ⚠️ The "Human-in-the-Loop" Review Checklist
+* **Curriculum Alignment:** Ensure the AI hasn't missed board-mandated keywords or included irrelevant topics.
+* **Accuracy Check:** Manually verify all math symbols, formulas, and code syntax.
+* **Visual Scannability:** Check if the layout is truly "glanceable" for students.
+* **Privacy:** Do not upload documents containing sensitive student data or internal school records.
+
+---
+
+## ✅ How to Know You Have Understood This Guide
+By the end of this guide, you should be able to:
+* Successfully extract key concepts from a multi-page document using AI.
+* Format raw data into a structured, printable study guide.
+* Calibrate the output to match a specific student age group.
+
+---
+
+## 🚀 Optional Extension
+* **Revision Suite:** Use the cheat sheet to generate flashcards or multiple-choice questions in the same chat.
+* **Interactive Version:** Ask the AI to create a "fill-in-the-blanks" version for active recall practice.

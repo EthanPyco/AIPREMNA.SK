@@ -1,54 +1,66 @@
-# Zefektívnenie tvorby kvízov a ich variantov pomocou AI
+# Tvorba kvízov a písomiek pomocou AI: Príručka pre učiteľov
 
-Vitajte v príručke efektivity od **aipremna**! Táto kniha postupov je určená výhradne pre pedagógov, ktorí chcú získať späť svoj čas strávený navrhovaním hodnotiacich materiálov. Rozlúčte sa s hodinami vymýšľania nových otázok, manuálneho miešania verzií testov a úmorného formátovania pre skupiny A a B. Privítajte rýchle navrhovanie kvízov poháňané umelou inteligenciou, ktoré vám umožní vygenerovať vyvážené testy, presné kľúče odpovedí a férové varianty v priebehu niekoľkých sekúnd.
+## Cieľ
+Zefektívnite navrhovanie vyvážených hodnotiacich materiálov, kvízov a variantov testov. Využitím AI ako pedagogického asistenta môžu učitelia transformovať poznámky z lekcií na kvalitné otázky, generovať paralelné verzie testov (skupiny A/B) v priebehu sekúnd a zabezpečiť, aby všetky otázky dokonale zodpovedali preberanému učivu.
+
+### 🛠️ Odporúčané nástroje AI
+* **ChatGPT / Claude:** Vynikajúce na generovanie kreatívnych typov otázok a udržiavanie konzistentnej náročnosti medzi verziami.
+* **Gemini:** Obzvlášť efektívny pri integrácii s Google Workspace (Dokumenty/Classroom).
+* **Microsoft Copilot:** Užitočný pre učiteľov využívajúcich ekosystém Office 365.
 
 ---
 
-## 1. Transformácia textu lekcie na kvízové otázky
-Najlepším spôsobom, ako zabezpečiť 100 % presnosť a férovosť vašich kvízov, je poskytnúť AI váš skutočný učebný materiál alebo poznámky a prikázať jej, aby navrhla otázky striktne z tohto textu.
+## 🔄 Postup krok za krokom
 
-### Zlaté pravidlo
-Vždy najprv poskytnite svoje **overené fakty k lekcii**, a potom prikážte AI, aby fungovala striktne ako *tvorca kvízov*, nie ako nezávislý tvorca obsahu. To zabráni tomu, aby AI testovala koncepty, ktoré ste v triede reálne neprebrali.
+`[Vloženie obsahu] ➔ [Definovanie plánu] ➔ [Generovanie variantov] ➔ [Finálna úprava]`
+
+### Krok 1: Poskytnite „zdroj pravdy“
+Vždy najprv poskytnite svoje overené učebné materiály alebo poznámky. Zabránite tým AI v „halucinovaní“ alebo testovaní konceptov, ktoré ste v triede neprebrali.
+
+### Krok 2: Definujte plán testu
+Presne špecifikujte, čo potrebujete: počet otázok, typy (výber z možností, Áno/Nie, otvorené otázky) a cieľovú úroveň náročnosti.
+
+### Krok 3: Vytvorte varianty (Skupina A/B)
+Prikážte AI vytvoriť paralelné verzie, ktoré testujú rovnaké koncepty s inou formuláciou alebo číselnými hodnotami, aby ste zabránili podvádzaniu pri zachovaní férovosti.
+
+### Krok 4: Finálna úprava a kľúč odpovedí
+Požiadajte o čisté rozloženie pripravené na tlač pre študentov a samostatný, podrobný kľúč správnych odpovedí pre seba.
+
+---
+
+## ✍️ Sekcia promptového inžinierstva
+
+### Šablóna promptu:
+> „Pôsob ako expert na navrhovanie pedagogických testov. Na základe nasledujúceho textu: [Vložte text], vytvor [Časový limit] kvíz pre [Ročník].
+> 
+> **Požiadavky:**
+> - [X] Otázok s výberom odpovede (4 možnosti, 1 správna).
+> - [Y] Otázok s krátkou odpoveďou.
+> - Štýl: [Profesionálny/Náročný].
+> - Formát: Poskytni pracovný list pre študenta a následne samostatný kľúč odpovedí pre učiteľa.“
 
 ### Príklad promptu:
-* **Pravidlo:** Najprv poskytnite overené fakty k lekcii, potom inštruujte AI, aby fungovala čisto ako tvorca kvízov.
-* **Príklad promptu:**
-    > „Pôsob ako expert na pedagogické formátovanie. Nižšie je môj surový text o Rímskej ríši. Na základe tohto textu vytvor kvíz s 5 otázkami s výberom odpovede (A, B, C, D). Pravidlo: Na každú otázku musí existovať presne jedna správna odpoveď. Otázky zakladaj striktne na poskytnutom texte; nepridávaj žiadne vonkajšie historické fakty. Na úplný spodok uveď jasný kľúč správnych odpovedí.“
-    > 
-    > *[Sem vložte text vašej lekcie]*
+> „Pôsob ako učiteľ biológie. Na základe mojich poznámok o 'Mitóze buniek' vytvor test s 10 otázkami. Zahrň 5 otázok s výberom odpovede a 5 popisov 'pomenuj fázu'. Potom vytvor verziu 'Skupina B', kde bude poradie otázok premiešané a príklady v časti s výberom odpovedí budú odlišné. Uveď kľúče odpovedí pre obe skupiny.“
 
 ---
 
-## 2. Generovanie rýchlych variantov testov (Skupina A / Skupina B)
-Potrebujete zabrániť podvádzaniu v preplnenej triede? Môžete použiť AI na okamžité vytvorenie paralelných verzií kvízu, ktoré si zachovávajú presne rovnakú úroveň náročnosti, ale obsahujú pomiešané parametre alebo odlišné zadania.
-
-### Profesionálna taktika pre úspech
-* **Zachovajte náročnosť:** Explicitne inštruujte AI, aby zachovala identickú kognitívnu záťaž a náročnosť, zatiaľ čo zmení formulácie alebo číselné hodnoty.
-* **Štruktúrovaný výstup:** Požiadajte o jasné oddelenie skupín a ich príslušných kľúčov odpovedí, aby oprava testov zostala plynulá.
-
-### Odporúčané usmernenia:
-* **Pre humanitné vedy (Zmena formulácie):** Požiadajte AI, aby vymenila konkrétne prípadové štúdie alebo pojmové uhly pohľadu bez toho, aby sa zmenila požadovaná hĺbka vedomostí.
-* **Pre STEM / prírodovedné predmety (Zmena hodnôt):** Inštruujte AI, aby zachovala jadro vzorca alebo typ problému identický, ale zmenila mená a číselné hodnoty tak, aby výsledná matematika bola čistá a logická.
-
-### Príklad promptu (Variant pre STEM):
-> „Pôsob ako učiteľ fyziky. Nižšie sú 3 slovné úlohy pre Skupinu A. Vytvor k nim zodpovedajúcu Skupinu B. Pravidlo: Zachovaj presne rovnaké typy fyzikálnych vzorcov a úroveň náročnosti, ale zmeň mená postáv a číselné hodnoty tak, aby výpočty zostali čisté a logické. Pod kvíz uveď riešenia krok za krokom a finálne odpovede pre obe skupiny.“
+## ⚠️ Kontrolný zoznam „Človek v slučke“
+* **Overenie faktov:** Skontrolujte, či je každá AI vygenerovaná odpoveď správna podľa vašich učebných osnov.
+* **Zhoda terminológie:** Uistite sa, že terminológia použitá AI zodpovedá tomu, čo ste učili v triede (napr. konkrétne vedecké alebo historické termíny).
+* **Kontrola zrozumiteľnosti:** Uistite sa, že otázky nie sú „chytáky“ kvôli nešikovnej formulácii AI.
+* **Súkromie:** **POVINNÉ VAROVANIE:** Do promptu nevkladajte citlivé údaje o študentoch ani osobné identifikátory učiteľa. Prompty zamerajte striktne na obsah učiva.
 
 ---
 
-## 3. Tvorba komplexných kvízov s rôznymi typmi otázok
-Dobre vyskladané hodnotenie by malo obsahovať mix štýlov otázok – od rýchleho overenia faktických vedomostí až po hlbšie kritické myslenie. AI vám pomôže bez námahy dosiahnuť dokonalú rovnováhu.
-
-### Pracovný postup (Workflow):
-* **Krok 1:** Zadajte AI svoju tému, cieľový ročník a časový limit (napr. 20-minútový kvíz).
-* **Krok 2:** Definujte plán (napr. 3 otázky s výberom odpovede, 2 doplňovačky, 1 otázka s krátkou odpoveďou).
-* **Krok 3:** Požiadajte o rozloženie pripravené na tlač pre študentov a samostatný kľúč správnych odpovedí pre učiteľa.
-
-### Príklad promptu:
-* **Rola:** Pôsob ako expert na navrhovanie pedagogických hodnotení.
-* **Príkaz:**
-    > „Vytvor 15-minútový kvíz na tému 'Fotosyntéza' pre biológiu v 7. ročníku. Kvíz musí pozostávať presne z: 2 otázok typu Pravda/Nepravda, 2 otázok s výberom odpovede (A, B, C) and 1 otvorenej otázky, kde študenti vlastnými slovami vysvetlia úlohu chlorofylu. Naformátuj výstup ako čistý pracovný list pre študenta pripravený na tlač. Hodnotiacu rubriku a kľúč správnych odpovedí umiestni do samostatnej časti na úplnom konci.“
+## ✅ Ako zistíte, že ste návod správne pochopili
+Na konci tejto príručky by ste mali byť schopní:
+* Vygenerovať kvíz striktne na základe poskytnutého textu, aby ste zabezpečili súlad s učivom.
+* Vytvoriť paralelné verzie testu (Skupina A a Skupina B) s identickou úrovňou náročnosti.
+* Použiť AI na kombinovanie rôznych typov otázok (výber odpovede, Áno/Nie, otvorené otázky) v jednom teste.
+* Naformátovať profesionálne vyzerajúci pracovný list pre študenta a zodpovedajúci kľúč odpovedí pre učiteľa.
 
 ---
 
-### Pedagogické pravidlo overené praxou
-Kvízy majú hodnotiť skutočné porozumenie študentov, nie ich chytať do pasce mätúcimi formuláciami. Používajte AI na zvládnutie únavnej a ťažkej práce s písaním možností a miešaním verzií, aby ste si ušetrili energiu na cielenú spätnú väzbu. Vždy pred vytlačením skontrolujte finálny výstup z AI, aby ste sa uistili, že terminológia zodvovedá slovnej zásobe, ktorú používate v triede!
+## 🚀 Voliteľné rozšírenia
+* **STEM (Číselné varianty):** Pri matematike alebo fyzike požiadajte AI, aby „ponechala vzorce identické, ale zmenila číselné hodnoty tak, aby výsledky boli čisté a bez nekonečných desatinných čísel.“
+* **Humanitné vedy (Prípadové štúdie):** Požiadajte AI, aby „vymenila historickú prípadovú štúdiu v Skupine A za porovnateľnú v Skupine B, ktorá si vyžaduje rovnakú úroveň analytickej hĺbky.“

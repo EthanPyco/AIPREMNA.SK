@@ -1,82 +1,71 @@
-# Optimalizovaný pracovný postup hodnotenia skúšok s pomocou AI
+# Hodnotenie písomiek pomocou AI: Príručka pre učiteľov
 
-## 1. Účel a základná filozofia
+## Cieľ
+Využite multimodálnu AI na urýchlenie opravovania ručne písaných písomiek, testov s krátkymi odpoveďami a esejí. Tento postup pomáha učiteľom poskytovať rýchlejšiu a podrobnejšiu spätnú väzbu pri zachovaní vysokej konzistencie hodnotenia a úspore hodín administratívnej práce.
 
-Tento pracovný postup využíva AI (konkrétne multimodálne LLM modely ako ChatGPT, Claude alebo Copilot) na urýchlenie hodnotenia ručne písaných skúšok, testov s krátkymi odpoveďami a esejí (vrátane zadaní v slovenskom jazyku).
-
-**Zlaté pravidlo:** AI navrhuje; učiteľ rozhoduje. AI je váš pedagogický asistent — pripravuje návrhy bodovania a spätnej väzby, no konečná pedagogická a právna zodpovednosť zostáva na vás.
-
----
-
-## 2. Ochrana súkromia a súlad s GDPR (nevyhnutné)
-
-Pred nahraním akéhokoľvek obrázka do komerčného AI modelu:
-
-* **Anonymizujte:** Prehnite, zakryte alebo digitálne orežte mená študentov, dátumy narodenia a školské identifikačné čísla.
-* **Identifikátor:** Použite jednoduchý systém číslovania na stránke (napr. *Študent 01*, *Študent 02*) na prepojenie testu s klasifikačnou tabuľkou.
-* **Zakázanie použitia dát:** V nastaveniach AI účtu vypnite možnosť „História chatu a tréning“, aby práce študentov neboli použité na trénovanie budúcich verejných modelov.
+### 🛠️ Odporúčané nástroje AI
+* **ChatGPT (GPT-4o) / Claude 3.5 Sonnet:** Špička v oblasti OCR (čítanie rukopisu) a komplexného uvažovania.
+* **Microsoft Copilot:** Silná alternatíva so zabudovanou ochranou údajov v mnohých inštitucionálnych prostrediach.
+* **Adobe Scan / Microsoft Lens:** Nevyhnutné pre kvalitné mobilné skenovanie do PDF.
 
 ---
 
-## 3. Zjednodušený 5-krokový pracovný postup
+## 🔄 Postup krok za krokom
+
+`[Príprava rubricu] ➔ [Digitalizácia] ➔ [Konfigurácia AI] ➔ [Dávkové hodnotenie] ➔ [Kontrola a overenie]`
 
 ### Krok 1: Pripravte „nepriestrelný“ hodnotiaci rubric
-
-AI nevie čítať vaše myšlienky. Ak je rubric nejasný, hodnotenie AI bude nekonzistentné.
-
-* **Zlý rubric:** *Otázka 1 (5 bodov): Dobré vysvetlenie fotosyntézy.*
-* **Dobrý rubric:** *Otázka 1 (5 bodov): Max. 2 body za pomenovanie svetelnej/tmavej fázy; max. 2 body za správnu identifikáciu vstupov/výstupov ($H_2O$, $CO_2$, $O_2$); 1 bod za správnu slovenskú vedeckú terminológiu (napr. „fotosyntéza“). Odpočítajte 0,5 bodu za menšie faktické chyby.*
+AI potrebuje jasné hranice. Namiesto „Dobré vysvetlenie“ použite konkrétne kritériá ako „Max. 2 body za pomenovanie vstupov/výstupov (H2O, CO2).“
 
 ### Krok 2: Vysokoefektívna digitalizácia
+Použite skenovaciu aplikáciu na konverziu papierov do PDF. Skombinujte strany každého študenta do jedného súboru (napr. `Student_01.pdf`), aby ste udržali proces organizovaný.
 
-Nerobte len bežné fotografie mobilom. Použite bezplatnú skenovaciu aplikáciu (napr. **Adobe Scan**, **Microsoft Lens** alebo funkciu skenovania v natívnej aplikácii Poznámky na iOS/Android).
+### Krok 3: Nastavenie „Mega-Promptu“
+Otvorte nový chat a „uzamknite“ svoje pravidlá hodnotenia a rubric ešte pred nahraním akýchkoľvek prác. To zabezpečí, že AI bude uplatňovať rovnaké štandardy na každého študenta.
 
-* Skenujte do **PDF formátu**, nie ako jednotlivé JPEG obrázky.
-* Skombinujte stránky jedného študenta do jedného PDF súboru s názvom `Student_01.pdf`. Súbory tak zostanú organizované a jednoduchšie na presúvanie myšou.
+### Krok 4: Dávkové spracovanie
+Nahrávajte PDF študentov po jednom. Použite konzistentný príkaz ako „Ohodnoť Študenta 01“ na spustenie predkonfigurovaného formátu odpovede.
 
-### Krok 3: Vytvorte „Mega-Prompt“ (ukotvený chat)
+---
 
-**Nevkladajte** rubric a pravidlá opakovane pre každého študenta. Namiesto toho otvorte úplne novú chatovaciu reláciu a najprv „uzamknite“ pravidlá.
+## ✍️ Sekcia promptového inžinierstva
 
-**Najprv vložte do AI tento presný prompt:**
+### Šablóna promptu:
+> „Pôsob ako expert na [Predmet], ktorý hodnotí skúšku. Budem nahrávať práce študentov jednu po druhej.
+> 
+> **Pravidlá:**
+> 1. Dodržuj tento Rubric: [Vložte Rubric]
+> 2. Rukopis: Ak je nečitateľný, označ ho ako [NEČITATEĽNÉ].
+> 3. Formát: Výsledky vráť ako:
+>    - **ID študenta:** [ID]
+>    - **Skóre:** [X]/[Celkom]
+>    - **Zrážky bodov:** [Dôvod v slovenčine]
+>    - **Spätná väzba:** [2 vety pre študenta]
+> 
+> Ak rozumieš, odpovedz 'Pripravený'."
 
-```text
-You are an expert high school teacher grading a Slovak-language exam. I am going to upload student exam papers one by one. Do not start grading yet. First, acknowledge that you understand these strict rules:
+### Príklad promptu:
+> „Pôsob ako skúsený učiteľ biológie na strednej škole. Použi nasledujúci rubric na ohodnotenie testu z fotosyntézy. Ak študent spomenie 'chlorofyl', ale vynechá 'svetelnú fázu', odpočítaj 1 bod. [Obsah rubricu...] Odpovedz 'Pripravený' pre začiatok.“
 
-1. GRADING CRITERIA: You must strictly follow the rubric provided below. Be fair, but do not award points for missing information.
-2. HANDWRITING & ACCENTS: The text is handwritten in Slovak. Pay close attention to Slovak diacritics (dĺžne, mäkčene). If a word is genuinely illegible, flag it as [ILLEGIBLE] and award 0 points for that specific part, leaving it for my manual review.
-3. NO HALLUCINATION: Grade only what is explicitly visible on the page. Do not invent missing answers.
-4. OUTPUT FORMAT: For every student paper I upload, you must reply strictly using the following markdown template:
+---
 
-### Student ID: [Insert ID]
-- **Question 1:** [X]/[Total] pts — *Reason for deduction:* [Brief reason in Slovak or "Full marks"]
-- **Question 2:** [X]/[Total] pts — *Reason for deduction:* [Brief reason]
-- **TOTAL SCORE:** [X]/[Total] pts
-- **Draft Feedback for Student (in Slovak):** [2-3 constructive sentences praising what they did well and noting where they lost points.]
+## ⚠️ Kontrolný zoznam „Človek v slučke“
+* **Presnosť OCR:** Dvakrát skontrolujte interpretáciu AI pri nečitateľnom rukopise alebo nejednoznačných symboloch.
+* **Kontrola konzistencie:** Ak sa AI zdá byť pri prvých prácach príliš benevolentná alebo prísna, okamžite zadajte „korekčný“ prompt.
+* **Súkromie:** **POVINNÉ VAROVANIE:** Nikdy nenahrávajte mená študentov ani iné citlivé identifikátory. Všetky práce anonymizujte (napr. použite „Študent 01“) a v nastaveniach AI vypnite „Históriu chatu a tréning“, aby ste chránili údaje študentov.
 
-Here is the Rubric you must use:
-[PASTE YOUR DETAILED RUBRIC HERE]
+---
 
-If you understand, reply with: "Ready for Student 01."
+## ✅ Ako zistíte, že ste návod správne pochopili
+Na konci tejto príručky by ste mali byť schopní:
+* Vytvoriť podrobný bodový rubric, ktorý dokáže AI konzistentne interpretovať.
+* Digitalizácia: Skenovať a organizovať prácu študentov do čistých, viacstranových PDF súborov.
+* Vykonávať stratégiu „Mega-Promptu“ na udržanie štandardov hodnotenia v celej triede.
+* Overovať a upravovať AI generovanú spätnú väzbu z hľadiska tónu a faktickej presnosti.
+* Anonymizovať údaje študentov v súlade s predpismi o ochrane súkromia.
 
-```
+---
 
-### Krok 4: Dávkové spracovanie (výrobná linka)
-
-Keď AI odpovie, že je pripravená:
-
-1. Pretiahnite súbor `Student_01.pdf` do chatu.
-2. Napíšte jednoduchý príkaz: `"Grade Student 01."`
-3. Skontrolujte výstup AI na obrazovke. Porovnajte ho priamo s papierovou verziou alebo PDF.
-4. Prepíšte body do Excelu alebo klasifikačnej tabuľky.
-5. Pretiahnite `Student_02.pdf`, napíšte `"Grade Student 02."` a postup zopakujte.
-
-> 💡 **Tip pre profesionálov:** Ak si všimnete, že AI je pri Študentovi 01 príliš benevolentná alebo príliš prísna, okamžite ju opravte (napr. *„Pri otázke 2 si bol príliš mierny. Ak chýba presný rok, musia stratiť celý 1 bod. Prehodnoť Študenta 01 s týmto pravidlom.“*). Po úprave pokračujte so Študentom 02.
-
-### Krok 5: Overenie a finálne doladenie
-
-Pred uzamknutím známok do oficiálneho školského systému (napr. EduPage):
-
-* Dvakrát skontrolujte všetky otázky, pri ktorých AI označila „nečitateľné písmo“.
-* Skontrolujte vygenerovanú slovenskú spätnú väzbu, aby bol tón povzbudzujúci a gramaticky prirodzený.
-
+## 🚀 Voliteľné rozšírenia
+* **Export do tabuľky:** Požiadajte AI: „Sformátuj výsledky pre Študentov 01-10 ako CSV tabuľku,“ aby ste mohli známky rýchlo skopírovať do svojho digitálneho zošita.
+* **Analýza častých chýb:** Po ohodnotení celej triedy sa opýtajte AI: „Na základe všetkých ohodnotených prác, aké boli 3 najčastejšie mylné predstavy, ktoré študenti mali?“

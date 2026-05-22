@@ -1,55 +1,54 @@
-# Empowering Learning: Generating Practice Questions and Student Tasks with AI
+# AI-Powered Practice Questions: A Guide for Teachers
 
-Generative AI is an exceptional tool for creating diverse, targeted practice materials. Whether you need a quick exit ticket, a comprehensive question bank, or simple classroom tasks, AI can generate content tailored to your specific curriculum and student needs in seconds.
+## Goal
+Generative AI is an exceptional tool for creating diverse, targeted practice materials. Whether you need a quick exit ticket, a comprehensive question bank, or simple classroom tasks, AI can generate content tailored to your specific curriculum and student needs in seconds, significantly reducing preparation time.
+
+### 🛠️ Recommended AI Tools
+* **Gemini / ChatGPT / Claude:** The primary engines for generating text-based questions, explanations, and rubrics.
+* **Canva Magic Media:** Useful for generating accompanying images or diagrams for visual-based tasks.
 
 ---
 
-## 1. Generating Diverse Question Types
+## 🔄 The Step-by-Step Workflow
 
-AI can transform a single piece of source material into various assessment formats, helping you cater to different learning styles and cognitive levels.
+`[Select Source] ➔ [Define Format] ➔ [Generate Questions] ➔ [Differentiate] ➔ [Review]`
 
-### Common Formats:
-* **Multiple Choice:** Ideal for quick knowledge checks.
-* **True/False:** Great for addressing common misconceptions.
-* **Fill-in-the-Blanks:** Effective for vocabulary and key concepts.
-* **Open-Ended/Short Answer:** Best for critical thinking and analysis.
+### Step 1: Select Your Source Material
+Provide the AI with the specific text, chapter summary, or learning objectives you want the questions to be based on. This ensures accuracy and curriculum alignment.
+
+### Step 2: Define the Question Format
+Decide on the most effective format for your current goal (e.g., Multiple Choice for quick checks, Open-Ended for critical thinking).
+
+### Step 3: Differentiate and Scaffold
+Use follow-up prompts to create "Level 2" versions with hints or "Extension" versions with higher-order thinking prompts.
+
+---
+
+## ✍️ Prompt Engineering Section
 
 ### Prompt Template:
-> "Based on the attached text about [Topic], generate 5 multiple-choice questions for [Grade Level] students. Ensure that for each question, one option is clearly correct, and the other three are plausible 'distractors.' Include an answer key at the end."
+> "Based on [Source Material/Topic], generate [Number] [Type of Questions] for [Grade Level] students. Focus on [Key Concepts]. Style: [Desired Tone, e.g., Encouraging]. Include an answer key and [Optional: Hints or Rubric]."
+
+### Example Prompt:
+> "Based on the attached text about photosynthesis, generate 5 multiple-choice questions for 8th-grade students. Ensure that for each question, one option is clearly correct, and the other three are plausible 'distractors.' Include an answer key at the end."
 
 ---
 
-## 2. Creating "Simple Tasks" for Daily Practice
-
-Beyond formal testing, AI can help design short, engaging tasks that keep students active and reinforce daily learning.
-
-### Examples of Simple Tasks:
-* **Summarization Challenges:** "Explain the greenhouse effect in exactly three sentences."
-* **Comparison Drills:** "List three differences between a plant cell and an animal cell based on our lesson."
-* **Vocabulary Application:** "Use the word 'photosynthesis' correctly in a sentence describing a forest."
-
-### Prompt Template:
-> "I am teaching [Subject] to [Grade Level]. Generate three simple, 5-minute tasks for students to complete at the end of class to demonstrate their understanding of [Specific Topic]. The tasks should be varied: one writing task, one drawing/diagramming task, and one verbal explanation task."
+## ⚠️ The "Human-in-the-Loop" Review Checklist
+* **Fact-Check:** Verify that the answer key is 100% accurate. AI can occasionally misinterpret data.
+* **Plausibility:** Check that distractors are challenging but not confusing.
+* **Privacy:** **Mandatory Warning:** Never upload documents containing sensitive student data (names, IDs) to generate practice materials.
 
 ---
 
-## 3. Scaffolding and Differentiation
-
-One of the greatest strengths of AI is its ability to adjust the difficulty of tasks for different student groups instantly.
-
-### Implementation Strategy:
-1. **The Core Task:** Start with a standard set of questions.
-2. **Supportive Version:** Ask the AI to rewrite the same questions with additional hints or simplified language for students who need more support.
-3. **Extension Version:** Ask the AI to adapt the questions into higher-order thinking prompts (e.g., using Bloom's Taxonomy) for advanced learners.
-
-### Example Prompt for Differentiation:
-> "Take the 5 math problems I just generated and create a 'Level 2' version. For each problem, add a 'Hint' box that explains the first step of the solution without giving away the final answer."
+## ✅ How to Know You Have Understood This Guide
+By the end of this guide, you should be able to:
+* Transform a piece of source material into at least three different question formats (e.g., MCQ, True/False, Open-Ended).
+* Create a differentiated version of a task by adding hints or increasing cognitive complexity.
+* Generate a clear 3-point rubric for short-answer questions.
+* Verify the pedagogical value of AI-generated distractors.
 
 ---
 
-## 4. Immediate Feedback Loops
-
-You can use AI to not only create the questions but also to generate the criteria for success, making it easier for students to self-assess or for you to provide fast feedback.
-
-### Prompt Template:
-> "For the short-answer questions above, provide a simple 3-point rubric that students can use to check their own work. The criteria should be: 1. Accuracy of facts, 2. Use of key vocabulary, and 3. Clarity of explanation."
+## 🚀 Optional Extension: Retrieval Practice Starters
+Ask the AI to create "Bell Ringers" or "Starter Tasks" based on the previous week's material to boost long-term retention through retrieval practice.

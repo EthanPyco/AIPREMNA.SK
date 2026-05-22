@@ -1,81 +1,71 @@
-# Optimized AI-Assisted Exam Grading Workflow
+# AI-Powered Exam Grading: A Guide for Teachers
 
-## 1. Purpose & Core Philosophy
+## Goal
+Leverage multimodal AI to accelerate the grading of handwritten exams, short-answer tests, and essays. This workflow helps teachers provide faster, more detailed feedback while maintaining high grading consistency and reclaiming hours of administrative time.
 
-This workflow leverages AI (specifically multimodal LLMs like ChatGPT, Claude, or Copilot) to accelerate the grading of handwritten exams, short-answer tests, and essays (including Slovak-language assignments).
-
-**The Golden Rule:** AI proposes; the teacher disposes. The AI is your teaching assistant—it drafts the scores and feedback, but you retain final pedagogical and legal responsibility.
-
----
-
-## 2. Privacy & GDPR Compliance (Non-Negotiable)
-
-Before any image is uploaded to a commercial AI model:
-
-* **Anonymize:** Fold back, cover, or digitally crop out student names, birthdates, and school IDs.
-* **Identifier:** Use a simple numbering system on the page (e.g., *Student 01*, *Student 02*) to match the paper back to your gradebook.
-* **Data Opt-Out:** In your AI account settings, turn off "Chat history & training" so your students' work isn't used to train future public models.
+### 🛠️ Recommended AI Tools
+* **ChatGPT (GPT-4o) / Claude 3.5 Sonnet:** Best-in-class for OCR (reading handwriting) and complex reasoning.
+* **Microsoft Copilot:** A strong alternative with built-in data protection in many institutional environments.
+* **Adobe Scan / Microsoft Lens:** Essential for high-quality mobile scanning to PDF.
 
 ---
 
-## 3. The Streamlined 5-Step Workflow
+## 🔄 The Step-by-Step Workflow
+
+`[Prepare Rubric] ➔ [Digitize Exams] ➔ [Configure AI] ➔ [Batch Grade] ➔ [Review & Verify]`
 
 ### Step 1: Prepare a "Bulletproof" Rubric
-
-AI cannot read your mind. If your rubric is vague, the AI’s grading will be inconsistent.
-
-* **Bad Rubric:** *Question 1 (5 points): Good explanation of photosynthesis.*
-* **Good Rubric:** *Question 1 (5 points): Max 2 points for naming light/dark reactions; max 2 points for correctly identifying inputs/outputs ($H_2O$, $CO_2$, $O_2$); 1 point for correct Slovak scientific terminology (e.g., "fotosyntéza"). Deduct 0.5 points for minor factual errors.*
+AI requires clear boundaries. Instead of "Good explanation," use specific criteria like "Max 2 points for naming inputs/outputs (H2O, CO2)."
 
 ### Step 2: High-Efficiency Digitization
+Use a scanning app to convert papers to PDF. Combine pages for each student into a single file (e.g., `Student_01.pdf`) to keep the process organized.
 
-Don't just take casual phone pictures. Use a free scanning app (like **Adobe Scan**, **Microsoft Lens**, or the native iOS/Android Notes app scan feature).
+### Step 3: The "Mega-Prompt" Setup
+Open a new chat and "lock in" your grading rules and rubric before uploading any papers. This ensures the AI applies the same standards to every student.
 
-* Scan to **PDF format** rather than individual JPEGs.
-* Combine the pages of a single student into one PDF file named `Student_01.pdf`. This keeps the files organized and easier to drag-and-drop.
+### Step 4: Batch Processing
+Upload student PDFs one by one. Use a consistent command like "Grade Student 01" to trigger the pre-configured response format.
 
-### Step 3: Establish the "Mega-Prompt" (The Anchor Chat)
+---
 
-Do **not** paste your rubric and rules over and over again for every student. Instead, open a brand-new chat session and "lock in" the rules first.
+## ✍️ Prompt Engineering Section
 
-**Paste this exact prompt into the AI first:**
+### Prompt Template:
+> "You are an expert teacher grading a [Subject] exam. I will upload student papers one by one.
+> 
+> **Rules:**
+> 1. Follow this Rubric: [Paste Rubric]
+> 2. Handwriting: If illegible, mark as [ILLEGIBLE].
+> 3. Format: Return results as:
+>    - **Student ID:** [ID]
+>    - **Score:** [X]/[Total]
+>    - **Deductions:** [Reason in Slovak/English]
+>    - **Feedback:** [2 sentences for the student]
+> 
+> Reply with 'Ready' to begin."
 
-```text
-You are an expert high school teacher grading a Slovak-language exam. I am going to upload student exam papers one by one. Do not start grading yet. First, acknowledge that you understand these strict rules:
+### Example Prompt:
+> "You are an expert high school biology teacher. Use the following rubric to grade the Photosynthesis test. If a student mentions 'chlorophyll' but misses the 'light-dependent' phase, deduct 1 point. [Rubric Content...] Reply with 'Ready' to begin."
 
-1. GRADING CRITERIA: You must strictly follow the rubric provided below. Be fair, but do not award points for missing information.
-2. HANDWRITING & ACCENTS: The text is handwritten in Slovak. Pay close attention to Slovak diacritics (dĺžne, mäkčene). If a word is genuinely illegible, flag it as [ILLEGIBLE] and award 0 points for that specific part, leaving it for my manual review.
-3. NO HALLUCINATION: Grade only what is explicitly visible on the page. Do not invent missing answers.
-4. OUTPUT FORMAT: For every student paper I upload, you must reply strictly using the following markdown template:
+---
 
-### Student ID: [Insert ID]
-- **Question 1:** [X]/[Total] pts — *Reason for deduction:* [Brief reason in Slovak or "Full marks"]
-- **Question 2:** [X]/[Total] pts — *Reason for deduction:* [Brief reason]
-- **TOTAL SCORE:** [X]/[Total] pts
-- **Draft Feedback for Student (in Slovak):** [2-3 constructive sentences praising what they did well and noting where they lost points.]
+## ⚠️ The "Human-in-the-Loop" Review Checklist
+* **OCR Accuracy:** Double-check the AI's interpretation of messy handwriting or ambiguous symbols.
+* **Consistency Check:** If the AI seems too lenient or harsh on the first few papers, provide a "course correction" prompt immediately.
+* **Privacy Warning:** **MANDATORY:** Never upload student names or sensitive identifiers. Anonymize all papers (e.g., use "Student 01") and disable "Chat History & Training" in your AI settings to protect student data.
 
-Here is the Rubric you must use:
-[PASTE YOUR DETAILED RUBRIC HERE]
+---
 
-If you understand, reply with: "Ready for Student 01."
+## ✅ How to Know You Have Understood This Guide
+By the end of this guide, you should be able to:
+* Create a detailed, point-based rubric that an AI can interpret consistently.
+* Digitization: Scan and organize student work into clean, multi-page PDFs.
+* Execute a "Mega-Prompt" strategy to maintain grading standards across a full class.
+* Verify and adjust AI-generated feedback for tone and factual accuracy.
+* Anonymize student data to comply with privacy regulations.
 
-```
+---
 
-### Step 4: Batch Processing (The Assembly Line)
-
-Once the AI replies that it is ready:
-
-1. Drag and drop `Student_01.pdf` into the chat.
-2. Type a simple command: `"Grade Student 01."`
-3. Review the AI's output on your screen. Compare it directly to the physical paper or PDF.
-4. Copy the scores into your Excel/Gradebook spreadsheet.
-5. Drag and drop `Student_02.pdf`, type `"Grade Student 02."`, and repeat.
-
-> 💡 **Pro-Tip:** If you notice the AI is being too lenient or too harsh on Student 01, immediately correct it (e.g., *"You were too soft on Question 2. If they miss the exact year, they must lose 1 full point. Re-grade Student 01 with this in mind."*). Once it adjusts, proceed to Student 02.
-
-### Step 5: Verification and Final Polish
-
-Before locking the grades into your official school portal (e.g., EduPage):
-
-* Double-check any questions where the AI flagged "unclear handwriting."
-* Scan the generated Slovak feedback to ensure the tone is encouraging and grammatically natural.
+## 🚀 Optional Extensions
+* **Spreadsheet Export:** Ask the AI to "Format the scores for Student 01-10 as a CSV table" to quickly copy-paste grades into your digital gradebook.
+* **Common Mistakes Analysis:** After grading the whole class, ask the AI: "Based on all graded papers, what were the 3 most common misconceptions students had?"
