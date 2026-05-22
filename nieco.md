@@ -1,2 +1,0 @@
-# nadpis
-moja ymena
