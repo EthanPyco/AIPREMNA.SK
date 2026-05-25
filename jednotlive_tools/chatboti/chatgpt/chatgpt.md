@@ -1,136 +1,64 @@
-# ChatGPT
+# ChatGPT: Standardized Guide for Teachers
 
 ---
 
-## 🤖 Čo je ChatGPT?
+## 1. General Use Case
+ChatGPT is a versatile conversational AI that acts as a creative partner and administrative assistant for teachers. Its core strength lies in generating high-quality text, brainstorming lesson ideas, and summarizing complex information to save educators hours of manual work.
 
-ChatGPT je konverzačný AI asistent vyvinutý spoločnosťou OpenAI. Umožňuje komunikovať s umelou inteligenciou formou prirodzeného rozhovoru – píšeš otázku alebo zadanie, AI ti odpovie. Je to jeden z najpoužívanejších AI nástrojov na svete, dostupný cez webový prehliadač aj mobilnú aplikáciu.
-
----
-
-## 🎯 Na čo sa ChatGPT používa?
-
-ChatGPT zvládne širokú škálu textových a myšlienkových úloh:
-
-* Písanie a úprava textov (e-maily, správy, články, hodnotenia)
-* Brainstorming a generovanie nápadov
-* Sumarizácia dlhých dokumentov alebo textov
-* Odpovedanie na otázky a vysvetľovanie tém
-* Písanie a ladenie kódu
-* Preklad textov do rôznych jazykov
-* Príprava prezentácií, osnov a plánov
-* Vyhľadávanie informácií pomocou funkcie Deep Research
+### 🛠️ Recommended Use Cases
+* **[Writing Emails](../../../jednotlive_usecases/administrativa/pisanie_emailu/writing_email.md):** Drafting professional and empathetic communication to parents and colleagues.
+* **[Creating Exams](../../../jednotlive_usecases/pisomky/tvorba_pisomky/creating_exams.md):** Generating multiple-choice questions or open-ended prompts based on curriculum.
+* **[Summarizing Notes](../../../jednotlive_usecases/sumarizacia_uciva/sumarizacia_poznamok/summarizing_notes.md):** Turning long articles or meeting minutes into concise bullet points.
+* **[Practice Questions](../../../jednotlive_usecases/aktivity_na_hodinu/cvicne_ulohy/practice_questions.md):** Creating subject-specific drills and worksheets for students.
 
 ---
 
-## ⚙️ Hlavné vlastnosti a schopnosti
+## 🔄 The Step-by-Step UI Workflow
 
-| Vlastnosť | Popis |
-|-----------|-------|
-| Konverzačná pamäť | Pamätá si kontext celého rozhovoru, takže môžeš nadväzovať na predchádzajúce otázky |
-| Nahrávanie súborov | Môžeš vložiť dokument, tabuľku alebo obrázok a ChatGPT ho analyzuje |
-| Generovanie obrázkov | Funkcia DALL·E umožňuje vytvárať obrázky z textového popisu |
-| Deep Research | Prehľadáva internet a zostavuje podrobné výskumné správy |
-| Hlasový režim | Umožňuje rozhovor s AI hlasom, nie len textom |
-| Integrácie | Prepojenie s externými nástrojmi (Canva, Google Drive a ďalšie) |
+`[Access/Login] ➔ [Prompting/Input] ➔ [Interacting/Refining] ➔ [Finalizing/Exporting]`
 
----
+### Step 1: Accessing the Tool
+Visit [chatgpt.com](https://chatgpt.com) or download the app (iOS/Android). Log in using a Google, Microsoft, or Apple account. No specialized "Education" mode is required, but you can set your persona in the "Custom Instructions" settings.
 
-## 💡 Ukážka promptu
+### Step 2: Providing Input
+Type your request in the central "Message ChatGPT" box. You can also upload PDFs, spreadsheets, or images using the paperclip icon; the AI will analyze these files and answer questions about them.
 
-> „Som učiteľ základnej školy. Potrebujem pripraviť krátke vysvetlenie fotosyntézy pre žiakov 5. ročníka. Použi jednoduchý jazyk, analógie zo každodenného života a na záver pridaj 3 otázky na overenie porozumenia."
-
-**Čo AI vráti:** ChatGPT vygeneruje štruktúrované vysvetlenie prispôsobené veku žiakov, použije prirovnania (napr. rastlina ako továreň), a pripojí konkrétne kontrolné otázky.
+### Step 3: Refining the Result
+If the first answer isn't perfect, use the "Regenerate" button for a fresh version, or simply type a follow-up instruction (e.g., "Make it simpler for 5th graders" or "Add a table comparing these two points").
 
 ---
 
-## ✅ Silné stránky
+## ✍️ Effective Prompting for ChatGPT
 
-* Výborný v generovaní a úprave textov akéhokoľvek druhu
-* Prirodzene pôsobiaci konverzačný štýl, ľahko sa s ním „ladí" výstup
-* Rozsiahla komunita – ľahko nájdeš tipy, príklady promptov a návody online
-* Deep Research funkcia na dôkladné vyhľadávanie informácií z internetu
+ChatGPT responds best to clear context and structured instructions.
 
-## ❌ Obmedzenia
+### How to Write Prompts for this Tool:
+* **Assign a Role:** Start with "You are an expert [Subject] teacher."
+* **Define the Output:** Specify the format (e.g., "Create a 3-column table," "Write a 200-word email").
+* **Use Delimiters:** Use triple quotes (""") to separate instructions from the text you want the AI to process.
 
-* Môže vymýšľať fakty (tzv. halucinácie) – vždy treba overiť konkrétne dáta, mená a dátumy
-* Bezplatná verzia má obmedzený počet správ a zobrazuje reklamy (od februára 2026 v USA)
-* Bez plateného plánu nemáš prístup k pokročilým funkciám (Deep Research, generovanie obrázkov)
-
----
-
-## 🔗 Kde ho nájdeš
-
-* **Web:** [chatgpt.com](https://chatgpt.com)
-* **Aplikácia:** iOS, Android, Windows, macOS
-* **Cena:** Zadarmo (obmedzene) / Plus 20 $/mesiac / Pro 100–200 $/mesiac
-
----
----
-
-# ChatGPT
+### Example Prompt:
+> "You are a high school history teacher. I want you to create a lesson outline about the Industrial Revolution for 10th-grade students. Focus on the impact on child labor. The output should include 5 key talking points and 3 discussion questions. Style: Engaging and professional."
 
 ---
 
-## 🤖 What is ChatGPT?
+## ⚠️ Tool-Specific Review Checklist (Shortcomings)
 
-ChatGPT is a conversational AI assistant developed by OpenAI. It lets you interact with artificial intelligence through natural dialogue — you type a question or task, and the AI responds. It is one of the most widely used AI tools in the world, available through a web browser and a mobile app.
-
----
-
-## 🎯 What is ChatGPT used for?
-
-ChatGPT handles a wide range of text-based and thinking tasks:
-
-* Writing and editing text (emails, reports, articles, assessments)
-* Brainstorming and generating ideas
-* Summarising long documents or texts
-* Answering questions and explaining topics
-* Writing and debugging code
-* Translating text into different languages
-* Preparing presentations, outlines, and plans
-* Researching topics in depth using the Deep Research feature
+* **Hallucination Check:** ChatGPT can confidently state false facts. Always verify specific names, dates, and historical citations.
+* **Bias/Tone:** It can sound overly "robotic" or unnaturally cheerful. Ask it to "Use a neutral, professional tone" to fix this.
+* **Formatting Issues:** While great at Markdown, complex tables may need manual adjustment when pasted into Word or Excel.
+* **Privacy Warning:** Never input sensitive student data, grades associated with names, or private school documents into the chat.
 
 ---
 
-## ⚙️ Key Features and Capabilities
-
-| Feature | Description |
-|---------|-------------|
-| Conversational memory | Remembers the context of the whole conversation, so you can build on previous questions |
-| File uploads | You can attach a document, spreadsheet, or image for ChatGPT to analyse |
-| Image generation | The DALL·E feature creates images from a text description |
-| Deep Research | Searches the internet and compiles detailed research reports |
-| Voice mode | Allows you to have a spoken conversation with the AI, not just text |
-| Integrations | Connects with external tools (Canva, Google Drive, and others) |
+## ✅ How to Know You Have Mastered This Tool
+By the end of this guide, you should be able to:
+* Successfully generate a lesson plan or email that requires only minor personal adjustments.
+* Use follow-up prompts to refine a long text into a specific format (like a table or summary).
 
 ---
 
-## 💡 Example Prompt
-
-> "I'm a primary school teacher. I need a short explanation of photosynthesis for 5th-grade students. Use simple language, everyday analogies, and add 3 comprehension check questions at the end."
-
-**What the AI returns:** ChatGPT will produce a structured explanation adapted to the students' age, use comparisons (e.g. a plant as a factory), and attach specific comprehension questions.
-
----
-
-## ✅ Strengths
-
-* Excellent at generating and editing text of any kind
-* Natural conversational style — easy to refine outputs through follow-up instructions
-* Large community — tips, prompt examples, and tutorials are easy to find online
-* Deep Research feature for thorough, internet-sourced information gathering
-
-## ❌ Limitations
-
-* Can make up facts (so-called hallucinations) — always verify specific data, names, and dates
-* The free version has limited messages and shows ads (from February 2026 in the US)
-* Without a paid plan, advanced features are locked (Deep Research, image generation)
-
----
-
-## 🔗 Where to find it
-
-* **Web:** [chatgpt.com](https://chatgpt.com)
-* **App:** iOS, Android, Windows, macOS
-* **Price:** Free (limited) / Plus $20/month / Pro $100–200/month
+## 🚀 Optional Extensions
+* **Custom GPTs:** Create your own specialized version of ChatGPT for specific tasks (e.g., a "Grammar Checker" or "Lesson Plan Generator").
+* **Deep Research:** Use the "Research" feature to let the AI browse the internet for up-to-date information.
+* **DALL-E:** Generate custom illustrations or diagrams directly within the chat.
