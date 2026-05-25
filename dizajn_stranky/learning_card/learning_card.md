@@ -38,6 +38,13 @@ background overlay, focusing the user's attention on the content.
 5. **Prompt examples** — each prompt is shown in a distinct quote-like
    block and has its **own bookmark button** in its corner, so users
    can save individual prompts independently of the whole card.
+   Each prompt block also has a **copy-to-clipboard button** next to
+   the bookmark icon, allowing users to copy the prompt text with a
+   single click. After a successful copy, the button shows a brief
+   confirmation state (e.g., a checkmark or *"Copied!"* tooltip).
+   The same controls apply to **prompt templates** (e.g., the
+   *"Prompt Template"* block), which are also bookmarkable and
+   copyable.
 6. **Checklist ("Human in the loop")** — visually **highlighted block**
    (e.g., colored background, warning icon) to draw attention to the
    critical review points.
@@ -74,6 +81,11 @@ interactive popup with persistent user state.
 - **Bookmarking individual prompts:** Each prompt example exposes its
   own bookmark control. Bookmarked prompts are stored separately so
   users can build a personal prompt library.
+- **Copying prompts:** Every prompt example **and prompt template**
+  exposes a **copy button** that places the prompt text into the
+  user's clipboard. The button provides immediate visual feedback on
+  success (checkmark / *"Copied!"* tooltip) and a fallback error
+  state if the clipboard API is unavailable.
 - **Progress tracking:** Each checkbox in the "How do you know you
   understood the guide" section is persisted per user and per guide.
   The overall progress (e.g., `4 / 6`) can be shown on the card and
@@ -143,7 +155,10 @@ the search field:
    rendered as four connected boxes.
 5. In the **Prompt examples** section, the teacher finds a useful
    prompt and clicks its **bookmark icon** to save just that prompt
-   for later.
+   for later. Next to the bookmark icon, the teacher clicks the
+   **copy button**; the prompt text is copied to the clipboard and a
+   *"Copied!"* tooltip briefly confirms the action. The teacher pastes
+   the prompt directly into their preferred AI tool.
 6. The teacher reviews the highlighted **"Human in the loop"**
    checklist (clearly emphasized so it is hard to miss).
 7. At the bottom of the card, the teacher ticks off items in
