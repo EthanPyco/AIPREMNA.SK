@@ -15,10 +15,9 @@ This document outlines the naming conventions and structure used in the **AIPREM
 ## 🇸🇰 Language and Translations
 - **Mandatory Slovak Translation:** Every file intended for human users (not for internal AI processing or configuration) **must** have a Slovak translation.
 - **Bilingual Content:** Most resources should exist in both Slovak and English.
-- **Translation Naming:** Translations should be named using the translated term in `snake_case`. No suffixes like `_en` or `_sk` are used.
-    - Example:
-        - `pisanie_emailu.md` (Slovak)
-        - `writing_email.md` (English)
+- **Translation Naming:**
+    - For general resources: Use the translated term in `snake_case`. No suffixes like `_en` or `_sk` are used. (Example: `pisanie_emailu.md` and `writing_email.md`).
+    - For tool guides in `jednotlive_tools/`: Slovak translations must use the `_sk` suffix (Example: `chatgpt.md` and `chatgpt_sk.md`).
 - **Single File Bilingualism:** In some cases (like `README.md`), both languages can be included in a single file, with English usually appearing first followed by the Slovak version.
 
 ## 🛠️ Tool-Specific Files
