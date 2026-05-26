@@ -5,7 +5,7 @@ This guide enables teachers to efficiently translate educational materials from 
 
 ### 🛠️ Recommended AI Tools
 * **DeepL:** Best for natural-sounding, high-quality translation across major European languages.
-* **ChatGPT / Claude:** Excellent for context-aware translations where you can specify grade level, subject matter, and tone.
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude:** Excellent for context-aware translations where you can specify grade level, subject matter, and tone.
 * **Google Translate:** Useful for quick gist-level translation or when working with rarer language pairs.
 
 ---

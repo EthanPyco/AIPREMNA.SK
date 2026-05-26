@@ -4,7 +4,7 @@
 Rozšírte kritické myslenie a prípravu na ústne skúšky využitím AI ako sokratovského partnera v debate. Táto príručka pomáha učiteľom nastaviť simulácie riadené AI, v ktorých musia študenti obhajovať svoje argumenty, odhaľovať logické klamy a prehlbovať svoje porozumenie prostredníctvom interaktívneho intelektuálneho sparringu.
 
 ### 🛠️ Odporúčané nástroje AI
-* **ChatGPT / Claude:** Ideálne pre komplexné, viacúrovňové dialógy a udržiavanie špecifickej persony.
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md) / Claude:** Ideálne pre komplexné, viacúrovňové dialógy a udržiavanie špecifickej persony.
 * **Vlastné GPT (Custom GPTs):** Umožňujú učiteľom vopred nakonfigurovať „Sokratovského tútora“ so špecifickými pravidlami správania.
 
 ---

@@ -4,7 +4,7 @@
 Transform raw lesson text into structured, engaging slide layouts and teacher scripts in seconds. This guide helps teachers reclaim their time by automating the tedious aspects of presentation design, allowing them to focus on active instruction and student engagement while maintaining factual accuracy.
 
 ### 🛠️ Recommended AI Tools
-* **Gemini / ChatGPT / Claude:** Excellent for generating structured outlines, slide content, and speaker notes from raw text.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini.md) / [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude:** Excellent for generating structured outlines, slide content, and speaker notes from raw text.
 * **Microsoft Copilot:** Directly integrates into PowerPoint to generate slides from prompts or existing documents.
 * **Canva Magic Design:** Automatically generates visual presentation layouts from a simple text description.
 

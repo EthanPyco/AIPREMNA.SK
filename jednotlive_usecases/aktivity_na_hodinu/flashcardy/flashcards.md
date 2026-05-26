@@ -4,7 +4,7 @@
 Reduce the hours spent manually designing study materials by using AI to instantly generate vocabulary lists, definition cards, and question-and-answer decks tailored to any topic or age group. This guide helps teachers create effective, engaging, and personalized flashcards for students to support active recall.
 
 ### 🛠️ Recommended AI Tools
-* **Gemini / ChatGPT / Claude:** Excellent for generating large sets of terms, definitions, and example sentences.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini.md) / [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude:** Excellent for generating large sets of terms, definitions, and example sentences.
 * **Quizlet / Anki:** Digital platforms where you can import AI-generated content (e.g., via CSV) for students to use.
 
 ---

@@ -5,7 +5,7 @@ As a teacher, you can use generative AI to draft professional, clear, and approp
 
 ### 🛠️ Recommended AI Tools
 * **Grammarly:** Excellent for real-time tone detection and refining existing drafts.
-* **Gemini / ChatGPT / Claude:** Powerful for generating complete drafts from short bullet points or instructions.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini.md) / [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude:** Powerful for generating complete drafts from short bullet points or instructions.
 * **Microsoft Outlook / Google Workspace (Built-in AI):** Many modern email clients now have "Help me write" features powered by AI directly in the compose window.
 
 ---

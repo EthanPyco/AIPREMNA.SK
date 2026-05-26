@@ -4,7 +4,7 @@
 Efficiently create high-quality worksheets from curriculum papers, lesson plans, and educational materials. This guide helps teachers save time on manual formatting and question construction while preserving technical accuracy and pedagogical intent.
 
 ### 🛠️ Recommended AI Tools
-* **Gemini / ChatGPT / Claude:** The primary engines for parsing source text and generating diverse exercise types.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini.md) / [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude:** The primary engines for parsing source text and generating diverse exercise types.
 * **Canva / Google Docs:** Platforms for final styling and printing of the AI-generated content.
 
 ---

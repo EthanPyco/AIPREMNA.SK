@@ -5,7 +5,7 @@ Táto príručka umožňuje učiteľom efektívne prekladať vzdelávacie materi
 
 ### 🛠️ Odporúčané AI nástroje
 * **DeepL:** Najlepší pre prirodzene znejúce a vysokokvalitné preklady vo väčšine európskych jazykov.
-* **ChatGPT / Claude:** Vynikajúce na preklady s ohľadom na kontext, kde môžete špecifikovať úroveň ročníka, predmet a tón.
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md) / Claude:** Vynikajúce na preklady s ohľadom na kontext, kde môžete špecifikovať úroveň ročníka, predmet a tón.
 * **Google Translate:** Užitočný na rýchly informatívny preklad alebo pri práci s menej častými jazykovými pármi.
 
 ---

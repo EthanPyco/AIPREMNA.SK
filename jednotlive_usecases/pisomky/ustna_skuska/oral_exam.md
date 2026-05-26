@@ -4,7 +4,7 @@
 Scale critical thinking and oral exam preparation by using AI as a Socratic debate partner. This guide helps teachers set up AI-driven simulations where students must defend their arguments, uncover logical fallacies, and deepen their understanding through interactive intellectual sparring.
 
 ### 🛠️ Recommended AI Tools
-* **ChatGPT / Claude:** Ideal for complex, multi-turn dialogues and maintaining a specific persona.
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude:** Ideal for complex, multi-turn dialogues and maintaining a specific persona.
 * **Custom GPTs:** Allows teachers to pre-configure a "Socratic Tutor" with specific behavioral guardrails.
 
 ---

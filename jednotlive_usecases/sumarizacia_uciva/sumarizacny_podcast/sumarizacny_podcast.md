@@ -4,9 +4,9 @@
 Táto príručka pomáha učiteľom rýchlo premeniť dlhé vzdelávacie podcasty a audio nahrávky na stručné zhrnutia, študijné príručky a aktivity. Šetrí hodiny počúvania a sprístupňuje odborný obsah študentom.
 
 ### 🛠️ Odporúčané AI nástroje
-* **NotebookLM:** Vynikajúci na priame nahrávanie audio súborov a generovanie hĺbkových zhrnutí.
+* **[NotebookLM](../../../jednotlive_tools/ucebne_pomocky/notebook_lm/notebook_lm_sk.md):** Vynikajúci na priame nahrávanie audio súborov a generovanie hĺbkových zhrnutí.
 * **Whisper (od OpenAI):** Štandard v odvetví pre presný prepis audia na text.
-* **ChatGPT/Claude:** Na úpravu prepisov do štruktúrovaných učebných materiálov.
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md)/Claude:** Na úpravu prepisov do štruktúrovaných učebných materiálov.
 * **YouTube Transcript:** Na rýchle získanie textu z edukačných videí.
 
 ---

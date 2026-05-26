@@ -4,7 +4,7 @@
 Efektívne vytvárajte vysokokvalitné pracovné listy z kurikulárnych dokumentov, plánov lekcií a vzdelávacích materiálov. Táto príručka pomáha učiteľom ušetriť čas pri manuálnom formátovaní a tvorbe otázok, pričom zachováva technickú presnosť a pedagogický zámer.
 
 ### 🛠️ Odporúčané nástroje AI
-* **Gemini / ChatGPT / Claude:** Hlavné nástroje na analýzu zdrojového textu a generovanie rôznych typov cvičení.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini_sk.md) / [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md) / Claude:** Hlavné nástroje na analýzu zdrojového textu a generovanie rôznych typov cvičení.
 * **Canva / Google Docs:** Platformy na finálnu úpravu a tlač AI-generovaného obsahu.
 
 ---

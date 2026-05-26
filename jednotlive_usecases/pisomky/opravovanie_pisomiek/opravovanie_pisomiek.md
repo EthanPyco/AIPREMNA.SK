@@ -4,7 +4,7 @@
 Využite multimodálnu AI na urýchlenie opravovania ručne písaných písomiek, testov s krátkymi odpoveďami a esejí. Tento postup pomáha učiteľom poskytovať rýchlejšiu a podrobnejšiu spätnú väzbu pri zachovaní vysokej konzistencie hodnotenia a úspore hodín administratívnej práce.
 
 ### 🛠️ Odporúčané nástroje AI
-* **ChatGPT (GPT-4o) / Claude 3.5 Sonnet:** Špička v oblasti OCR (čítanie rukopisu) a komplexného uvažovania.
+* **[ChatGPT (GPT-4o)](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md) / Claude 3.5 Sonnet:** Špička v oblasti OCR (čítanie rukopisu) a komplexného uvažovania.
 * **Microsoft Copilot:** Silná alternatíva so zabudovanou ochranou údajov v mnohých inštitucionálnych prostrediach.
 * **Adobe Scan / Microsoft Lens:** Nevyhnutné pre kvalitné mobilné skenovanie do PDF.
 

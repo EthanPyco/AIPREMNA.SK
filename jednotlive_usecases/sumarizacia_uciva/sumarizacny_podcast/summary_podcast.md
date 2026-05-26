@@ -4,9 +4,9 @@
 This guide helps teachers quickly turn long educational podcasts and audio recordings into concise summaries, study guides, and activities. It saves hours of listening time while making expert content accessible for students.
 
 ### 🛠️ Recommended AI Tools
-* **NotebookLM:** Excellent for uploading audio files directly and generating deep-dive summaries.
+* **[NotebookLM](../../../jednotlive_tools/ucebne_pomocky/notebook_lm/notebook_lm.md):** Excellent for uploading audio files directly and generating deep-dive summaries.
 * **Whisper (by OpenAI):** Industry-standard for accurate audio-to-text transcription.
-* **ChatGPT/Claude:** For refining transcripts into structured study materials.
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md)/Claude:** For refining transcripts into structured study materials.
 * **YouTube Transcript Feature:** For quickly grabbing text from educational videos.
 
 ---

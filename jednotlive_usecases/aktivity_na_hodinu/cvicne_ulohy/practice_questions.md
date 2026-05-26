@@ -4,7 +4,7 @@
 Generative AI is an exceptional tool for creating diverse, targeted practice materials. Whether you need a quick exit ticket, a comprehensive question bank, or simple classroom tasks, AI can generate content tailored to your specific curriculum and student needs in seconds, significantly reducing preparation time.
 
 ### 🛠️ Recommended AI Tools
-* **Gemini / ChatGPT / Claude:** The primary engines for generating text-based questions, explanations, and rubrics.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini.md) / [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude:** The primary engines for generating text-based questions, explanations, and rubrics.
 * **Canva Magic Media:** Useful for generating accompanying images or diagrams for visual-based tasks.
 
 ---

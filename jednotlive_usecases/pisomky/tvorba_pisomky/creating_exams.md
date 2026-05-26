@@ -4,8 +4,8 @@
 Streamline the design of balanced assessments, quizzes, and exam variations. By using AI as a pedagogical assistant, teachers can transform lesson notes into high-quality questions, generate parallel test versions (Groups A/B) in seconds, and ensure all questions align perfectly with covered curriculum.
 
 ### 🛠️ Recommended AI Tools
-* **ChatGPT / Claude:** Excellent for generating creative question types and maintaining consistent difficulty across versions.
-* **Gemini:** Particularly effective when integrated with Google Workspace (Docs/Classroom).
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude:** Excellent for generating creative question types and maintaining consistent difficulty across versions.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini.md):** Particularly effective when integrated with Google Workspace (Docs/Classroom).
 * **Microsoft Copilot:** Useful for teachers using the Office 365 ecosystem.
 
 ---
