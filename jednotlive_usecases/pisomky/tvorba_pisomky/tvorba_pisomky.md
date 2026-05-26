@@ -4,8 +4,8 @@
 Zefektívnite navrhovanie vyvážených hodnotiacich materiálov, kvízov a variantov testov. Využitím AI ako pedagogického asistenta môžu učitelia transformovať poznámky z lekcií na kvalitné otázky, generovať paralelné verzie testov (skupiny A/B) v priebehu sekúnd a zabezpečiť, aby všetky otázky dokonale zodpovedali preberanému učivu.
 
 ### 🛠️ Odporúčané nástroje AI
-* **ChatGPT / Claude:** Vynikajúce na generovanie kreatívnych typov otázok a udržiavanie konzistentnej náročnosti medzi verziami.
-* **Gemini:** Obzvlášť efektívny pri integrácii s Google Workspace (Dokumenty/Classroom).
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md) / Claude:** Vynikajúce na generovanie kreatívnych typov otázok a udržiavanie konzistentnej náročnosti medzi verziami.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini_sk.md):** Obzvlášť efektívny pri integrácii s Google Workspace (Dokumenty/Classroom).
 * **Microsoft Copilot:** Užitočný pre učiteľov využívajúcich ekosystém Office 365.
 
 ---

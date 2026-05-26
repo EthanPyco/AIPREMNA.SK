@@ -4,7 +4,7 @@
 Skráťte hodiny strávené manuálnym navrhovaním študijných materiálov pomocou AI na okamžité generovanie zoznamov slovíčok, kartičiek s definíciami a sád otázok a odpovedí prispôsobených akejkoľvek téme alebo vekovej skupine. Táto príručka pomáha učiteľom vytvárať efektívne a personalizované kartičky na podporu aktívneho vyvolávania informácií z pamäte.
 
 ### 🛠️ Odporúčané nástroje AI
-* **Gemini / ChatGPT / Claude:** Vynikajúce nástroje na generovanie veľkých sád pojmov, definícií a príkladových viet.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini_sk.md) / [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md) / Claude:** Vynikajúce nástroje na generovanie veľkých sád pojmov, definícií a príkladových viet.
 * **Quizlet / Anki:** Digitálne platformy, do ktorých môžete importovať AI-generovaný obsah (napr. cez CSV), aby ho študenti mohli používať.
 
 ---

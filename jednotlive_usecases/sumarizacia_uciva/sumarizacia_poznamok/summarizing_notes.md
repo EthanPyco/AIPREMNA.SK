@@ -4,7 +4,7 @@
 This guide helps teachers and students turn messy, handwritten, or raw digital classroom notes into organized, structured summaries. It ensures that the most important information is captured and easily reviewable, improving study efficiency.
 
 ### 🛠️ Recommended AI Tools
-* **ChatGPT / Claude:** Excellent for restructuring messy text and identifying information hierarchies.
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude:** Excellent for restructuring messy text and identifying information hierarchies.
 * **Google Lens / Apple Live Text:** For digitizing handwritten notes from a whiteboard or paper via OCR.
 * **Microsoft OneNote:** Integrates well for capturing and organizing raw digital ink before AI processing.
 

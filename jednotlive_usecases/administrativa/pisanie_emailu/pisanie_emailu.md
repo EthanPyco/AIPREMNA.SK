@@ -5,7 +5,7 @@ Ako učiteľ môžete využiť generatívnu AI na vypracovanie profesionálnych,
 
 ### 🛠️ Odporúčané nástroje AI
 * **Grammarly:** Vynikajúce na detekciu tónu v reálnom čase a vylepšovanie existujúcich konceptov.
-* **Gemini / ChatGPT / Claude:** Výkonné nástroje na generovanie kompletných konceptov z krátkych bodov alebo inštrukcií.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini_sk.md) / [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md) / Claude:** Výkonné nástroje na generovanie kompletných konceptov z krátkych bodov alebo inštrukcií.
 * **Microsoft Outlook / Google Workspace (vstavaná AI):** Mnohé moderné e-mailové klienty už majú funkcie „Pomôž mi písať“ poháňané AI priamo v okne písania správy.
 
 ---

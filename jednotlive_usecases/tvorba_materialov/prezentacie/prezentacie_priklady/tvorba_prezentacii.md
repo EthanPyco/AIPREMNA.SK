@@ -95,7 +95,7 @@ Skvelá prezentácia dosahuje dokonalú rovnováhu medzi tým, čo študenti vid
 ---
 
 ### 3. Tvorba automatizovaných osnov snímok (Konverzia textu na prezentáciu)
-Nástroje AI (ako Claude, Microsoft Copilot, NotebookLM alebo Gemini) dokážu vziať špecifický typ formátovania textu a jedným kliknutím ho premeniť na hotové rozloženie prezentácie. Môžete použiť AI na to, aby vaše myšlienky dokonale naformátovala pre tieto nástroje.
+Nástroje AI (ako Claude, Microsoft Copilot, [NotebookLM](../../../../jednotlive_tools/ucebne_pomocky/notebook_lm/notebook_lm_sk.md) alebo [Gemini](../../../../jednotlive_tools/generacia_obrazkov/gemini/gemini_sk.md)) dokážu vziať špecifický typ formátovania textu a jedným kliknutím ho premeniť na hotové rozloženie prezentácie. Môžete použiť AI na to, aby vaše myšlienky dokonale naformátovala pre tieto nástroje.
 
 #### Pracovný postup (Workflow):
 * **Krok 1:** Zadajte AI svoju tému a cieľový ročník.

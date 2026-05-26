@@ -4,8 +4,8 @@
 Táto príručka umožňuje učiteľom transformovať obsiahle učebnice, PDF súbory alebo poznámky z prednášok na vysoko efektívne a prehľadné študijné pomôcky. Pomáha študentom zamerať sa na kľúčové informácie a zároveň šetrí učiteľom hodiny manuálneho formátovania.
 
 ### 🛠️ Odporúčané AI nástroje
-* **NotebookLM:** Najlepší na spracovanie viacerých veľkých dokumentov alebo celých kapitol učebníc s vysokou presnosťou zdrojov.
-* **ChatGPT / Claude / Gemini:** Vynikajúce na extrakciu textu, sumarizáciu a štrukturálne formátovanie.
+* **[NotebookLM](../../../jednotlive_tools/ucebne_pomocky/notebook_lm/notebook_lm_sk.md):** Najlepší na spracovanie viacerých veľkých dokumentov alebo celých kapitol učebníc s vysokou presnosťou zdrojov.
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md) / Claude / [Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini_sk.md):** Vynikajúce na extrakciu textu, sumarizáciu a štrukturálne formátovanie.
 
 ---
 

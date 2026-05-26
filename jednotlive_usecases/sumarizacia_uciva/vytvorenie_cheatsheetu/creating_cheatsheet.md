@@ -4,8 +4,8 @@
 This guide enables teachers to transform dense textbooks, PDFs, or lecture notes into high-impact, scannable study aids. It helps students focus on high-yield information while saving teachers hours of manual formatting.
 
 ### 🛠️ Recommended AI Tools
-* **NotebookLM:** Best for processing multiple large documents or full textbook chapters with high source grounding.
-* **ChatGPT / Claude / Gemini:** Excellent for text extraction, summarizing, and structural formatting.
+* **[NotebookLM](../../../jednotlive_tools/ucebne_pomocky/notebook_lm/notebook_lm.md):** Best for processing multiple large documents or full textbook chapters with high source grounding.
+* **[ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude / [Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini.md):** Excellent for text extraction, summarizing, and structural formatting.
 
 ---
 

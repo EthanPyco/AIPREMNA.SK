@@ -4,7 +4,7 @@
 Leverage multimodal AI to accelerate the grading of handwritten exams, short-answer tests, and essays. This workflow helps teachers provide faster, more detailed feedback while maintaining high grading consistency and reclaiming hours of administrative time.
 
 ### 🛠️ Recommended AI Tools
-* **ChatGPT (GPT-4o) / Claude 3.5 Sonnet:** Best-in-class for OCR (reading handwriting) and complex reasoning.
+* **[ChatGPT (GPT-4o)](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md) / Claude 3.5 Sonnet:** Best-in-class for OCR (reading handwriting) and complex reasoning.
 * **Microsoft Copilot:** A strong alternative with built-in data protection in many institutional environments.
 * **Adobe Scan / Microsoft Lens:** Essential for high-quality mobile scanning to PDF.
 

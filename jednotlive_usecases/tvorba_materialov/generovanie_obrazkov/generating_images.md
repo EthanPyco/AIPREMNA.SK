@@ -4,7 +4,7 @@
 This guide helps teachers create high-quality, custom visuals, diagrams, and illustrations for their lessons. It eliminates the need for hours of searching for the "perfect" copyright-free image, allowing for perfectly tailored educational aids.
 
 ### 🛠️ Recommended AI Tools
-* **DALL-E 3 (via ChatGPT):** Great for following complex instructions and adding simple text within images.
+* **DALL-E 3 (via [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt.md)):** Great for following complex instructions and adding simple text within images.
 * **Midjourney:** Best for high-artistic quality and realistic textures.
 * **Canva Magic Media:** Integrated directly into the popular design tool for seamless classroom use.
 * **Adobe Firefly:** Excellent for high-quality, safe imagery with intuitive editing features.

@@ -4,7 +4,7 @@
 Táto príručka pomáha učiteľom vytvárať vysokokvalitné, vlastné vizuálne materiály, diagramy a ilustrácie pre ich vyučovacie hodiny. Eliminuje potrebu tráviť hodiny hľadaním "dokonalého" obrázka bez autorských práv a umožňuje vytvárať učebné pomôcky šité na mieru.
 
 ### 🛠️ Odporúčané AI nástroje
-* **DALL-E 3 (cez ChatGPT):** Skvelý na dodržiavanie komplexných pokynov a pridávanie jednoduchého textu do obrázkov.
+* **DALL-E 3 (cez [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md)):** Skvelý na dodržiavanie komplexných pokynov a pridávanie jednoduchého textu do obrázkov.
 * **Midjourney:** Najlepší pre vysokú umeleckú kvalitu a realistické textúry.
 * **Canva Magic Media:** Integrovaný priamo v populárnom dizajnovom nástroji pre učiteľov.
 * **Adobe Firefly:** Vynikajúci pre vysokokvalitné, bezpečné obrázky s intuitívnymi funkciami úprav.

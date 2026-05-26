@@ -4,7 +4,7 @@
 Generatívna AI je výnimočný nástroj na vytváranie rozmanitých a cielene zameraných učebných materiálov. Či už potrebujete rýchly „exit ticket“, komplexnú banku otázok alebo jednoduché úlohy na hodinu, AI dokáže vygenerovať obsah prispôsobený vašim osnovám a potrebám študentov v priebehu niekoľkých sekúnd.
 
 ### 🛠️ Odporúčané nástroje AI
-* **Gemini / ChatGPT / Claude:** Hlavné nástroje na generovanie textových otázok, vysvetlení a rubrík.
+* **[Gemini](../../../jednotlive_tools/generacia_obrazkov/gemini/gemini_sk.md) / [ChatGPT](../../../jednotlive_tools/chatboti/chatgpt/chatgpt_sk.md) / Claude:** Hlavné nástroje na generovanie textových otázok, vysvetlení a rubrík.
 * **Canva Magic Media:** Užitočné na generovanie sprievodných obrázkov alebo diagramov pre vizuálne úlohy.
 
 ---
