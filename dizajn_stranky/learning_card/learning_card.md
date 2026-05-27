@@ -96,16 +96,15 @@ interactive popup with persistent user state.
   which prevents accidental opens from polluting the history.
 
 ### Inputs
-- The Markdown content of the underlying guide file.
-- The user's stored state: bookmark flags (card-level and prompt-level)
-  and checklist progress.
+- The Markdown content of the underlying guide file (Slovak version preferred).
+- The user's stored state in **LocalStorage**: bookmark flags (card-level and prompt-level) and checklist progress.
 
 ### Outputs / side effects
 - Renders the styled, interactive popup.
-- Updates bookmark state in the user's storage.
-- Updates checklist progress in the user's storage.
-- Appends the guide to **Last used** when the 10-second threshold is
-  reached.
+- Updates bookmark state in the user's **LocalStorage**.
+- Updates checklist progress in the user's **LocalStorage**.
+- Appends the guide to **Last used** in **LocalStorage** when the 10-second threshold is reached.
+
 
 ### States
 - **Loading:** Skeleton placeholders for title, sections and lists

@@ -4,50 +4,30 @@
 The application's main page is designed with an emphasis on visual clarity and an intuitive user interface, dominated by an **interactive tree graph (mind map / tree graph)** positioned in the center of the screen. The graph uses clean lines, rounded node contours, and distinct color coding to differentiate the main categories.
 
 - **Screen Placement:** The tree graph fills the central viewport of the screen, supporting smooth zooming (zoom) and panning (pan) via mouse click-and-drag or touch gestures.
-- **UI Node Elements:** Nodes are represented by rounded rectangles or ovals containing clear text labels in English. Major structural connections are highlighted with thicker red or blue lines.
+- **UI Node Elements:** Nodes are represented by rounded rectangles or ovals containing clear text labels in **Slovak**. Major structural connections are highlighted with thicker red or blue lines.
 - **Visual Styling & Colors (Matching the source mind map):**
-  - **Central Node ("Use Cases / Prípady použitia"):** A prominent red node in the center of the graph, serving as the core anchor from which the entire architecture branches out.
-  - **Core Infrastructure Branch ("Tools" & "Prompt Writing"):** These boxes are bordered in red, signifying their importance as the technical and methodical backbone of the application.
-  - **Category Nodes:** First-level directional nodes (*Administration, Lesson Activities, Exams, Summary of Material, Content Creation, Chatbots, Teaching Aids*) feature blue borders and act as navigational junctions.
-  - **Action Nodes (Leaf Nodes):** The final, executable endpoints feature purple or pink borders, representing concrete tools, outputs, or templates.
+  - **Primary Tier Node ("Základy a Príprava"):** A prominent node serving as the starting point, linking to `initial_info` content.
+  - **Secondary Tier Node ("Prípady použitia"):** Branching from the first tier, linking to `jednotlive_usecases`.
+  - **Tertiary Tier Node ("Konkrétne nástroje"):** The final stage of the roadmap, linking to `jednotlive_tools`.
 - **Interactions & Visual States:**
   - **Hover State:** Hovering over any node slightly scales its size, adds a subtle drop shadow highlight, and deepens the opacity of the connecting line back to its parent node.
-  - **Click Action:** Clicking a final purple action node redirects the user to the corresponding tool interface or setup form. Clicking an expandable parent node collapses or expands its respective sub-tree with a smooth transition animation.
+  - **Click Action:** Clicking a final leaf node redirects the user to the corresponding tool interface or Learning Card. Clicking an expandable parent node collapses or expands its respective sub-tree with a smooth transition animation.
   - **Responsiveness:** On mobile devices, the graph adapts to the viewport. Users can navigate nodes using pinch-to-zoom gestures or toggle an alternative clean hierarchical list view.
 
 ## Functionality
-The primary objective of this page is to serve as a visual navigation map and router for educators and content creators working with AI. The graph dynamically maps the relationships between prompt engineering methodologies, specific tools, and real-world pedagogical use cases.
+The primary objective of this page is to serve as a visual navigation map and router for educators. The graph maps the progress from foundational knowledge to specific tools.
 
 ### Tree Logical Structure (Data Scheme):
-The tree branches out from two interconnected core pillars:
+The tree follows a 3-tier progression based on the folder hierarchy:
 
-1. **Prompt Writing ↔ Tools ↔ Use Cases**
-   - **Prompt Writing:** Splits into engineering specializations:
-     - `prompt engineer`
-     - `context engineer`
-   - **Tools:** Categorized into:
-     - `Chatbots`
-     - `Teaching Aids` (featuring a specific implementation: `NotebookLM`)
+1. **Základy a Príprava (`initial_info`)**
+   - Branches include: `prompt_engineering`, `context_engineering`, `gdpr`, `akademicka_integrita`, `vyber_nastrojov`, etc.
 
-2. **Use Cases (Main Pedagogical Hub):** Branches out into 5 distinct areas of application:
-   - **Administration:**
-     - `email writing`
-   - **Lesson Activities:**
-     - `practice exercises`
-     - `flashcards`
-     - `worksheets`
-   - **Exams:**
-     - `grading exams`
-     - `exam creation`
-     - `oral testing`
-   - **Summary of Material:**
-     - `summary of notes`
-     - `summary podcast`
-     - `cheatsheet creation`
-   - **Content Creation:**
-     - `image generation`
-     - `material translation`
-     - `presentations`
+2. **Prípady použitia (`jednotlive_usecases`)**
+   - Branches include: `administrativa`, `aktivity_na_hodinu`, `pisomky`, `sumarizacia_uciva`, `tvorba_materialov`.
+
+3. **Konkrétne nástroje (`jednotlive_tools`)**
+   - Branches include: `chatboti`, `generacia_obrazkov`, `ucebne_pomocky`.
 
 ### Technical Logic & Behavior:
 - **Inputs:** The user interacts by clicking, dragging, or panning across nodes. Additionally, a global search input field (adhering to the `search.md` standard) sits above the graph to instantly highlight and locate specific nodes.
