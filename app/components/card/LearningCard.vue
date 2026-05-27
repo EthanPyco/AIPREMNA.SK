@@ -24,6 +24,19 @@ const slug = computed(() => props.guide?.slug ?? '')
 const checklist = computed(() => props.guide?.checklist ?? [])
 
 const { markSeen, summaryRef } = useProgress()
+const bookmarks = useBookmarks()
+
+const isBookmarked = computed(() => (slug.value ? bookmarks.isCardBookmarked(slug.value) : false))
+
+function onToggleBookmark() {
+  if (!props.guide) return
+  bookmarks.toggleCard({
+    slug: props.guide.slug,
+    title: props.guide.title ?? props.guide.slug,
+    tier: '',
+    category: null,
+  })
+}
 
 const progress = summaryRef(
   () => slug.value,
@@ -118,15 +131,31 @@ onMounted(() => {
                     {{ title || 'Načítavam…' }}
                   </DialogTitle>
                 </div>
-                <button
-                  type="button"
-                  class="rounded-md p-1.5 text-ink/60 hover:bg-ink/[0.05] hover:text-ink"
-                  data-testid="card-close"
-                  aria-label="Zavrieť"
-                  @click="emit('close')"
-                >
-                  <Icon name="lucide:x" class="h-5 w-5" />
-                </button>
+                <div class="flex items-center gap-1">
+                  <button
+                    v-if="guide"
+                    type="button"
+                    class="rounded-md p-1.5 text-ink/60 hover:bg-ink/[0.05] hover:text-primary"
+                    data-testid="card-bookmark"
+                    :data-state="isBookmarked ? 'on' : 'off'"
+                    :aria-label="isBookmarked ? 'Odstrániť z uložených' : 'Uložiť'"
+                    @click="onToggleBookmark"
+                  >
+                    <Icon
+                      :name="isBookmarked ? 'lucide:bookmark-check' : 'lucide:bookmark'"
+                      class="h-5 w-5"
+                    />
+                  </button>
+                  <button
+                    type="button"
+                    class="rounded-md p-1.5 text-ink/60 hover:bg-ink/[0.05] hover:text-ink"
+                    data-testid="card-close"
+                    aria-label="Zavrieť"
+                    @click="emit('close')"
+                  >
+                    <Icon name="lucide:x" class="h-5 w-5" />
+                  </button>
+                </div>
               </header>
 
               <div class="flex-1 overflow-y-auto px-5 py-4">
@@ -164,6 +193,8 @@ onMounted(() => {
                     :text="p.text"
                     :heading="p.heading"
                     :index="p.index"
+                    :slug="slug"
+                    :guide-title="title"
                   />
                 </section>
 

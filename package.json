@@ -37,6 +37,7 @@
     "vue-router": "^5.0.7"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.109",
     "@nuxt/test-utils": "^4.0.3",
     "@playwright/test": "^1.60.0",
     "@types/canvas-confetti": "^1.9.0",
