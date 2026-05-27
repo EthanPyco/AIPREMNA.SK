@@ -11,6 +11,15 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
   ],
 
+  components: [
+    { path: '~/components', pathPrefix: false },
+  ],
+
+  css: [
+    '@vue-flow/core/dist/style.css',
+    '@vue-flow/core/dist/theme-default.css',
+  ],
+
   ssr: true,
 
   devServer: {
