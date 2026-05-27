@@ -31,6 +31,8 @@ const navLinks = [
           <span>{{ link.label }}</span>
         </NuxtLink>
       </nav>
+
+      <HeaderSearch class="ml-auto hidden md:block" />
     </div>
   </header>
 </template>
