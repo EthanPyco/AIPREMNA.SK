@@ -14,22 +14,25 @@ Key visual elements:
 The primary purpose of this feature is to give users a clear overview of their advancement, helping them resume their learning journey exactly where they left off, and track their mastery of individual topics.
 
 Behavior and logic:
-- **Inputs:** User interactions – specifically checking/unchecking milestone boxes or clicking the "Mark as Complete" button.
-- **Data Persistence:** Progress state is automatically synced with the user's account in real-time. For guest (unauthenticated) users, progress is saved locally using browser `localStorage`.
+- **Inputs:** User interactions – specifically opening a guide, checking/unchecking boxes in the "Learning Verification" section, or clicking the "Mark as Complete" button.
+- **Data Persistence:** All progress is saved locally using browser `localStorage`. No server-side storage or user accounts are used.
 - **Outputs:** Updated completion percentages, a dynamically recalculated progress ring, and updated visual states for the checklist items.
-- **Milestone Weighting:** Each checked box uniformly increases the overall percentage of the current chapter. Clicking the final "Mark as Complete" button marks the entire guide as finished and unlocks the next recommended guide in the roadmap sequence.
-- **Confetti Celebration:** When a user completes a major milestone or reaches 100% completion in a guide, a brief canvas-based confetti animation triggers across the screen as a reward for their effort.
+- **State Logic:**
+    - **In Progress:** Triggered automatically when a guide is first opened.
+    - **Mastery:** Each checked box in the "Learning Verification" checklist increases the overall percentage.
+    - **Completed:** Marked when all checklist items are ticked or the "Mark as Complete" button is pressed.
+- **Prompts:** All prompt templates displayed within guides are **static text** designed for easy selection and manual copying.
 
 States:
-- **Not Started (Empty state):** The progress ring sits at 0% and all checkboxes are empty.
+- **Not Started (Empty state):** The guide has never been opened.
+- **Opened (Just Started):** The guide has been viewed but no items are checked. The progress ring shows a "Seen" status or 0%.
 - **In Progress:** A portion of the checkboxes are ticked; the ring displays the calculated percentage.
-- **Completed:** The guide is fully finished, showing 100% completion, and the primary button is replaced by a permanent "Completed" badge.
-- **Syncing / Loading:** A small three-dots loading animation appears next to the percentage text while progress is being saved to the server.
-- **Offline Mode:** If the network connection drops, progress is safely cached locally, and the application attempts to resend it automatically once the connection is restored. The user is notified by a subtle warning icon.
+- **Completed:** The guide is fully finished, showing 100% completion.
+- **Offline Mode:** Since all data is stored in `localStorage`, the feature works fully offline by default.
 
 Dependencies and performance:
-- The feature is tightly integrated with the Roadmap system and the User Profile.
-- API network requests are debounced (~500 ms) in case a user rapidly clicks multiple checkboxes in succession, preventing database overload.
+- The feature is tightly integrated with the Roadmap system.
+- Since storage is local, updates are instantaneous with no network debouncing required.
 
 ## Example / Use Case
 A teacher wants to track their progress through a complex module about Python programming:
