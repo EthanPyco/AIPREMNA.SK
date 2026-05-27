@@ -25,6 +25,7 @@ const checklist = computed(() => props.guide?.checklist ?? [])
 
 const { markSeen, summaryRef } = useProgress()
 const bookmarks = useBookmarks()
+const lastUsed = useLastUsed()
 
 const isBookmarked = computed(() => (slug.value ? bookmarks.isCardBookmarked(slug.value) : false))
 
@@ -45,8 +46,17 @@ const progress = summaryRef(
 
 watch(
   () => [props.open, slug.value],
-  ([isOpen, s]) => {
-    if (isOpen && s) markSeen(s as string)
+  ([isOpen, s], prev) => {
+    const wasOpen = Array.isArray(prev) ? !!prev[0] : false
+    const previousSlug = Array.isArray(prev) ? (prev[1] as string | null) : null
+
+    if (isOpen && s) {
+      markSeen(s as string)
+      lastUsed.startSession(s as string, title.value || (s as string))
+    }
+    if (wasOpen && (!isOpen || s !== previousSlug)) {
+      lastUsed.endSession()
+    }
   },
   { immediate: true },
 )
