@@ -22,9 +22,12 @@ export interface LoadedGuide {
 
 export const useGuide = (
   slug: Ref<string | null>,
-  locale: Ref<'sk' | 'en'> | (() => 'sk' | 'en') = () => 'sk',
+  locale?: Ref<'sk' | 'en'> | (() => 'sk' | 'en'),
 ) => {
-  const localeFn = typeof locale === 'function' ? locale : () => locale.value
+  const { locale: localeState } = useLocale()
+  const localeFn = locale
+    ? (typeof locale === 'function' ? locale : () => locale.value)
+    : () => localeState.value
 
   const url = computed(() => {
     if (!slug.value) return null
@@ -34,7 +37,7 @@ export const useGuide = (
   return useFetch<LoadedGuide | null>(() => url.value ?? '/api/guide/_noop', {
     key: () => `guide:${slug.value}:${localeFn()}`,
     immediate: !!slug.value,
-    watch: [slug],
+    watch: [slug, localeState],
     server: true,
     default: () => null,
   })

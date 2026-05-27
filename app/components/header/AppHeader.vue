@@ -32,7 +32,10 @@ const navLinks = [
         </NuxtLink>
       </nav>
 
-      <HeaderSearch class="ml-auto hidden md:block" />
+      <div class="ml-auto flex items-center gap-3">
+        <HeaderSearch class="hidden md:block" />
+        <LocaleToggle />
+      </div>
     </div>
   </header>
 </template>
