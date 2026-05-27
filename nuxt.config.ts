@@ -5,8 +5,15 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   modules: [
     '@nuxt/content',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts'
   ],
+  googleFonts: {
+    families: {
+      'Krona One': true,
+      'Ubuntu': [300, 400, 500, 700]
+    }
+  },
   content: {
     highlight: {
       theme: 'github-dark'

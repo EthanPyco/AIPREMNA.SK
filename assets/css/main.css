@@ -3,22 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --brand-primary: #EF4444;
-  --brand-secondary: #3B82F6;
+  --brand-primary: #8175fb;
+  --brand-secondary: #3d72e5;
+  --brand-accent: #7dbcf9;
 }
 
 body {
-  @apply antialiased text-brand-dark bg-white;
+  @apply antialiased text-brand-dark bg-brand-background font-sans;
 }
 
-/* Custom scrollbar for a cleaner look */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading;
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-brand-light;
+  @apply bg-brand-background;
 }
 
 ::-webkit-scrollbar-thumb {

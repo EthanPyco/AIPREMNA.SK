@@ -12,13 +12,20 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          primary: '#EF4444', // Red as per design standard "thicker red lines"
-          secondary: '#3B82F6', // Blue as per "blue connection line"
-          dark: '#1F2937',
-          light: '#F3F4F6',
+          primary: '#8175fb', // New Primary Purple
+          secondary: '#3d72e5', // New Secondary Blue
+          accent: '#7dbcf9', // New Accent Light Blue
+          background: '#f8f2f2', // New Off-white Background
+          dark: '#140c0b', // New Deep Font Color
         }
+      },
+      fontFamily: {
+        heading: ['Krona One', 'sans-serif'],
+        sans: ['Ubuntu', 'sans-serif'],
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
