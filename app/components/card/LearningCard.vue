@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, onMounted } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionRoot, TransitionChild } from '@headlessui/vue'
+import confetti from 'canvas-confetti'
 import type { LoadedGuide } from '../../composables/useGuide'
 import CardSectionImpl from './CardSection.vue'
 import PromptWindowImpl from './PromptWindow.vue'
+import ChecklistSectionImpl from './ChecklistSection.vue'
+import ProgressRingImpl from './ProgressRing.vue'
 
 const props = defineProps<{
   open: boolean
@@ -17,6 +20,54 @@ const emit = defineEmits<{
 const title = computed(() => props.guide?.title ?? '')
 const sections = computed(() => props.guide?.sections ?? {})
 const prompts = computed(() => props.guide?.prompts ?? [])
+const slug = computed(() => props.guide?.slug ?? '')
+const checklist = computed(() => props.guide?.checklist ?? [])
+
+const { markSeen, summaryRef } = useProgress()
+
+const progress = summaryRef(
+  () => slug.value,
+  () => checklist.value.length,
+)
+
+watch(
+  () => [props.open, slug.value],
+  ([isOpen, s]) => {
+    if (isOpen && s) markSeen(s as string)
+  },
+  { immediate: true },
+)
+
+function fireConfetti() {
+  if (typeof window === 'undefined') return
+  const key = `aipremna:celebrated:${slug.value}`
+  if (sessionStorage.getItem(key)) return
+  sessionStorage.setItem(key, '1')
+  confetti({
+    particleCount: 110,
+    spread: 70,
+    origin: { y: 0.7 },
+    colors: ['#8175fb', '#3d72e5', '#7dbcf9', '#22c55e'],
+  })
+}
+
+watch(
+  () => progress.value.percent,
+  (next, prev) => {
+    if (next === 100 && (prev ?? 0) < 100 && checklist.value.length > 0) {
+      fireConfetti()
+    } else if (next < 100) {
+      const key = `aipremna:celebrated:${slug.value}`
+      if (typeof window !== 'undefined') sessionStorage.removeItem(key)
+    }
+  },
+)
+
+onMounted(() => {
+  if (props.open && progress.value.percent === 100 && checklist.value.length > 0) {
+    fireConfetti()
+  }
+})
 </script>
 
 <template>
@@ -52,13 +103,21 @@ const prompts = computed(() => props.guide?.prompts ?? [])
               <header
                 class="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-ink/10 bg-bg/95 px-5 py-3 backdrop-blur"
               >
-                <DialogTitle
-                  as="h2"
-                  class="font-heading text-xl text-ink"
-                  data-testid="card-title"
-                >
-                  {{ title || 'Načítavam…' }}
-                </DialogTitle>
+                <div class="flex items-center gap-3">
+                  <ProgressRingImpl
+                    v-if="checklist.length > 0"
+                    :percent="progress.percent"
+                    :size="56"
+                    :stroke="5"
+                  />
+                  <DialogTitle
+                    as="h2"
+                    class="font-heading text-xl text-ink"
+                    data-testid="card-title"
+                  >
+                    {{ title || 'Načítavam…' }}
+                  </DialogTitle>
+                </div>
                 <button
                   type="button"
                   class="rounded-md p-1.5 text-ink/60 hover:bg-ink/[0.05] hover:text-ink"
@@ -116,8 +175,13 @@ const prompts = computed(() => props.guide?.prompts ?? [])
                   testid="card-human-loop"
                 />
 
+                <ChecklistSectionImpl
+                  v-if="checklist.length > 0"
+                  :slug="slug"
+                  :items="checklist"
+                />
                 <CardSectionImpl
-                  v-if="sections.mastery"
+                  v-else-if="sections.mastery"
                   heading="Ako zistíte, že ste návod pochopili"
                   :body="sections.mastery"
                   testid="card-mastery"

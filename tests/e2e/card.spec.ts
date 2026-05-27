@@ -32,7 +32,7 @@ test.describe('slice 3 — learning card modal', () => {
     await expect(page.getByTestId('card-workflow')).toBeVisible()
     await expect(page.getByTestId('card-prompts')).toBeVisible()
     await expect(page.getByTestId('card-human-loop')).toBeVisible()
-    await expect(page.getByTestId('card-mastery')).toBeVisible()
+    await expect(page.getByTestId('card-checklist')).toBeVisible()
   })
 
   test('copy button on a prompt copies the text to clipboard', async ({ page, context }) => {
