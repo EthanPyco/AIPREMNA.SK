@@ -51,15 +51,19 @@ background overlay, focusing the user's attention on the content.
 7. **"How do you know you understood the guide" list** — rendered as
    **checkable items (checkboxes)**. The user's checked/unchecked state
    is persisted, so the card tracks **progress** per guide.
-8. **Optional extension** — placed at the **bottom** of the card,
-   visually **de-emphasized** (e.g., lighter background, smaller
-   heading, slightly muted text) to indicate that it is supplementary
-   content.
+8. **Optional extension** — placed near the bottom of the card, visually
+   **de-emphasized** (e.g., lighter background, smaller heading,
+   slightly muted text) to indicate that it is supplementary content.
+9. **External links** — a list of useful URLs (e.g., YouTube videos,
+   articles, tool homepages) sourced from a `links.txt` file in the
+   guide's directory. These are displayed at the very bottom of the
+   card as a simple list of clickable hyperlinks.
 
 ### Visual styling
 - Rounded corners, soft shadow around the popup to lift it from the
   backdrop.
 - Section dividers (thin horizontal rules) between the main blocks.
+- External links are styled cleanly to avoid cluttering the footer.
 - Color accents follow the existing design system (icons for tools,
   steps, prompts, warnings, success).
 - Smooth open/close animation (fade + slight scale).
@@ -94,9 +98,13 @@ interactive popup with persistent user state.
   10 seconds**, the guide is automatically added to the user's
   **Last used** list. Closing the card sooner does **not** record it,
   which prevents accidental opens from polluting the history.
+- **External links:** If a `links.txt` file exists in the guide's
+  directory, its URLs are parsed and displayed at the bottom of the
+  card. Each link opens in a new tab.
 
 ### Inputs
 - The Markdown content of the underlying guide file (Slovak version preferred).
+- The content of a `links.txt` file (if present) in the same directory as the guide.
 - The user's stored state in **LocalStorage**: bookmark flags (card-level and prompt-level) and checklist progress.
 
 ### Outputs / side effects
@@ -167,5 +175,8 @@ the search field:
    corner** of the card to keep the whole guide for later reference.
 9. Since the card was open for more than 10 seconds, the guide is
    automatically added to the **Last used** list.
-10. The teacher closes the card by clicking outside of it (or the ✕
+10. At the very bottom of the card, the teacher notices a few
+    **External links**, including a video tutorial. They click it to
+    open the YouTube video in a new tab for further learning.
+11. The teacher closes the card by clicking outside of it (or the ✕
     button in the top-right corner) and returns to the roadmap.
