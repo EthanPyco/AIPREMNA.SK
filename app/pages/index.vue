@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 const { data } = await useRoadmapGraph('sk')
+const { activeSlug, isOpen, open, close } = useCardRoute()
+
+const slugRef = computed(() => activeSlug.value)
+const { data: guide } = useGuide(slugRef)
 
 function onSelectLeaf(slug: string) {
-  // Wired in slice 3 (Learning Card modal)
-  console.log('leaf selected:', slug)
+  open(slug)
 }
 </script>
 
@@ -26,5 +31,7 @@ function onSelectLeaf(slug: string) {
       :graph="data.positioned"
       @select-leaf="onSelectLeaf"
     />
+
+    <LearningCard :open="isOpen" :guide="guide ?? null" @close="close" />
   </div>
 </template>

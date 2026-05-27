@@ -32,18 +32,6 @@ test.describe('slice 2 — roadmap tree', () => {
     await expect(chatgpt).toBeVisible()
   })
 
-  test('clicking a leaf emits open intent (console log for slice 2)', async ({ page }) => {
-    const messages: string[] = []
-    page.on('console', (m) => {
-      if (m.type() === 'log') messages.push(m.text())
-    })
-    await page.goto('/')
-    // Wait for Vue Flow client-only hydration
-    await expect(page.locator('[data-id="leaf:pisanie-emailu"]')).toBeVisible()
-    await page.locator('[data-id="leaf:pisanie-emailu"]').dispatchEvent('click')
-    await expect.poll(() => messages.join('|')).toMatch(/leaf selected.*pisanie-emailu/)
-  })
-
   test('header navigation links render', async ({ page }) => {
     await page.goto('/')
     const nav = page.getByTestId('header-nav')
