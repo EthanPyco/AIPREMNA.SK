@@ -6,8 +6,10 @@ The Teachers' Cheatsheet is a dedicated, high-density reference page designed to
 ### Layout & placement
 - **Location:** Accessible via a prominent "Cheatsheet" link in the main navigation bar or sidebar.
 - **Header Area:** Features the page title, a short subtitle explaining its purpose, and a floating **"Print / Download PDF" button** with an icon in the top-right corner.
-- **Grid Layout:** Content is organized into a responsive multi-column grid of compact **"Quick Cards"**, categorized by common teaching tasks (e.g., Lesson Planning, Grading & Feedback, Parent Communication, Administrative Tasks).
-- **Search & Filter Bar:** Placed directly below the header, allowing teachers to quickly filter the cards by category tags or keywords.
+- **Subpage Navigation:** A horizontal tab bar located directly below the header, allowing users to toggle between the **"Main Cheatsheet"** (default) and the **"Slovník pojmov" (Glossary)** view.
+- **Slovník pojmov Subpage:** When active, the grid layout is replaced by a clean, single-column vertical list of technical terms. Each term is highlighted in bold, followed by a concise explanation in Slovak, with technical English terms maintained for accuracy.
+- **Grid Layout:** In the "Main Cheatsheet" view, content is organized into a responsive multi-column grid of compact **"Quick Cards"**, categorized by common teaching tasks (e.g., Lesson Planning, Grading & Feedback, Parent Communication, Administrative Tasks).
+- **Search & Filter Bar:** Placed directly below the subpage navigation, allowing teachers to quickly filter the cards or glossary terms by category tags or keywords.
 
 ### Quick Card UI Elements
 - **Card Header:** Contains a category icon, a bold title, and a color-coded tag indicating the recommended AI tool or complexity level.
@@ -19,7 +21,9 @@ The Teachers' Cheatsheet is a dedicated, high-density reference page designed to
 The primary purpose of the Cheatsheet is to serve as a fast, actionable "cheat sheet" for teachers during their busy workdays, enabling rapid prompt copying and quick safety verification.
 
 ### Core behaviors
-- **Filtering & Search:** Typing in the cheatsheet search bar instantly hides non-matching cards using client-side fuzzy matching. Clicking a category tag isolates only the cards belonging to that category.
+- **Subpage Switching:** Clicking between tabs in the navigation bar instantly swaps the view between the task-based cheatsheet and the terminology glossary.
+- **Glossary Integration:** The content for the "Slovník pojmov" subpage is dynamically synchronized with the [glosar_pojmov.md](../../initial_info/glosar_pojmov.md) file, ensuring teachers always have access to the latest technical definitions.
+- **Filtering & Search:** Typing in the cheatsheet search bar instantly hides non-matching cards or glossary terms using client-side fuzzy matching. Clicking a category tag isolates only the cards belonging to that category.
 - **One-Click Copying:** Clicking the copy button next to any micro-prompt copies the raw text directly to the clipboard and triggers a brief "Copied!" tooltip feedback.
 - **Print Optimization:** The page includes a custom CSS print stylesheet. When the user clicks "Print / Download PDF" (or presses `Ctrl+P`), the layout automatically strips out the navigation bars, sidebar, and search controls, formatting the grid into a clean, multi-page document optimized for physical printing or PDF saving.
 
@@ -47,6 +51,8 @@ The primary purpose of the Cheatsheet is to serve as a fast, actionable "cheat s
 - Global navigation links to ensure accessibility from any page within the application.
 
 ## Example / Use Case
+
+### Use Case 1: Quick Email Drafting
 A teacher needs to draft a quick email announcement to parents about an upcoming school trip during a 5-minute class recess:
 
 1. The teacher clicks on **"Cheatsheet"** in the top navigation menu.
@@ -56,3 +62,12 @@ A teacher needs to draft a quick email announcement to parents about an upcoming
 5. The teacher clicks the **"Copy" button** inside the prompt block. The button changes to a green checkmark saying *"Copied!"*.
 6. The teacher opens their email client or preferred AI tool, pastes the template, quickly replaces the bracketed placeholders with their specific trip details, and runs it.
 7. Satisfied with how fast it worked, the teacher clicks the **"Print / Download PDF"** button at the top of the page to print out a physical copy of the cheatsheet to pin next to their desk.
+
+### Use Case 2: Clarifying Technical Terminology
+While reading a guide on prompt engineering, a teacher encounters the term "LLM" and isn't sure what it means:
+
+1. The teacher clicks on **"Cheatsheet"** in the top navigation menu.
+2. They click on the **"Slovník pojmov"** tab in the subpage navigation bar.
+3. The view switches to a vertical list of terms. The teacher types `LLM` into the search bar.
+4. The list filters instantly to show the entry for **LLM (Large Language Model / Veľký jazykový model)** with its Slovak explanation.
+5. After quickly reading the definition, the teacher feels more confident and returns to their previous guide.

@@ -4,7 +4,7 @@
 
 ## Hlavné oblasti a témy
 
-*   **Základy a etika:** Úvod do sveta AI, techniky efektívneho promptovania a pravidlá bezpečného používania s dôrazom na ochranu údajov žiakov a kritické overovanie faktov (prevencia halucinácií).
+*   **Základy a etika:** Úvod do sveta AI, techniky efektívneho promptovania a pravidlá bezpečného používania s dôrazom na ochranu údajov žiakov a kritické overovanie faktov (prevencia halucinácií). Pre rýchle pochopenie technických výrazov navštívte náš [Slovník pojmov](initial_info/glosar_pojmov.md).
 *   **Administratíva a komunikácia:** Návody na bleskové písanie profesionálnych a empatických e-mailov pre rodičov, kolegov či vedenie školy.
 *   **Príprava na vyučovanie:** Automatizácia tvorby detailných učebných plánov, osnov hodín, generovanie sprievodných obrázkov a preklad cudzojazyčných materiálov.
 *   **Tvorba učebných materiálov:** Rýchle generovanie pracovných listov, cvičných úloh, flashcardov a prehľadných „ťahákov“ (cheatsheetov) pre študentov.
