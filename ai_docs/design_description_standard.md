@@ -117,9 +117,9 @@ A user wants to find a guide about writing emails:
 
 ## 📐 Conventions
 
-- **Language:** All feature specifications must be written in **English**.
-- **File naming:** Use lowercase, kebab-case names (e.g., `user-profile.md`, `password-reset.md`).
-- **Location:** Place feature spec files in the `/dizajn_stranky/` directory (or the project's designated docs folder).
+- **Language:** All feature specifications must be written in **English**. These are considered internal documents and do not require Slovak translations.
+- **File naming:** Use lowercase, **snake_case** names (e.g., `user_profile.md`, `password_reset.md`).
+- **Location:** Place feature spec files in the `/dizajn_stranky/` directory. They can be organized into subdirectories (e.g., `/dizajn_stranky/search/search.md`).
 - **Headings:** Use the exact section names **Design**, **Functionality**, and **Example / Use Case** (level-2 headings `##`).
 - **Optional sections:** You may add extra sections (e.g., *Accessibility*, *Analytics*, *Out of Scope*) **after** the three required ones, but never replace or skip the required sections.
 

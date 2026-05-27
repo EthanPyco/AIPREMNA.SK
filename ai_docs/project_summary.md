@@ -25,4 +25,7 @@ All content is organized into practical "playbooks" that include specific prompt
 
 *   **Language:** The platform is purely in Slovak. Standard AI terminology (e.g., "Prompt", "LLM", "Hallucination") is maintained in English for technical accuracy.
 *   **Persistence:** User progress, bookmarks, and history are stored locally in the browser's **LocalStorage**. No user accounts or cloud synchronization are implemented, ensuring a fast and private "no-account" experience.
+    *   **Progress Tracking:** The system tracks two levels of engagement:
+        1.  **Seen/Opened:** A guide is marked as "In Progress" as soon as it is opened for the first time.
+        2.  **Mastery:** Progress is calculated based on the number of items checked within the "Learning Verification" section of each guide. A guide is only considered "Completed" when all checklist items are ticked.
 *   **Navigation:** A visual, interactive tree graph serves as the primary navigation method, allowing teachers to explore the curriculum at their own pace.

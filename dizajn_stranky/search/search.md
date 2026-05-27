@@ -30,7 +30,10 @@ that mentions a given term, without having to browse the roadmap manually.
 Behavior:
 - **Input:** Any free-text string typed by the user into the search field.
 - **Query scope:** The entered text is matched against the content of
-  **all guides** available in the application (titles and body text).
+  **all guides** available in the application. This includes:
+  - Guide titles and body text.
+  - **Prompt templates** (static text blocks designed for copy-pasting).
+  - **Learning Verification checklists**.
 - **Output:** A dropdown list of matching guides, each with:
   - the guide title,
   - a short excerpt containing the matched term,

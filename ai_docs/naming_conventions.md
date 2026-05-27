@@ -9,12 +9,13 @@ This document outlines the naming conventions and structure used in the **AIPREM
 
 ## 📄 File Naming
 - All file names must use **`snake_case`**.
-- Special characters (like accents) should generally be avoided in filenames for better compatibility, although some existing files may contain them. Prefer `generovanie_obrazkov.md` over `generovanie_obrázkov.md`.
+- Special characters (like accents) should generally be avoided in filenames for better compatibility. Always prefer `generovanie_obrazkov.md` over `generovanie_obrázkov.md`.
 - Example: `practice_questions.md`, `tvorba_pisomky.md`.
 
 ## 🇸🇰 Language and Translations
-- **Mandatory Slovak Translation:** Every file intended for human users (not for internal AI processing or configuration) **must** have a Slovak translation.
-- **Bilingual Content:** Most resources should exist in both Slovak and English.
+- **Mandatory Slovak Translation:** Every file intended for human users (teachers/students) **must** have a Slovak translation.
+- **Internal Documentation Exception:** Files intended strictly for AI use, developers, or internal project design (e.g., files in `ai_docs/` or `dizajn_stranky/`) are considered internal and **do not** require a Slovak translation. They should be written in English.
+- **Bilingual Content:** Most user-facing resources should exist in both Slovak and English.
 - **Translation Naming:**
     - For general resources: Use the translated term in `snake_case`. No suffixes like `_en` or `_sk` are used. (Example: `pisanie_emailu.md` and `writing_email.md`).
     - For tool guides in `jednotlive_tools/`: Slovak translations must use the `_sk` suffix (Example: `chatgpt.md` and `chatgpt_sk.md`).
