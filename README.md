@@ -1,24 +1,75 @@
-# AIPREMNA.SK
+# Nuxt Minimal Starter
 
-**AIPREMNA.SK** is a comprehensive educational platform and roadmap designed to empower Slovak teachers through the integration of Artificial Intelligence. Our mission is to bridge the gap between advanced AI technology and everyday classroom practice, helping educators save time and enhance their teaching impact.
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## 🎯 Project Goals
+## Setup
 
-The primary objective of this project is to provide a structured, "start-to-finish" guide for teachers to:
-1.  **Speed up workflows:** Automate administrative tasks, email correspondence, and exam grading.
-2.  **Enhance Preparation:** Generate lesson plans, worksheets, and presentations more efficiently.
-3.  **Innovate in the Classroom:** Integrate AI tools directly into the learning process to engage students.
-4.  **Local Context:** Tailor resources specifically for the Slovak educational environment and language.
+Make sure to install dependencies:
 
-## 🗺️ The AI Roadmap
+```bash
+# npm
+npm install
 
-The project is structured as a roadmap-style website that guides teachers through different stages of AI adoption:
--   **Introduction to AI:** Understanding the basics and ethical considerations.
--   **Practical Tools:** Step-by-step guides for tools like Gemini, Claude, and NotebookLM.
--   **Daily Workflow Optimization:** Real-world examples of how AI can handle routine tasks.
--   **Classroom Integration:** Strategies for using AI as a pedagogical aid.
+# pnpm
+pnpm install
 
+# yarn
+yarn install
 
-## 🇸🇰 Prečo AIPREMNA.SK?
+# bun
+bun install
+```
 
-Mnoho učiteľov pociťuje preťaženie administratívou. AI ponúka cestu, ako získať späť drahocenný čas, ktorý môžu venovať žiakom. Tento projekt slúži ako maják pre slovenské školstvo v dobe digitálnej transformácie.
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
