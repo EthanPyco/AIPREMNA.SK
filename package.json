@@ -41,8 +41,17 @@
     "@types/canvas-confetti": "^1.9.0",
     "@types/dagre": "^0.7.54",
     "@types/node": "^25.9.1",
+    "better-sqlite3": "^12.10.0",
     "happy-dom": "^20.9.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.7"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "better-sqlite3",
+      "esbuild",
+      "vue-demi"
+    ]
   }
 }

@@ -18,6 +18,7 @@ node_modules
 .output
 .nitro
 .cache
+.data
 dist
 
 # Env
