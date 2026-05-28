@@ -9,15 +9,24 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@vueuse/nuxt',
     '@nuxtjs/google-fonts',
+    '@nuxtjs/i18n',
   ],
+
+  i18n: {
+    strategy: 'no_prefix',
+    defaultLocale: 'sk',
+    locales: [
+      { code: 'sk', language: 'sk-SK', name: 'Slovenčina', file: 'sk.json' },
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+    ],
+    detectBrowserLanguage: false,
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
+  },
 
   components: [
     { path: '~/components', pathPrefix: false },
-  ],
-
-  css: [
-    '@vue-flow/core/dist/style.css',
-    '@vue-flow/core/dist/theme-default.css',
   ],
 
   ssr: true,
