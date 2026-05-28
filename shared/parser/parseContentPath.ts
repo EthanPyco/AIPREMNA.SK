@@ -23,7 +23,7 @@ export function parseContentPath(path: string): ContentMeta | null {
     }
     if (parts.length >= 3) {
       const category = parts[1]
-      return { tier: 'foundation', category, leaf: basename, filename, locale: detectLocale(basename, category) }
+      return { tier: 'foundation', category, leaf: category, filename, locale: detectLocale(basename, category) }
     }
     return null
   }

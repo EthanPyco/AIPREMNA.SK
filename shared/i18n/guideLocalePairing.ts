@@ -50,10 +50,9 @@ export function buildGuidePairs(paths: string[]): Map<string, GuidePair> {
     const meta = parseContentPath(path)
     if (!meta) continue
 
-    const leafKey = meta.tier === 'impactEffort' ? meta.leaf : meta.leaf
     const slug = meta.tier === 'tools'
       ? slugify(meta.leaf)
-      : slugForLeaf(leafKey)
+      : slugForLeaf(meta.leaf)
 
     const existing = pairs.get(slug) ?? {
       slug,
