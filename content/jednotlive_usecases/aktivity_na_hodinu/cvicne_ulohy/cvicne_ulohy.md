@@ -1,3 +1,7 @@
+---
+description: Generovanie cvičných úloh na precvičovanie učiva pomocou AI.
+---
+
 # Tvorba cvičných úloh pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

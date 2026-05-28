@@ -1,3 +1,7 @@
+---
+description: Tvorba konštruktívnej slovnej spätnej väzby pre žiakov pomocou AI.
+---
+
 # Personalizovaná spätná väzba pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

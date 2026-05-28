@@ -1,3 +1,7 @@
+---
+description: Ako využiť AI pri plánovaní projektového vyučovania a tematických celkov.
+---
+
 # Projektové vyučovanie (PBL) pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

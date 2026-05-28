@@ -1,3 +1,7 @@
+---
+description: Univerzálny AI asistent na písanie textov, brainstorming a sumarizáciu — ideálny pre prípravu materiálov a komunikáciu.
+---
+
 # ChatGPT: Štandardizovaná príručka pre učiteľov
 
 ---

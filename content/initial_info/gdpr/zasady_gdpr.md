@@ -1,3 +1,7 @@
+---
+description: Pravidlá GDPR pri používaní AI nástrojov s údajmi žiakov.
+---
+
 # AI Compliance a GDPR: Príručka bezpečnosti pre učiteľov
 
 ## Cieľ

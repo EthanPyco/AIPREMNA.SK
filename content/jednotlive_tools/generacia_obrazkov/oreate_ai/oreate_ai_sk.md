@@ -1,3 +1,7 @@
+---
+description: AI nástroj na rýchle vytváranie obrázkov a vizuálnych pomôcok bez potreby grafických zručností.
+---
+
 # Oreate AI: Štandardizovaná príručka pre učiteľov
 
 ---

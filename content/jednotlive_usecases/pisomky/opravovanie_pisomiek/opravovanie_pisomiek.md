@@ -1,3 +1,7 @@
+---
+description: Pomoc AI pri oprave písomiek podľa kritérií hodnotenia.
+---
+
 # Hodnotenie písomiek pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

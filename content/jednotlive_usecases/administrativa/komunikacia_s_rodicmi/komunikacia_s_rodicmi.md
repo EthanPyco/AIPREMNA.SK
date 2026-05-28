@@ -1,3 +1,7 @@
+---
+description: AI tipy na empatickú a efektívnu komunikáciu s rodičmi žiakov.
+---
+
 # Komunikácia s rodičmi pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

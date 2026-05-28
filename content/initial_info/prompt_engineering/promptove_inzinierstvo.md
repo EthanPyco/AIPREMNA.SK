@@ -1,3 +1,7 @@
+---
+description: Základy efektívneho písania promptov pre AI asistentov.
+---
+
 # Príručka Prompt Engineeringu (Inžinierstva príkazov)
 
 ## Cieľ

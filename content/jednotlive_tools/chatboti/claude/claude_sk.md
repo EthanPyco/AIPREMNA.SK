@@ -1,3 +1,7 @@
+---
+description: AI asistent vyladený na dlhé texty, analýzu dokumentov a citlivý tón komunikácie.
+---
+
 # Claude: Štandardizovaná príručka pre učiteľov
 
 ---

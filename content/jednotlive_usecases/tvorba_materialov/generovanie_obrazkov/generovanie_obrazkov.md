@@ -1,3 +1,7 @@
+---
+description: Tvorba vlastných obrázkov a ilustrácií pre vyučovanie pomocou AI.
+---
+
 # Generovanie obrázkov pomocou AI: Príručka pre učiteľov
 
 ## Goal

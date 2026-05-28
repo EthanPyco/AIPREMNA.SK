@@ -1,3 +1,7 @@
+---
+description: Ako pomocou AI rýchlo zostaviť písomku s variantmi A/B.
+---
+
 # Tvorba kvízov a písomiek pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

@@ -1,3 +1,7 @@
+---
+description: Open-source AI model s dôrazom na uvažovanie a riešenie matematických či kódovacích úloh.
+---
+
 # DeepSeek: Štandardizovaná príručka pre učiteľov
 
 ---

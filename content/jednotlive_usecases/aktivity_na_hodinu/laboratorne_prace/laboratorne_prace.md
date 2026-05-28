@@ -1,3 +1,7 @@
+---
+description: Príprava laboratórnych a praktických aktivít s podporou AI.
+---
+
 # Laboratórne práce a experimenty pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

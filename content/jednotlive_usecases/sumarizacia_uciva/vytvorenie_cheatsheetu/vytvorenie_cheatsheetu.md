@@ -1,3 +1,7 @@
+---
+description: Tvorba prehľadných ťahákov (cheatsheetov) pre žiakov.
+---
+
 # Generátor ťahákov pomocou AI: Príručka pre učiteľov
 
 ## Goal

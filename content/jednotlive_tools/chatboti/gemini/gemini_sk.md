@@ -1,3 +1,7 @@
+---
+description: Multimodálny AI asistent od Google s podporou obrázkov, dokumentov a integráciou s Workspace.
+---
+
 # Gemini: Štandardizovaná príručka pre učiteľov
 
 ---

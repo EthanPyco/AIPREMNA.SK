@@ -1,3 +1,7 @@
+---
+description: Preklad učebných materiálov do iných jazykov pomocou AI.
+---
+
 # Preklad učebných materiálov pomocou AI: Príručka pre učiteľov
 
 ## Goal

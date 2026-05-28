@@ -1,3 +1,7 @@
+---
+description: Generovanie pracovných listov rôznej náročnosti pre jednu tému.
+---
+
 # Tvorba pracovných listov pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

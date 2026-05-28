@@ -1,3 +1,7 @@
+---
+description: Ako pomocou AI rýchlo zostaviť štruktúru a obsah prezentácie.
+---
+
 # Pozdvihnite svoje vyučovanie: Zjednodušte si tvorbu prezentácií pomocou AI
 
 Vitajte v praktickej príručke od **aipremna**! Tento sprievodca je navrhnutý exkluzívne pre pedagógov, ktorí chcú získať späť svoj drahocenný čas. Dajte zbohom hodinám úmorného písania, mikroskopického zarovnávania textu a manuálneho kopírovania. Privítajte rýchle koncipovanie prezentácií poháňané umelou inteligenciou, ktoré vám umožní sústrediť sa na to, čo robíte najlepšie: **učiť a inšpirovať.**
@@ -59,3 +63,13 @@ Nástroje AI (ako Claude, Microsoft Copilot, [NotebookLM](../../../jednotlive_to
 
 ### Články
 * 🔗 [Generátor prezentácií PowerPoint s AI – Microsoft](https://www.microsoft.com/sk-sk/microsoft-365/powerpoint/ai-powerpoint-generator)
+
+---
+
+## ✅ Ako zistíte, že ste návod správne pochopili
+Na konci tejto príručky by ste mali byť schopní:
+* Vytvoriť prompt, ktorý jasne oddeľuje rolu AI ako „formátovača snímok“ od tvorcu obsahu.
+* Vygenerovať z vlastných overených faktov osnovu snímky po snímke s názvom a max. 3 odrážkami.
+* Súbežne nechať AI vytvoriť text na snímke aj poznámky pre učiteľa (hovorený text).
+* Naformátovať osnovu prezentácie tak, aby sa dala priamo skopírovať do PowerPointu alebo Google Slides.
+* Dodržať didaktické pravidlo, že snímky vyučovanie podporujú, nie nahrádzajú.

@@ -1,3 +1,7 @@
+---
+description: AI asistent od xAI s priamym prístupom k aktuálnym informáciám z webu cez X (Twitter).
+---
+
 # Grok: Štandardizovaná príručka pre učiteľov
 
 ---

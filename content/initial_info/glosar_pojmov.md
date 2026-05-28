@@ -1,3 +1,7 @@
+---
+description: Slovník základných AI pojmov v slovenčine s ľahko zrozumiteľnými vysvetleniami.
+---
+
 # Slovník pojmov: Sprievodca AI terminológiou pre učiteľov
 
 Svet umelej inteligencie (AI) prináša množstvo nových výrazov, ktoré môžu znieť technicky a mätúco. Tento slovník vám pomôže rýchlo sa zorientovať v tých najdôležitejších pojmoch, s ktorými sa pri práci s AI nástrojmi stretnete.

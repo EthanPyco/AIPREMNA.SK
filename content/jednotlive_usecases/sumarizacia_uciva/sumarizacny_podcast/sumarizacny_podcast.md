@@ -1,3 +1,7 @@
+---
+description: Vytvorenie audio-podcastu zo zhrnutia učiva pomocou AI.
+---
+
 # Sumarizácia podcastov pomocou AI: Príručka pre učiteľov
 
 ## Goal

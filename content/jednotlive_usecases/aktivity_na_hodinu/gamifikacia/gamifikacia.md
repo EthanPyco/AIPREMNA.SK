@@ -1,3 +1,7 @@
+---
+description: AI nápady na gamifikáciu vyučovania a zapojenie žiakov hrou.
+---
+
 # Gamifikácia pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

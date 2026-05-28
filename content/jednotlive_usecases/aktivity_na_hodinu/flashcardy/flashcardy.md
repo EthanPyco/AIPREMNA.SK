@@ -1,3 +1,7 @@
+---
+description: Tvorba kartičiek (flashcards) na rýchle učenie sa pojmov pomocou AI.
+---
+
 # Tvorba didaktických kartičiek (Flashcards) pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

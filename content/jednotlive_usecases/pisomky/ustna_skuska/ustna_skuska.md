@@ -1,3 +1,7 @@
+---
+description: Príprava otázok a kritérií pre ústnu skúšku pomocou AI.
+---
+
 # Sokratovský dialóg a príprava na ústne skúšky pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

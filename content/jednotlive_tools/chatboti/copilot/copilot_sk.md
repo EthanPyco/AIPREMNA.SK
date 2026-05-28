@@ -1,3 +1,7 @@
+---
+description: Microsoft AI asistent integrovaný v Office (Word, Excel, PowerPoint) na automatizáciu bežnej kancelárskej práce.
+---
+
 # Microsoft Copilot: Štandardizovaná príručka pre učiteľov
 
 ---

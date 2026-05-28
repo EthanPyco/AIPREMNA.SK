@@ -1,3 +1,7 @@
+---
+description: Praktický návod na výber správneho AI nástroja pre konkrétnu úlohu.
+---
+
 # Ako vyberať AI nástroje: Príručka pre učiteľov
 
 ## Cieľ

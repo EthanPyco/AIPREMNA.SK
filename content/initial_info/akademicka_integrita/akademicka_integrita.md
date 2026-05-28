@@ -1,3 +1,7 @@
+---
+description: Etické zásady používania AI v škole a ako zabrániť podvádzaniu žiakov.
+---
+
 # AI a akademická integrita: Príručka pre učiteľov
 
 ## Cieľ

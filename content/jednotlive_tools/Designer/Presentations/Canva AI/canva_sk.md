@@ -1,3 +1,7 @@
+---
+description: Canva s integrovanou AI na tvorbu prezentácií, plagátov a vizuálov pre triedu.
+---
+
 # Canva (Magic Studio): Štandardizovaná príručka pre učiteľov
 
 ---

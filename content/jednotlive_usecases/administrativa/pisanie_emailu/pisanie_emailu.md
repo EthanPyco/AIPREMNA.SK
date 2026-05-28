@@ -1,3 +1,7 @@
+---
+description: Ako pomocou AI rýchlo vytvoriť profesionálne e-maily pre rodičov, kolegov a vedenie.
+---
+
 # Písanie e-mailov pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

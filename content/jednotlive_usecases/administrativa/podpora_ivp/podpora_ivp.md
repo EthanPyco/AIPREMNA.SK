@@ -1,3 +1,7 @@
+---
+description: Pomoc AI pri tvorbe a aktualizácii individuálnych vzdelávacích plánov.
+---
+
 # Podpora IVP pomocou AI: Príručka pre učiteľov
 
 ## Cieľ

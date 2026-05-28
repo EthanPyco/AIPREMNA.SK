@@ -1,3 +1,7 @@
+---
+description: Premena dlhých poznámok a článkov na stručné prehľadné body.
+---
+
 ## Cieľ
 
 Tento plán sa zameriava na pomoc učiteľom pri využívaní umelej inteligencie na efektívne kondenzovanie rozsiahlych textov, surových kapitol z kníh, akademických článkov a neusporiadaných poznámok z prednášok do štruktúrovaných, vysokokvalitných študijných materiálov a učebných pomôcok. Hlavným cieľom je umožniť pedagógom extrahovať kľúčové pedagogické koncepty z veľkého množstva textových dát v priebehu niekoľkých sekúnd, čo umožní rýchlu tvorbu štruktúrovaných prehľadov, diferencovaných sprievodcov čítaním a nástrojov formatívneho hodnotenia bez hodín manuálneho konceptovania.

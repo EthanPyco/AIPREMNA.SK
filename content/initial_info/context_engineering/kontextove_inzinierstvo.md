@@ -1,3 +1,7 @@
+---
+description: Ako poskytnúť AI správny kontext pre presnejšie a relevantnejšie odpovede.
+---
+
 # Príručka Context Engineeringu (Inžinierstva kontextu)
 
 ## Cieľ
