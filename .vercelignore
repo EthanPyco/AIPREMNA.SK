@@ -1,0 +1,15 @@
+ai_docs/
+dizajn_stranky/
+ai_generovana_roadmapa/
+impact_effort_map/
+test-results/
+playwright-report/
+.claude/
+.agents/
+after-refactor.md
+final_ssr.html
+ssr_output.html
+GEMINI.md
+FINAL.md
+links.txt
+README.md

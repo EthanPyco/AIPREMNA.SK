@@ -22,3 +22,22 @@ logs
 .env
 .env.*
 !.env.example
+
+# Local Claude Code settings (contains secrets/tokens)
+.claude/settings.local.json
+.claude/.credentials.json
+
+# Local MCP server config (uses ${VERCEL_TOKEN} placeholder but is dev-local)
+.mcp.json
+
+# Dev scratch / refactor notes
+after-refactor.md
+final_ssr.html
+ssr_output.html
+
+# npm lockfile (we use pnpm only)
+package-lock.json
+
+# Test artifacts
+test-results/
+playwright-report/

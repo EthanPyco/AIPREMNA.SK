@@ -31,5 +31,12 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/favicon.png' }
       ]
     }
+  },
+  nitro: {
+    preset: 'static',
+    prerender: {
+      crawlLinks: true,
+      failOnError: false
+    }
   }
 })
