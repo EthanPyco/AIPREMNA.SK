@@ -114,55 +114,11 @@ import {
 
 const emit = defineEmits(['node-click'])
 
-const { data: allContent } = await useAsyncData('roadmap-content', () => {
-  return queryCollection('content').all()
-})
+const { data: slovakContent } = await useSlovakContent()
 
-// Strict filtering similar to useRoadmap
-const filteredContent = computed(() => {
-  if (!allContent.value) return []
-  return allContent.value.filter(item => {
-    if (item.path.endsWith('_sk')) return true
-    const hasSkSuffixPartner = allContent.value.some(other => other.path === `${item.path}_sk`)
-    if (hasSkSuffixPartner) return false
-    
-    const englishFiles = [
-      '/initial_info/akademicka_integrita/academic_integrity',
-      '/initial_info/ai_overenie_odpovedi/ai_verification_of_answers',
-      '/initial_info/context_engineering/context_engineering',
-      '/initial_info/gdpr/gdpr',
-      '/initial_info/prompt_engineering/prompt_engineering',
-      '/initial_info/vyber_nastrojov/evaluating_ai_tools',
-      '/jednotlive_usecases/administrativa/komunikacia_s_rodicmi/parent_communication',
-      '/jednotlive_usecases/administrativa/pisanie_emailu/writing_email',
-      '/jednotlive_usecases/administrativa/podpora_ivp/iep_support',
-      '/jednotlive_usecases/aktivity_na_hodinu/cvicne_ulohy/practice_questions',
-      '/jednotlive_usecases/aktivity_na_hodinu/flashcardy/flashcards',
-      '/jednotlive_usecases/aktivity_na_hodinu/gamifikacia/gamification',
-      '/jednotlive_usecases/aktivity_na_hodinu/laboratorne_prace/lab_work',
-      '/jednotlive_usecases/aktivity_na_hodinu/pracovne_listy/worksheets',
-      '/jednotlive_usecases/aktivity_na_hodinu/projektove_vyucovanie/project_based_learning',
-      '/jednotlive_usecases/pisomky/opravovanie_pisomiek/exam_grading',
-      '/jednotlive_usecases/pisomky/spatna_vazba/student_feedback',
-      '/jednotlive_usecases/pisomky/tvorba_pisomky/creating_exams',
-      '/jednotlive_usecases/pisomky/ustna_skuska/oral_exam',
-      '/jednotlive_usecases/sumarizacia_uciva/sumarizacia_poznamok/summarizing_notes',
-      '/jednotlive_usecases/sumarizacia_uciva/sumarizacia_poznamok/summary_notes',
-      '/jednotlive_usecases/sumarizacia_uciva/sumarizacny_podcast/summary_podcast',
-      '/jednotlive_usecases/sumarizacia_uciva/vytvorenie_cheatsheetu/creating_cheatsheet',
-      '/jednotlive_usecases/tvorba_materialov/generovanie_obrazkov/generating_images',
-      '/jednotlive_usecases/tvorba_materialov/preklad_uciva/translating_curriculum',
-      '/jednotlive_usecases/tvorba_materialov/prezentacie/creating_presentations'
-    ]
-    if (englishFiles.includes(item.path)) return false
-    if (item.path.endsWith('/links')) return false
-    return true
-  })
-})
-
-const tier1 = computed(() => filteredContent.value.filter(f => f.path.startsWith('/initial_info/')))
-const tier2 = computed(() => filteredContent.value.filter(f => f.path.startsWith('/jednotlive_usecases/')))
-const tier3 = computed(() => filteredContent.value.filter(f => f.path.startsWith('/jednotlive_tools/')))
+const tier1 = computed(() => (slovakContent.value || []).filter(f => f.path.startsWith('/initial_info/')))
+const tier2 = computed(() => (slovakContent.value || []).filter(f => f.path.startsWith('/jednotlive_usecases/')))
+const tier3 = computed(() => (slovakContent.value || []).filter(f => f.path.startsWith('/jednotlive_tools/')))
 
 const tier2Grouped = computed(() => {
   const groups = {}
@@ -177,11 +133,13 @@ const tier2Grouped = computed(() => {
 const getProgress = (path) => {
   if (typeof window === 'undefined') return 0
   const saved = localStorage.getItem(`progress-${path}`)
-  if (!saved) return 0
+  const totalRaw = localStorage.getItem(`progress-total-${path}`)
+  if (!saved || !totalRaw) return 0
+  const total = parseInt(totalRaw, 10)
+  if (!total) return 0
   const checklist = JSON.parse(saved)
   const completed = Object.values(checklist).filter(v => v).length
-  // For simplicity here, we assume 5 items if we don't have the guide loaded
-  return Math.min(100, Math.round((completed / 5) * 100))
+  return Math.min(100, Math.round((completed / total) * 100))
 }
 </script>
 

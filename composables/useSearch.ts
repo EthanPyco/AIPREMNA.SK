@@ -12,9 +12,7 @@ export const useSearch = () => {
   const allGuides = ref<any[]>([])
 
   const initIndex = async () => {
-    const { data } = await useAsyncData('search-content', () => {
-      return queryCollection('content').all()
-    })
+    const { data } = await useSlovakContent()
 
     if (data.value) {
       allGuides.value = data.value

@@ -50,10 +50,11 @@
       </div>
 
       <!-- Modal overlay if opened from here -->
-      <GuideLearningCard 
-        v-if="activeCardPath" 
-        :path="activeCardPath" 
-        @close="handleCardClose" 
+      <GuideLearningCard
+        v-if="activeCardPath"
+        :key="activeCardPath"
+        :path="activeCardPath"
+        @close="handleCardClose"
       />
     </div>
   </NuxtLayout>

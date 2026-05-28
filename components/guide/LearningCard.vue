@@ -224,6 +224,13 @@ const completion = computed(() => {
   return getCompletionPercentage(extractedChecklistItems.value.length)
 })
 
+// Persist the real checklist length so the roadmap can compute % without
+// loading every guide. Read by ScrollRoadmap.getProgress.
+watch(extractedChecklistItems, (items) => {
+  if (typeof window === 'undefined' || items.length === 0) return
+  localStorage.setItem(`progress-total-${props.path}`, String(items.length))
+}, { immediate: true })
+
 const toggleBookmarkStatus = () => {
   toggleBookmark(props.path)
 }

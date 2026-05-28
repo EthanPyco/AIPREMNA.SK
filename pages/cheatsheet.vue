@@ -11,8 +11,8 @@
             <p class="text-gray-500">Rýchle vzorce a tipy pre vaše každodenné úlohy.</p>
           </div>
         </div>
-        <button 
-          @click="window.print()"
+        <button
+          @click="printPage"
           class="hidden md:flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-xl text-sm font-bold hover:bg-gray-50 transition-colors"
         >
           <PrinterIcon class="w-4 h-4" />
@@ -95,6 +95,10 @@ const copy = (text) => {
   navigator.clipboard.writeText(text)
   copied.value = true
   setTimeout(() => copied.value = false, 2000)
+}
+
+const printPage = () => {
+  if (typeof window !== 'undefined') window.print()
 }
 
 const { data: glossaryContent, pending: pendingGlossary } = await useAsyncData('glossary', () => {

@@ -52,10 +52,11 @@
       </div>
 
       <!-- Modal overlay if opened from here -->
-      <GuideLearningCard 
-        v-if="activeCardPath" 
-        :path="activeCardPath" 
-        @close="handleCardClose" 
+      <GuideLearningCard
+        v-if="activeCardPath"
+        :key="activeCardPath"
+        :path="activeCardPath"
+        @close="handleCardClose"
       />
     </div>
   </NuxtLayout>
@@ -69,9 +70,7 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 const { bookmarkedPaths, toggleBookmark } = useBookmarks()
-const { data: allGuides, pending } = await useAsyncData('all-guides-bookmarks', () => {
-  return queryCollection('content').all()
-})
+const { data: allGuides, pending } = await useSlovakContent()
 
 const bookmarkedGuides = computed(() => {
   if (!allGuides.value) return []

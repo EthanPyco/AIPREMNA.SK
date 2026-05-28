@@ -25,10 +25,12 @@
       </div>
       
       <!-- Learning Card Modal -->
-      <GuideLearningCard 
-        v-if="activeCardPath" 
-        :path="activeCardPath" 
-        @close="handleCardClose" 
+      <!-- :key forces remount on path change so useAsyncData re-runs with the new key -->
+      <GuideLearningCard
+        v-if="activeCardPath"
+        :key="activeCardPath"
+        :path="activeCardPath"
+        @close="handleCardClose"
       />
     </div>
   </NuxtLayout>
