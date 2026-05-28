@@ -1,36 +1,21 @@
-import { ref, watch, onMounted } from 'vue'
+import { computed } from 'vue'
 
 export const useProgress = (path: string) => {
-  const progressKey = `progress-${path}`
-  const checklist = ref<Record<number, boolean>>({})
-  
-  const loadProgress = () => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(progressKey)
-      if (saved) {
-        checklist.value = JSON.parse(saved)
-      }
-    }
-  }
+  const store = useProgressStore()
+  const entry = store.getEntry(path)
 
-  const saveProgress = () => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem(progressKey, JSON.stringify(checklist.value))
-    }
-  }
+  // Reactive computed so LearningCard's `checklist.value[index]` reads stay reactive
+  // and update when the store mutates.
+  const checklist = computed(() => entry.checklist)
 
   const toggleItem = (index: number) => {
-    checklist.value[index] = !checklist.value[index]
-    saveProgress()
+    store.setChecklistItem(path, index, !entry.checklist[index])
   }
 
   const getCompletionPercentage = (totalItems: number) => {
-    if (totalItems === 0) return 0
-    const completedCount = Object.values(checklist.value).filter(v => v).length
-    return Math.round((completedCount / totalItems) * 100)
+    if (totalItems !== entry.total) store.setTotal(path, totalItems)
+    return store.getPercent(path)
   }
-
-  onMounted(loadProgress)
 
   return {
     checklist,

@@ -221,15 +221,10 @@ const processedGuide = computed(() => processedData.value.processedGuide)
 const extractedChecklistItems = computed(() => processedData.value.items)
 
 const completion = computed(() => {
+  // getCompletionPercentage syncs the total into the shared progress store,
+  // which is also what ScrollRoadmap reads on the homepage.
   return getCompletionPercentage(extractedChecklistItems.value.length)
 })
-
-// Persist the real checklist length so the roadmap can compute % without
-// loading every guide. Read by ScrollRoadmap.getProgress.
-watch(extractedChecklistItems, (items) => {
-  if (typeof window === 'undefined' || items.length === 0) return
-  localStorage.setItem(`progress-total-${props.path}`, String(items.length))
-}, { immediate: true })
 
 const toggleBookmarkStatus = () => {
   toggleBookmark(props.path)

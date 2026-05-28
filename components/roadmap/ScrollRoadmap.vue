@@ -130,16 +130,12 @@ const tier2Grouped = computed(() => {
   return groups
 })
 
+const progressStore = useProgressStore()
+// Touching `getEntry` here makes the template binding depend on the reactive
+// store, so the homepage % updates instantly when LearningCard toggles a box.
 const getProgress = (path) => {
-  if (typeof window === 'undefined') return 0
-  const saved = localStorage.getItem(`progress-${path}`)
-  const totalRaw = localStorage.getItem(`progress-total-${path}`)
-  if (!saved || !totalRaw) return 0
-  const total = parseInt(totalRaw, 10)
-  if (!total) return 0
-  const checklist = JSON.parse(saved)
-  const completed = Object.values(checklist).filter(v => v).length
-  return Math.min(100, Math.round((completed / total) * 100))
+  progressStore.getEntry(path)
+  return progressStore.getPercent(path)
 }
 </script>
 
