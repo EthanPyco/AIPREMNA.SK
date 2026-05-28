@@ -16,23 +16,29 @@
       </div>
 
       <div v-else-if="bookmarkedGuides.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div 
-          v-for="guide in bookmarkedGuides" 
+        <div
+          v-for="guide in bookmarkedGuides"
           :key="guide.path"
           class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer group flex flex-col justify-between"
           @click="openCard(guide.path)"
         >
           <div>
             <h3 class="font-bold text-lg mb-2 group-hover:text-brand-primary transition-colors">{{ guide.title }}</h3>
-            <p class="text-sm text-gray-500 line-clamp-2 mb-4">{{ guide.description }}</p>
+            <p class="text-sm text-gray-600 line-clamp-2 mb-4">{{ guide.description }}</p>
           </div>
-          <div class="flex items-center justify-between mt-auto">
-            <span class="text-[10px] uppercase font-bold tracking-wider text-gray-400 px-2 py-1 bg-gray-50 rounded">
-              {{ guide.path.split('/')[1]?.replace(/_/g, ' ') }}
+          <div class="flex items-center justify-between mt-auto gap-2">
+            <span
+              class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded inline-flex items-center gap-1.5"
+              :class="categoryFor(guide.path).pillClass"
+            >
+              <span>{{ categoryFor(guide.path).tier }}</span>
+              <span v-if="categoryFor(guide.path).sub" class="opacity-60">·</span>
+              <span v-if="categoryFor(guide.path).sub">{{ categoryFor(guide.path).sub }}</span>
             </span>
-            <button 
+            <button
               @click.stop="toggleBookmark(guide.path)"
-              class="text-brand-primary hover:scale-110 transition-transform"
+              class="text-brand-primary hover:scale-110 transition-transform shrink-0"
+              aria-label="Odstrániť z uložených"
             >
               <BookmarkIcon class="w-5 h-5" fill="currentColor" />
             </button>
@@ -76,6 +82,26 @@ const bookmarkedGuides = computed(() => {
   if (!allGuides.value) return []
   return allGuides.value.filter(g => bookmarkedPaths.value.includes(g.path))
 })
+
+const humanise = (s) => (s || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+
+// Maps a guide's content path to a tier label + actual subcategory folder
+// and a brand-colour pill matching the homepage roadmap tiers.
+const categoryFor = (path) => {
+  const parts = (path || '').split('/').filter(Boolean)
+  const tierFolder = parts[0]
+  const sub = humanise(parts[1] || '')
+  if (tierFolder === 'initial_info') {
+    return { tier: 'Základy', sub, pillClass: 'text-brand-primary bg-brand-primary/10' }
+  }
+  if (tierFolder === 'jednotlive_usecases') {
+    return { tier: 'Prípady použitia', sub, pillClass: 'text-brand-secondary bg-brand-secondary/10' }
+  }
+  if (tierFolder === 'jednotlive_tools') {
+    return { tier: 'Nástroje', sub, pillClass: 'text-emerald-700 bg-emerald-50' }
+  }
+  return { tier: humanise(tierFolder), sub, pillClass: 'text-gray-700 bg-gray-100' }
+}
 
 const activeCardPath = ref(null)
 

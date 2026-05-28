@@ -32,9 +32,9 @@
           </div>
           <div class="flex-1 min-w-0">
             <h3 class="font-bold text-lg text-brand-dark truncate">{{ item.title }}</h3>
-            <p class="text-sm text-gray-400">{{ formatDate(item.timestamp) }}</p>
+            <p class="text-sm text-gray-600">{{ formatDate(item.timestamp) }}</p>
           </div>
-          <ChevronRightIcon class="w-5 h-5 text-gray-300 group-hover:text-brand-secondary transition-colors" />
+          <ChevronRightIcon class="w-5 h-5 text-gray-500 group-hover:text-brand-secondary transition-colors" />
         </div>
       </div>
 

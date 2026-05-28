@@ -54,7 +54,7 @@
             
             <!-- External Links if any -->
             <div v-if="guide.externalLinks?.length" class="mt-12 pt-8 border-t border-gray-100">
-              <h3 class="text-sm uppercase tracking-widest text-gray-400 font-bold mb-6">Užitočné zdroje</h3>
+              <h3 class="text-sm uppercase tracking-widest text-gray-700 font-bold mb-6">Užitočné zdroje</h3>
               <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none !pl-0">
                 <li v-for="link in guide.externalLinks" :key="link">
                   <a 

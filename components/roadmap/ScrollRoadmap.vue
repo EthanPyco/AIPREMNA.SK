@@ -10,7 +10,7 @@
           <BookOpenIcon class="w-10 h-10" />
         </div>
         <h2 class="text-3xl md:text-5xl font-heading font-bold text-center tracking-tighter text-brand-dark">Základy a Príprava</h2>
-        <p class="text-gray-400 mt-4 text-center max-w-md font-medium">Všetko, čo potrebujete vedieť pred prvým promptom.</p>
+        <p class="text-gray-600 mt-4 text-center max-w-md font-medium">Všetko, čo potrebujete vedieť pred prvým promptom.</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -25,7 +25,7 @@
               <ChevronRightIcon class="w-6 h-6 text-brand-primary" />
             </div>
             <h3 class="font-heading font-bold text-sm uppercase tracking-tight mb-4 text-brand-dark group-hover:text-brand-primary transition-colors">{{ guide.title }}</h3>
-            <p class="text-gray-400 text-xs leading-relaxed italic line-clamp-3 mb-6 flex-1">{{ guide.description }}</p>
+            <p class="text-gray-600 text-xs leading-relaxed italic line-clamp-3 mb-6 flex-1">{{ guide.description }}</p>
             <div class="flex items-center gap-2 mt-auto">
               <div class="h-1.5 flex-1 bg-gray-100 rounded-full overflow-hidden">
                 <div class="h-full bg-brand-primary transition-all duration-500" :style="{ width: `${getProgress(guide.path)}%` }"></div>
@@ -44,11 +44,11 @@
           <ZapIcon class="w-10 h-10" />
         </div>
         <h2 class="text-3xl md:text-5xl font-heading font-bold text-center tracking-tighter text-brand-dark">Prípady použitia</h2>
-        <p class="text-gray-400 mt-4 text-center max-w-md font-medium">Praktické scenáre pre vašu každodennú prácu.</p>
+        <p class="text-gray-600 mt-4 text-center max-w-md font-medium">Praktické scenáre pre vašu každodennú prácu.</p>
       </div>
 
       <div v-for="(items, category) in tier2Grouped" :key="category" class="mb-20 last:mb-0">
-        <h4 class="font-heading font-black text-[10px] uppercase tracking-[0.3em] text-gray-300 mb-8 flex items-center gap-4">
+        <h4 class="font-heading font-black text-[11px] uppercase tracking-[0.3em] text-gray-600 mb-8 flex items-center gap-4">
           <span>{{ category.replace(/_/g, ' ') }}</span>
           <div class="h-px flex-1 bg-gray-100"></div>
         </h4>
@@ -80,7 +80,7 @@
           <CpuIcon class="w-10 h-10" />
         </div>
         <h2 class="text-3xl md:text-5xl font-heading font-bold text-center tracking-tighter text-brand-dark">Konkrétne nástroje</h2>
-        <p class="text-gray-400 mt-4 text-center max-w-md font-medium">Hĺbkové pohľady na najlepšie AI aplikácie.</p>
+        <p class="text-gray-600 mt-4 text-center max-w-md font-medium">Hĺbkové pohľady na najlepšie AI aplikácie.</p>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">

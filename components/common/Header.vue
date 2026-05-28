@@ -1,12 +1,12 @@
 <template>
   <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
-    <div ref="headerInnerRef" class="h-16 flex items-center px-4 md:px-8">
+    <div ref="headerInnerRef" class="h-20 flex items-center px-4 md:px-8">
       <!-- Logo -->
       <NuxtLink to="/" class="flex items-center gap-3 group">
-        <img src="/logo.png" alt="AIPREMNA" class="h-10 w-auto" />
+        <img src="/logo.png" alt="AIPREMNA" class="h-14 w-auto" />
         <div class="hidden sm:block">
-          <h1 class="font-heading font-bold text-sm leading-tight tracking-tight uppercase">AI PREMNA</h1>
-          <p class="text-[10px] text-brand-secondary font-bold tracking-[0.2em] uppercase">AI PRE NÁS</p>
+          <h1 class="font-heading font-bold text-base leading-tight tracking-tight uppercase">AI PREMNA</h1>
+          <p class="text-[11px] text-brand-secondary font-bold tracking-[0.2em] uppercase">AI PRE NÁS</p>
         </div>
       </NuxtLink>
 
