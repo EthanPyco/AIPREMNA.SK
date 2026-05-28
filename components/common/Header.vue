@@ -45,7 +45,7 @@
         >
           <div v-for="result in results" :key="result.path" class="border-b border-gray-50 last:border-0">
             <button
-              @mousedown="navigateToResult(result.path)"
+              @mousedown="navigateToResult(result)"
               class="w-full text-left p-4 hover:bg-brand-background transition-colors flex flex-col gap-1 min-w-0"
             >
               <span class="font-heading font-bold text-xs text-brand-dark uppercase tracking-tight truncate block w-full">{{ result.title }}</span>
@@ -95,7 +95,7 @@
         >
           <div v-for="result in results" :key="result.path" class="border-b border-gray-50 last:border-0">
             <button
-              @mousedown="navigateToResult(result.path)"
+              @mousedown="navigateToResult(result)"
               class="w-full text-left p-4 hover:bg-brand-background transition-colors flex flex-col gap-1 min-w-0"
             >
               <span class="font-heading font-bold text-xs text-brand-dark uppercase tracking-tight truncate block w-full">{{ result.title }}</span>
@@ -193,11 +193,14 @@ watch(searchQuery, (newQuery) => {
   }
 })
 
-const navigateToResult = (path) => {
-  // Always land on the homepage when opening a card from search. The other
-  // pages render LearningCard too but starting from / gives the most
-  // predictable back-button behaviour and keeps the canonical URL clean.
-  router.push({ path: '/', query: { card: path } })
+const navigateToResult = (hit) => {
+  // Guide hits open the LearningCard modal on the homepage.
+  // Cheatsheet-prompt hits jump to /cheatsheet and highlight the matching card.
+  if (hit?.kind === 'prompt') {
+    router.push({ path: '/cheatsheet', query: { focus: hit.path } })
+  } else {
+    router.push({ path: '/', query: { card: hit?.path ?? hit } })
+  }
   searchQuery.value = ''
   showResults.value = false
   closeMobileMenu()
