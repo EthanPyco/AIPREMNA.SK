@@ -35,13 +35,17 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
 
-const activeCardPath = ref(null)
+const activeCardPath = ref(route.query.card)
+
+watch(() => route.query.card, (newCard) => {
+  activeCardPath.value = newCard
+}, { immediate: true })
 
 const handleNodeClick = (node) => {
   if (node.path) {
@@ -50,6 +54,7 @@ const handleNodeClick = (node) => {
 }
 
 const handleCardClose = () => {
+  activeCardPath.value = null
   const query = { ...route.query }
   delete query.card
   router.push({ query })
@@ -58,8 +63,4 @@ const handleCardClose = () => {
 const scrollToRoadmap = () => {
   document.getElementById('roadmap')?.scrollIntoView({ behavior: 'smooth' })
 }
-
-watch(() => route.query.card, (newCard) => {
-  activeCardPath.value = newCard
-}, { immediate: true })
 </script>

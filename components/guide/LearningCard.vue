@@ -3,88 +3,94 @@
     <!-- Backdrop -->
     <div class="absolute inset-0 bg-brand-dark/20 backdrop-blur-md" @click="close"></div>
     
-    <!-- Modal Content -->
-    <div class="relative bg-white w-full max-w-6xl max-h-full flex flex-col rounded-[2.5rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+    <!-- Modal Card -->
+    <div 
+      class="relative w-full max-w-5xl h-[90vh] bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col animate-in zoom-in-95 duration-300"
+    >
       <!-- Header -->
-      <div class="flex items-center justify-between p-6 md:p-10 border-b border-gray-50 sticky top-0 bg-white/90 backdrop-blur z-10">
-        <div class="flex-1 min-w-0">
-          <h2 class="text-2xl md:text-3xl font-heading font-bold tracking-tight text-brand-dark truncate leading-tight">{{ guide?.title }}</h2>
-          <div v-if="guide?.description" class="text-sm text-gray-400 mt-2 font-medium italic line-clamp-1">
-            {{ guide.description }}
+      <div class="p-6 md:p-8 flex items-center justify-between border-b border-gray-50 bg-white/80 backdrop-blur-sm sticky top-0 z-10">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open w-6 h-6"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
           </div>
+          <h2 class="text-xl md:text-2xl font-heading font-bold text-brand-dark line-clamp-1">
+            {{ guide?.title || 'Načítavam...' }}
+          </h2>
         </div>
         
-        <div class="flex items-center gap-3 ml-6">
+        <div class="flex items-center gap-2">
           <button 
             @click="toggleBookmarkStatus"
-            class="p-3 rounded-2xl hover:bg-brand-background transition-all"
-            :class="isBookmarked(path) ? 'text-brand-primary bg-brand-primary/10' : 'text-gray-300'"
-            title="Uložiť do záložiek"
+            class="p-3 rounded-xl transition-all"
+            :class="isBookmarked(path) ? 'bg-brand-primary/10 text-brand-primary' : 'bg-gray-50 text-gray-400 hover:bg-gray-100'"
+            :title="isBookmarked(path) ? 'Odstrániť z uložených' : 'Uložiť návod'"
           >
-            <BookmarkIcon class="w-6 h-6" :fill="isBookmarked(path) ? 'currentColor' : 'none'" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" :fill="isBookmarked(path) ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark w-5 h-5"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
           </button>
-          <button @click="close" class="p-3 rounded-2xl hover:bg-red-50 transition-all text-gray-300 hover:text-red-400">
-            <XIcon class="w-6 h-6" />
+          <button 
+            @click="close"
+            class="p-3 bg-gray-50 text-gray-400 hover:bg-gray-100 rounded-xl transition-all"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-5 h-5"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
           </button>
         </div>
       </div>
 
-      <!-- Scrollable Body -->
+      <!-- Main Body -->
       <div class="flex-1 overflow-y-auto custom-scrollbar bg-white">
-        <div v-if="pending" class="flex items-center justify-center py-32">
-          <div class="w-12 h-12 border-4 border-brand-accent border-t-brand-primary rounded-full animate-spin"></div>
-        </div>
-        <div v-else-if="guide" class="flex flex-col lg:flex-row min-h-full">
-          <!-- Main Content -->
-          <div class="flex-1 p-8 md:p-14 prose prose-brand prose-lg max-w-none prose-headings:text-brand-dark prose-headings:font-heading prose-headings:tracking-tight prose-blockquote:border-brand-primary prose-blockquote:bg-brand-background/50 prose-blockquote:rounded-3xl prose-blockquote:border-l-8">
-            <ContentRenderer :value="guide" />
-            
-            <!-- In-content Checklist (Visible on mobile) -->
-            <div v-if="extractedChecklistItems.length > 0" class="mt-16 lg:hidden pt-10 border-t border-gray-100">
-              <h3 class="flex items-center gap-3 text-xl font-heading font-bold text-brand-dark mb-8">
-                <CheckCircleIcon class="w-7 h-7 text-emerald-500" />
-                <span>Overenie vedomostí</span>
-              </h3>
-              <GuideChecklistItems 
-                :items="extractedChecklistItems"
-                :checklist="checklist"
-                @toggle="toggleItem"
-              />
-            </div>
+        <div v-if="pending" class="p-8 space-y-8 animate-pulse">
+          <div class="h-8 bg-gray-100 rounded-lg w-3/4"></div>
+          <div class="h-4 bg-gray-100 rounded-lg w-1/2"></div>
+          <div class="space-y-4">
+            <div class="h-20 bg-gray-100 rounded-2xl w-full"></div>
+            <div class="h-20 bg-gray-100 rounded-2xl w-full"></div>
           </div>
-          
-          <!-- Sidebar (Progress Tracker) -->
-          <div class="hidden lg:block w-96 p-10 border-l border-gray-50 bg-brand-background/30">
+        </div>
+        
+        <div v-else-if="guide" class="flex flex-col lg:flex-row min-h-full">
+          <!-- Content -->
+          <article class="flex-1 p-6 md:p-10 md:pt-8 prose prose-slate max-w-none prose-headings:font-heading prose-headings:text-brand-dark prose-blockquote:border-brand-primary prose-blockquote:bg-brand-primary/5 prose-blockquote:rounded-2xl prose-blockquote:py-1 prose-a:text-brand-primary prose-img:rounded-3xl prose-img:shadow-xl">
+            <ContentRenderer :value="processedGuide" />
+            
+            <!-- External Links if any -->
+            <div v-if="guide.externalLinks?.length" class="mt-12 pt-8 border-t border-gray-100">
+              <h3 class="text-sm uppercase tracking-widest text-gray-400 font-bold mb-6">Užitočné zdroje</h3>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none !pl-0">
+                <li v-for="link in guide.externalLinks" :key="link">
+                  <a 
+                    :href="link" 
+                    target="_blank"
+                    class="flex items-center gap-3 p-4 bg-gray-50 rounded-2xl hover:bg-brand-primary/5 hover:text-brand-primary transition-all group no-underline"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-4 h-4 text-gray-400 group-hover:text-brand-primary"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                    <span class="text-sm font-medium truncate">{{ link }}</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Sidebar Tracking -->
+          <aside class="w-full lg:w-80 p-6 md:p-8 bg-gray-50/50 lg:border-l border-gray-50 flex flex-col gap-8">
             <GuideProgressTracker 
               :items="extractedChecklistItems"
               :checklist="checklist"
               :progress="completion"
               @toggle="toggleItem"
             />
-            
-            <!-- External Links -->
-            <div v-if="guide.externalLinks && guide.externalLinks.length > 0" class="mt-12 bg-white rounded-[2rem] p-8 shadow-sm border border-gray-50">
-              <h3 class="font-heading font-bold text-xs uppercase tracking-widest text-gray-400 mb-6 flex items-center gap-2">
-                <ExternalLinkIcon class="w-4 h-4" />
-                <span>Užitočné odkazy</span>
-              </h3>
-              <ul class="space-y-4">
-                <li v-for="link in guide.externalLinks" :key="link">
-                  <a 
-                    :href="link" 
-                    target="_blank" 
-                    class="text-sm text-brand-secondary hover:text-brand-primary transition-colors line-clamp-1 flex items-center gap-2 font-bold group"
-                  >
-                    <div class="w-1.5 h-1.5 rounded-full bg-brand-accent group-hover:bg-brand-primary transition-colors"></div>
-                    {{ link }}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          </aside>
         </div>
-        <div v-else class="text-center py-32">
-          <p class="text-gray-400 font-medium font-heading italic text-lg uppercase tracking-tighter">Návod sa nepodarilo načítať.</p>
+
+        <!-- Error State -->
+        <div v-else class="p-20 text-center">
+          <div class="w-16 h-16 bg-red-50 text-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle w-8 h-8"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-brand-dark mb-2">Nepodarilo sa načítať návod</h3>
+          <p class="text-gray-500 mb-8">Skúste to prosím znova alebo skontrolujte pripojenie.</p>
+          <button @click="close" class="px-6 py-3 bg-brand-dark text-white rounded-xl font-bold text-sm tracking-wider uppercase">
+            Zavrieť
+          </button>
         </div>
       </div>
     </div>
@@ -92,13 +98,10 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted } from 'vue'
-import { 
-  X as XIcon, 
-  Bookmark as BookmarkIcon, 
-  CheckCircle as CheckCircleIcon,
-  ExternalLink as ExternalLinkIcon
-} from '@lucide/vue'
+import { ref, computed, watch, onMounted, onUnmounted, provide } from 'vue'
+import { useBookmarks } from '~/composables/useBookmarks'
+import { useLastUsed } from '~/composables/useLastUsed'
+import { useProgress } from '~/composables/useProgress'
 
 const props = defineProps({
   path: {
@@ -109,80 +112,117 @@ const props = defineProps({
 
 const emit = defineEmits(['close'])
 
-const { fetchGuide } = useContent()
 const { isBookmarked, toggleBookmark } = useBookmarks()
 const { addLastUsed } = useLastUsed()
 
 const isOpen = ref(true)
-const guide = ref(null)
-const pending = ref(true)
 const openTime = ref(0)
 const timer = ref(null)
 
 const { checklist, toggleItem, getCompletionPercentage } = useProgress(props.path)
 
-const extractedChecklistItems = computed(() => {
-  if (!guide.value?.body?.children) return []
-  
-  const children = guide.value.body.children
-  let inVerificationSection = false
-  let items = []
-  
-  for (const node of children) {
-    if (node.tag?.match(/^h[1-6]$/)) {
-      const text = node.children?.[0]?.value || ''
-      if (text.includes('✅') || text.includes('Ako zistíte') || text.includes('How to Know')) {
-        inVerificationSection = true
-        continue
-      } else if (inVerificationSection) {
-        break
+// Use useAsyncData for stable fetching and SSR support
+const { data: guide, pending, error } = await useAsyncData(`guide-${props.path}`, async () => {
+  try {
+    const g = await queryCollection('content').path(props.path).first()
+    if (g) {
+      const dir = props.path.substring(0, props.path.lastIndexOf('/'))
+      const linksData = await queryCollection('content').path(`${dir}/links`).first()
+      if (linksData) {
+        g.externalLinks = linksData.links || []
       }
     }
-    
-    if (inVerificationSection && (node.tag === 'ul' || node.tag === 'ol')) {
-      const liItems = node.children
-        ?.filter(li => li.tag === 'li')
-        .map(li => {
-          return li.children?.map(c => {
-            if (c.type === 'text') return c.value
-            if (c.tag === 'strong' || c.tag === 'em' || c.tag === 'code') {
-              return c.children?.[0]?.value || ''
-            }
-            return ''
-          }).join('') || ''
-        }) || []
-      items = [...items, ...liItems]
+    return g
+  } catch (e) {
+    console.error('Error fetching guide in useAsyncData:', e)
+    return null
+  }
+}, {
+  watch: [() => props.path]
+})
+
+// Provide state for interactive Prose components (like ProseLi)
+provide('checklistState', checklist)
+provide('toggleItem', toggleItem)
+
+// Helper to extract text from Minimark AST nodes [tag, props, ...children]
+const getText = (node) => {
+  if (!node) return ''
+  if (typeof node === 'string') return node
+  if (Array.isArray(node)) {
+    // Skip tag (index 0) and props (index 1)
+    const children = node.slice(2)
+    return children.map(getText).join('')
+  }
+  return ''
+}
+
+// Helper to check if a heading matches the verification section
+const isVerificationHeading = (node) => {
+  if (!Array.isArray(node)) return false
+  const tag = node[0]
+  if (typeof tag !== 'string' || !tag.match(/^h[1-6]$/)) return false
+  
+  const text = getText(node).toLowerCase()
+  // Permissive matching for verification sections
+  return text.includes('✅') ||
+         text.includes('ako zisti') ||
+         text.includes('ako vedie') ||
+         text.includes('how to know') ||
+         text.includes('overeni') ||
+         text.includes('pochopi') ||
+         text.includes(' mastered')
+}
+
+const processedData = computed(() => {
+  const bodyChildren = guide.value?.body?.value || guide.value?.body?.children
+  if (!bodyChildren || !Array.isArray(bodyChildren)) {
+    return { processedGuide: guide.value, items: [] }
+  }
+
+  const newGuide = JSON.parse(JSON.stringify(guide.value))
+  const children = newGuide.body.value || newGuide.body.children
+  let inVerificationSection = false
+  let checklistIndex = 0
+  let items = []
+
+  for (const node of children) {
+    if (!Array.isArray(node)) continue
+
+    const tag = node[0]
+    if (isVerificationHeading(node)) {
+      inVerificationSection = true
+      continue
+    } else if (inVerificationSection && typeof tag === 'string' && tag.match(/^h[1-6]$/)) {
+      inVerificationSection = false
+    }
+
+    if (inVerificationSection && (tag === 'ul' || tag === 'ol')) {
+      const listChildren = node.slice(2)
+      for (const child of listChildren) {
+        if (Array.isArray(child) && child[0] === 'li') {
+          const itemText = getText(child).trim()
+          if (itemText) {
+            items.push(itemText)
+            // Inject props into index 1 of the Minimark node array
+            child[1] = child[1] || {}
+            child[1].checklistIndex = checklistIndex++
+            child[1].isInsideVerification = true
+          }
+        }
+      }
     }
   }
-  
-  return items.filter(i => i.trim().length > 0)
+
+  return { processedGuide: newGuide, items }
 })
+
+const processedGuide = computed(() => processedData.value.processedGuide)
+const extractedChecklistItems = computed(() => processedData.value.items)
 
 const completion = computed(() => {
   return getCompletionPercentage(extractedChecklistItems.value.length)
 })
-
-const loadGuide = async () => {
-  pending.value = true
-  guide.value = await fetchGuide(props.path)
-  pending.value = false
-  
-  if (guide.value) {
-    startTimer()
-  }
-}
-
-const startTimer = () => {
-  if (timer.value) clearInterval(timer.value)
-  openTime.value = 0
-  timer.value = setInterval(() => {
-    openTime.value += 1
-    if (openTime.value >= 10) {
-      addLastUsed(props.path, guide.value?.title || props.path)
-      clearInterval(timer.value)
-    }
-  }, 1000)
-}
 
 const toggleBookmarkStatus = () => {
   toggleBookmark(props.path)
@@ -190,27 +230,28 @@ const toggleBookmarkStatus = () => {
 
 const close = () => {
   isOpen.value = false
-  clearInterval(timer.value)
   emit('close')
 }
-
-watch(() => props.path, loadGuide, { immediate: true })
 
 onMounted(() => {
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') close()
   })
+  
+  // Track last used
+  const timer = setTimeout(() => {
+    if (guide.value) {
+      addLastUsed(props.path, guide.value.title || props.path)
+    }
+  }, 10000)
+  
+  onUnmounted(() => clearTimeout(timer))
 })
 </script>
 
 <style scoped>
 .prose :deep(blockquote) {
-  @apply py-8 px-10 font-medium text-brand-dark my-12 relative shadow-xl shadow-brand-primary/5 border-brand-accent/20;
-}
-
-.prose :deep(blockquote::before) {
-  content: "PROMPT PRE AI";
-  @apply absolute -top-4 left-8 bg-brand-primary text-white text-[10px] uppercase font-heading font-black px-4 py-2 rounded-full tracking-[0.2em] shadow-lg shadow-brand-primary/30;
+  @apply font-normal italic text-slate-600 bg-slate-50/50 border-slate-200 rounded-2xl py-2 px-6;
 }
 
 .custom-scrollbar::-webkit-scrollbar {

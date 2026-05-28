@@ -1,20 +1,16 @@
 export const useContent = () => {
   const fetchGuide = async (path: string) => {
     try {
-      const { data } = await useAsyncData(`content-${path}`, () => {
-        return queryCollection('content').path(path).first()
-      })
+      // Use queryCollection directly for dynamic fetching
+      const guide = await queryCollection('content').path(path).first()
       
-      const guide = data.value
       if (guide) {
-        // Try to fetch associated links.yaml
+        // Try to fetch associated links
         const dir = path.substring(0, path.lastIndexOf('/'))
-        const { data: linksData } = await useAsyncData(`links-${dir}`, () => {
-          return queryCollection('content').path(`${dir}/links`).first()
-        })
+        const linksData = await queryCollection('content').path(`${dir}/links`).first()
         
-        if (linksData.value) {
-          guide.externalLinks = linksData.value.links || []
+        if (linksData) {
+          guide.externalLinks = linksData.links || []
         }
       }
       return guide
