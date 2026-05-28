@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 
 const MOBILE_VIEWPORT = { width: 390, height: 844 }
 
-test.describe('slice 10 — mobile responsive', () => {
+test.describe('mobile responsive', () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize(MOBILE_VIEWPORT)
   })
@@ -10,18 +10,28 @@ test.describe('slice 10 — mobile responsive', () => {
   test('homepage renders core chrome at mobile viewport', async ({ page }) => {
     await page.goto('/')
     await expect(page.getByTestId('brand')).toBeVisible()
-    await expect(page.getByTestId('roadmap-tree')).toBeVisible()
+    await expect(page.getByTestId('roadmap-grid')).toBeVisible()
   })
 
-  test('header nav links are hidden on mobile (hamburger pattern reserved for future)', async ({ page }) => {
+  test('header nav links hide on small viewports', async ({ page }) => {
     await page.goto('/')
-    // Confirm desktop-only nav and search are hidden by md: breakpoint
     await expect(page.getByTestId('header-nav')).toBeHidden()
   })
 
   test('locale toggle remains visible on mobile', async ({ page }) => {
     await page.goto('/')
     await expect(page.getByTestId('locale-toggle')).toBeVisible()
+  })
+
+  test('roadmap cards stack to single column on narrow widths', async ({ page }) => {
+    await page.goto('/')
+    const cards = page.getByTestId('tier-foundation').getByTestId('roadmap-card')
+    await expect(cards.first()).toBeVisible()
+    const first = await cards.nth(0).boundingBox()
+    const second = await cards.nth(1).boundingBox()
+    expect(first).not.toBeNull()
+    expect(second).not.toBeNull()
+    expect(second!.y).toBeGreaterThan(first!.y + first!.height - 10)
   })
 
   test('learning card modal is usable at mobile width', async ({ page }) => {
@@ -42,12 +52,11 @@ test.describe('slice 10 — mobile responsive', () => {
     const second = await cards.nth(1).boundingBox()
     expect(first).not.toBeNull()
     expect(second).not.toBeNull()
-    // On mobile (1 col), the second card stacks BELOW the first (top > first.top)
     expect(second!.y).toBeGreaterThan(first!.y + first!.height - 10)
   })
 })
 
-test.describe('slice 10 — accessibility basics', () => {
+test.describe('accessibility basics', () => {
   test('learning card dialog exposes proper roles + aria', async ({ page }) => {
     await page.goto('/?card=pisanie-emailu')
     const dialog = page.getByRole('dialog')
@@ -55,7 +64,7 @@ test.describe('slice 10 — accessibility basics', () => {
     await expect(dialog).toHaveAttribute('aria-labelledby', /headlessui-dialog-title/)
   })
 
-  test('close button on card has aria-label in Slovak', async ({ page }) => {
+  test('close button on card has Slovak aria-label by default', async ({ page }) => {
     await page.goto('/?card=pisanie-emailu')
     const closeBtn = page.getByTestId('card-close')
     await expect(closeBtn).toHaveAttribute('aria-label', 'Zavrieť')
