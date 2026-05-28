@@ -46,10 +46,10 @@
           <div v-for="result in results" :key="result.path" class="border-b border-gray-50 last:border-0">
             <button
               @mousedown="navigateToResult(result.path)"
-              class="w-full text-left p-4 hover:bg-brand-background transition-colors flex flex-col gap-1"
+              class="w-full text-left p-4 hover:bg-brand-background transition-colors flex flex-col gap-1 min-w-0"
             >
-              <span class="font-heading font-bold text-xs text-brand-dark uppercase tracking-tight">{{ result.title }}</span>
-              <span class="text-xs text-gray-400 line-clamp-1 italic">{{ result.description }}</span>
+              <span class="font-heading font-bold text-xs text-brand-dark uppercase tracking-tight truncate block w-full">{{ result.title }}</span>
+              <span class="text-xs text-gray-500 line-clamp-1 italic break-words">{{ result.description }}</span>
             </button>
           </div>
         </div>
@@ -96,10 +96,10 @@
           <div v-for="result in results" :key="result.path" class="border-b border-gray-50 last:border-0">
             <button
               @mousedown="navigateToResult(result.path)"
-              class="w-full text-left p-4 hover:bg-brand-background transition-colors flex flex-col gap-1"
+              class="w-full text-left p-4 hover:bg-brand-background transition-colors flex flex-col gap-1 min-w-0"
             >
-              <span class="font-heading font-bold text-xs text-brand-dark uppercase tracking-tight">{{ result.title }}</span>
-              <span class="text-xs text-gray-400 line-clamp-1 italic">{{ result.description }}</span>
+              <span class="font-heading font-bold text-xs text-brand-dark uppercase tracking-tight truncate block w-full">{{ result.title }}</span>
+              <span class="text-xs text-gray-500 line-clamp-1 italic break-words">{{ result.description }}</span>
             </button>
           </div>
         </div>
@@ -183,15 +183,21 @@ onBeforeUnmount(() => {
 watch(() => route.fullPath, closeMobileMenu)
 
 watch(searchQuery, (newQuery) => {
-  if (newQuery.length > 2) {
-    search(newQuery)
+  // Guard against pathological queries that would push the dropdown wider
+  // than its container — FlexSearch tolerates any length but the UI doesn't.
+  const trimmed = (newQuery || '').slice(0, 80)
+  if (trimmed.length > 2) {
+    search(trimmed)
   } else {
     results.value = []
   }
 })
 
 const navigateToResult = (path) => {
-  router.push({ query: { card: path } })
+  // Always land on the homepage when opening a card from search. The other
+  // pages render LearningCard too but starting from / gives the most
+  // predictable back-button behaviour and keeps the canonical URL clean.
+  router.push({ path: '/', query: { card: path } })
   searchQuery.value = ''
   showResults.value = false
   closeMobileMenu()
