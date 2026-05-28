@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { CATEGORY_LABELS_SK } from '~~/shared/labels.sk'
 
-const { data } = await useCheatsheet('sk')
+const { t, locale } = useI18n()
+const { data } = await useCheatsheet(() => (locale.value === 'en' ? 'en' : 'sk'))
 const cardRoute = useCardRoute()
 
 type Tab = 'cheats' | 'glossary'
@@ -39,8 +39,8 @@ const filteredGlossary = computed(() => {
   const q = filter.value.trim().toLowerCase()
   const all = data.value?.glossary ?? []
   if (!q) return all
-  return all.filter((t) =>
-    [t.term, t.english ?? '', t.definition, t.group ?? '']
+  return all.filter((term) =>
+    [term.term, term.english ?? '', term.definition, term.group ?? '']
       .join(' ')
       .toLowerCase()
       .includes(q),
@@ -48,8 +48,8 @@ const filteredGlossary = computed(() => {
 })
 
 function categoryLabel(c: string | null): string {
-  if (!c) return 'Všeobecné'
-  return CATEGORY_LABELS_SK[c] ?? c
+  if (!c) return t('roadmap.categories.Designer', 'Všeobecné')
+  return t(`roadmap.categories.${c}`, c.replace(/_/g, ' '))
 }
 
 function openCard(slug: string) {
@@ -66,10 +66,8 @@ function onPrint() {
   <main class="mx-auto max-w-7xl px-6 py-10" data-testid="cheatsheet-page">
     <header class="mb-6 flex flex-wrap items-end justify-between gap-4 print:hidden">
       <div>
-        <h1 class="font-heading text-3xl text-ink">Ťahák promptov</h1>
-        <p class="mt-1 text-sm text-ink/60">
-          Rýchla zbierka promptov a kľúčových pojmov, ktorú môžeš mať vždy poruke.
-        </p>
+        <h1 class="font-heading text-3xl text-ink">{{ t('pages.cheatsheet.title') }}</h1>
+        <p class="mt-1 text-sm text-ink/60">{{ t('pages.cheatsheet.subtitle') }}</p>
       </div>
       <button
         type="button"
@@ -78,7 +76,7 @@ function onPrint() {
         @click="onPrint"
       >
         <Icon name="lucide:printer" class="mr-1 inline h-4 w-4" />
-        Vytlačiť / PDF
+        PDF
       </button>
     </header>
 
@@ -96,7 +94,7 @@ function onPrint() {
           :data-active="tab === 'cheats'"
           @click="tab = 'cheats'"
         >
-          Hlavný ťahák
+          {{ t('pages.cheatsheet.tabPrompts') }}
         </button>
         <button
           type="button"
@@ -110,14 +108,14 @@ function onPrint() {
           :data-active="tab === 'glossary'"
           @click="tab = 'glossary'"
         >
-          Slovník pojmov
+          {{ t('pages.cheatsheet.tabGlossary') }}
         </button>
       </div>
 
       <input
         v-model="filter"
         type="search"
-        placeholder="Filtrovať…"
+        :placeholder="t('pages.cheatsheet.filterPlaceholder')"
         class="h-9 w-full max-w-xs rounded-lg border border-ink/15 bg-white px-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
         data-testid="cheatsheet-filter"
       >
@@ -159,7 +157,7 @@ function onPrint() {
               :name="copiedId === p.id ? 'lucide:check' : 'lucide:copy'"
               class="h-3.5 w-3.5"
             />
-            <span>{{ copiedId === p.id ? 'Skopírované' : 'Kopírovať' }}</span>
+            <span>{{ copiedId === p.id ? t('card.copied') : t('card.copyPrompt') }}</span>
           </button>
         </header>
         <pre class="whitespace-pre-wrap rounded bg-ink/[0.04] p-3 font-mono text-xs text-ink/85">{{ p.text }}</pre>
@@ -169,7 +167,7 @@ function onPrint() {
         class="col-span-full rounded-xl border border-dashed border-ink/20 bg-white p-8 text-center text-ink/60"
         data-testid="cheatsheet-empty"
       >
-        Žiadne prompty pre tento filter.
+        {{ t('pages.cheatsheet.empty') }}
       </div>
     </section>
 
@@ -179,22 +177,22 @@ function onPrint() {
       data-testid="glossary-section"
     >
       <div v-if="filteredGlossary.length === 0" class="rounded-xl border border-dashed border-ink/20 bg-white p-8 text-center text-ink/60">
-        Žiadne pojmy pre tento filter.
+        {{ t('pages.cheatsheet.glossaryEmpty') }}
       </div>
       <ul v-else class="space-y-3">
         <li
-          v-for="t in filteredGlossary"
-          :key="t.term"
+          v-for="term in filteredGlossary"
+          :key="term.term"
           class="rounded-xl border border-ink/10 bg-white p-4"
           data-testid="glossary-item"
         >
           <div class="text-xs uppercase tracking-wide text-ink/50">
-            {{ t.group ?? 'Pojem' }}
+            {{ term.group ?? '' }}
           </div>
           <div class="mt-1 font-heading text-base text-ink">
-            {{ t.term }}<span v-if="t.english" class="text-ink/50"> ({{ t.english }})</span>
+            {{ term.term }}<span v-if="term.english" class="text-ink/50"> ({{ term.english }})</span>
           </div>
-          <p class="mt-1 text-sm text-ink/80">{{ t.definition }}</p>
+          <p class="mt-1 text-sm text-ink/80">{{ term.definition }}</p>
         </li>
       </ul>
     </section>

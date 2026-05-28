@@ -1,15 +1,19 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
+const { t, locale } = useI18n()
 const { sortedEntries, clearAll, remove } = useLastUsed()
 const cardRoute = useCardRoute()
 
-const rtf = new Intl.RelativeTimeFormat('sk', { numeric: 'auto' })
+const rtf = computed(() => new Intl.RelativeTimeFormat(locale.value === 'en' ? 'en' : 'sk', { numeric: 'auto' }))
+
 function relative(ts: number): string {
   const diffSec = Math.round((ts - Date.now()) / 1000)
   const abs = Math.abs(diffSec)
-  if (abs < 60) return rtf.format(diffSec, 'second')
-  if (abs < 3600) return rtf.format(Math.round(diffSec / 60), 'minute')
-  if (abs < 86_400) return rtf.format(Math.round(diffSec / 3600), 'hour')
-  return rtf.format(Math.round(diffSec / 86_400), 'day')
+  if (abs < 60) return rtf.value.format(diffSec, 'second')
+  if (abs < 3600) return rtf.value.format(Math.round(diffSec / 60), 'minute')
+  if (abs < 86_400) return rtf.value.format(Math.round(diffSec / 3600), 'hour')
+  return rtf.value.format(Math.round(diffSec / 86_400), 'day')
 }
 
 function open(slug: string) {
@@ -22,10 +26,8 @@ function open(slug: string) {
   <main class="mx-auto max-w-5xl px-6 py-10" data-testid="lastused-page">
     <header class="mb-6 flex items-end justify-between gap-4">
       <div>
-        <h1 class="font-heading text-3xl text-ink">Naposledy otvorené</h1>
-        <p class="mt-1 text-sm text-ink/60">
-          Návody, na ktoré si strávil aspoň 10 sekúnd.
-        </p>
+        <h1 class="font-heading text-3xl text-ink">{{ t('pages.lastUsed.title') }}</h1>
+        <p class="mt-1 text-sm text-ink/60">{{ t('pages.lastUsed.subtitle') }}</p>
       </div>
       <button
         v-if="sortedEntries.length > 0"
@@ -34,7 +36,7 @@ function open(slug: string) {
         data-testid="lastused-clear"
         @click="clearAll"
       >
-        Vyčistiť všetko
+        {{ t('pages.lastUsed.clearAll') }}
       </button>
     </header>
 
@@ -44,7 +46,7 @@ function open(slug: string) {
       data-testid="lastused-empty"
     >
       <Icon name="lucide:history" class="mx-auto mb-2 h-8 w-8 text-ink/30" />
-      <p class="text-ink/60">Tu sa zobrazia návody, ktoré si nedávno otvoril.</p>
+      <p class="text-ink/60">{{ t('pages.lastUsed.empty') }}</p>
     </div>
 
     <ul v-else class="grid gap-3 md:grid-cols-2">
@@ -69,7 +71,7 @@ function open(slug: string) {
           type="button"
           class="rounded-md p-1.5 text-ink/50 hover:bg-ink/[0.05] hover:text-ink"
           data-testid="lastused-remove"
-          aria-label="Odstrániť"
+          :aria-label="t('pages.bookmarks.removeCard')"
           @click="remove(entry.slug)"
         >
           <Icon name="lucide:x" class="h-4 w-4" />

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { locale, setLocale } = useLocale()
 
-const locales: { id: 'sk' | 'en'; label: string }[] = [
+const items: { id: 'sk' | 'en'; label: string }[] = [
   { id: 'sk', label: 'SK' },
   { id: 'en', label: 'EN' },
 ]
@@ -13,24 +13,24 @@ function onClick(id: 'sk' | 'en') {
 
 <template>
   <div
-    class="inline-flex overflow-hidden rounded-md border border-ink/15 bg-white text-xs"
+    class="inline-flex overflow-hidden rounded-full border border-ink/10 bg-white p-0.5 text-xs shadow-sm"
     data-testid="locale-toggle"
   >
     <button
-      v-for="l in locales"
-      :key="l.id"
+      v-for="item in items"
+      :key="item.id"
       type="button"
-      class="px-2 py-1 transition-colors"
+      class="rounded-full px-3 py-1 font-heading uppercase tracking-wide transition-colors"
       :class="
-        locale === l.id
+        locale === item.id
           ? 'bg-primary text-white'
-          : 'text-ink/70 hover:bg-ink/[0.04] hover:text-ink'
+          : 'text-ink/60 hover:text-ink'
       "
-      :data-testid="`locale-toggle-${l.id}`"
-      :data-active="locale === l.id"
-      @click="onClick(l.id)"
+      :data-testid="`locale-toggle-${item.id}`"
+      :data-active="locale === item.id"
+      @click="onClick(item.id)"
     >
-      {{ l.label }}
+      {{ item.label }}
     </button>
   </div>
 </template>

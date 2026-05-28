@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
+const { t, locale } = useI18n()
 const { sortedCards, sortedPrompts, removeCard, removePrompt, totalCount } = useBookmarks()
 const cardRoute = useCardRoute()
 
@@ -10,14 +11,15 @@ const tab = ref<Tab>('all')
 const showCards = computed(() => tab.value === 'all' || tab.value === 'cards')
 const showPrompts = computed(() => tab.value === 'all' || tab.value === 'prompts')
 
-const tabs: { id: Tab; label: string }[] = [
-  { id: 'all', label: 'Všetko' },
-  { id: 'cards', label: 'Návody' },
-  { id: 'prompts', label: 'Prompty' },
-]
+const tabs = computed<{ id: Tab; label: string }[]>(() => [
+  { id: 'all', label: t('pages.bookmarks.tabAll') },
+  { id: 'cards', label: t('pages.bookmarks.tabCards') },
+  { id: 'prompts', label: t('pages.bookmarks.tabPrompts') },
+])
 
 function formatTime(ts: number): string {
-  return new Date(ts).toLocaleString('sk-SK', { dateStyle: 'short', timeStyle: 'short' })
+  const tag = locale.value === 'en' ? 'en-US' : 'sk-SK'
+  return new Date(ts).toLocaleString(tag, { dateStyle: 'short', timeStyle: 'short' })
 }
 
 function openCard(slug: string) {
@@ -30,27 +32,25 @@ function openCard(slug: string) {
   <main class="mx-auto max-w-5xl px-6 py-10" data-testid="bookmarks-page">
     <header class="mb-6 flex items-end justify-between gap-4">
       <div>
-        <h1 class="font-heading text-3xl text-ink">Uložené</h1>
-        <p class="mt-1 text-sm text-ink/60">
-          {{ totalCount }} {{ totalCount === 1 ? 'položka' : (totalCount < 5 ? 'položky' : 'položiek') }}
-        </p>
+        <h1 class="font-heading text-3xl text-ink">{{ t('pages.bookmarks.title') }}</h1>
+        <p class="mt-1 text-sm text-ink/60">{{ t('pages.bookmarks.subtitle') }}</p>
       </div>
       <div class="flex gap-1" data-testid="bookmarks-tabs">
         <button
-          v-for="t in tabs"
-          :key="t.id"
+          v-for="tabItem in tabs"
+          :key="tabItem.id"
           type="button"
           class="rounded-lg border px-3 py-1.5 text-sm transition-colors"
           :class="
-            tab === t.id
+            tab === tabItem.id
               ? 'border-primary bg-primary/10 text-primary'
               : 'border-ink/15 bg-white text-ink/70 hover:border-primary/50'
           "
-          :data-testid="`bookmarks-tab-${t.id}`"
-          :data-active="tab === t.id"
-          @click="tab = t.id"
+          :data-testid="`bookmarks-tab-${tabItem.id}`"
+          :data-active="tab === tabItem.id"
+          @click="tab = tabItem.id"
         >
-          {{ t.label }}
+          {{ tabItem.label }}
         </button>
       </div>
     </header>
@@ -61,10 +61,7 @@ function openCard(slug: string) {
       data-testid="bookmarks-empty"
     >
       <Icon name="lucide:bookmark" class="mx-auto mb-2 h-8 w-8 text-ink/30" />
-      <p class="text-ink/60">Zatiaľ ste si nič neuložili.</p>
-      <p class="mt-1 text-xs text-ink/50">
-        Klikni na ikonu záložky pri návode alebo prompte, ktorý si chceš nechať poruke.
-      </p>
+      <p class="text-ink/60">{{ t('pages.bookmarks.empty') }}</p>
     </div>
 
     <section
@@ -72,7 +69,7 @@ function openCard(slug: string) {
       class="mb-8"
       data-testid="bookmarks-cards"
     >
-      <h2 class="mb-2 font-heading text-base text-ink/80">Návody</h2>
+      <h2 class="mb-2 font-heading text-base text-ink/80">{{ t('pages.bookmarks.tabCards') }}</h2>
       <ul class="space-y-2">
         <li
           v-for="card in sortedCards"
@@ -93,7 +90,7 @@ function openCard(slug: string) {
             type="button"
             class="rounded-md p-1.5 text-ink/50 hover:bg-ink/[0.05] hover:text-ink"
             data-testid="bookmark-card-remove"
-            aria-label="Odstrániť"
+            :aria-label="t('pages.bookmarks.removeCard')"
             @click="removeCard(card.slug)"
           >
             <Icon name="lucide:x" class="h-4 w-4" />
@@ -106,7 +103,7 @@ function openCard(slug: string) {
       v-if="showPrompts && sortedPrompts.length > 0"
       data-testid="bookmarks-prompts"
     >
-      <h2 class="mb-2 font-heading text-base text-ink/80">Prompty</h2>
+      <h2 class="mb-2 font-heading text-base text-ink/80">{{ t('pages.bookmarks.tabPrompts') }}</h2>
       <ul class="space-y-2">
         <li
           v-for="p in sortedPrompts"
@@ -131,7 +128,7 @@ function openCard(slug: string) {
               type="button"
               class="rounded-md p-1.5 text-ink/50 hover:bg-ink/[0.05] hover:text-ink"
               data-testid="bookmark-prompt-remove"
-              aria-label="Odstrániť"
+              :aria-label="t('pages.bookmarks.removeCard')"
               @click="removePrompt(p.id)"
             >
               <Icon name="lucide:x" class="h-4 w-4" />

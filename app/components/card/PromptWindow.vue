@@ -9,6 +9,7 @@ const props = defineProps<{
   guideTitle?: string | null
 }>()
 
+const { t } = useI18n()
 const copied = ref(false)
 let resetTimer: ReturnType<typeof setTimeout> | null = null
 
@@ -60,7 +61,7 @@ async function copy() {
   >
     <div class="flex items-center justify-between border-b border-ink/10 bg-ink/[0.05] px-4 py-2">
       <span class="text-xs font-medium uppercase tracking-wide text-ink/60">
-        {{ heading ?? 'Prompt' }}
+        {{ heading ?? t('card.sections.prompts') }}
       </span>
       <div class="flex items-center gap-1">
         <button
@@ -69,7 +70,7 @@ async function copy() {
           class="rounded-md border border-ink/15 bg-white px-2 py-1 text-xs text-ink hover:border-primary hover:text-primary"
           data-testid="prompt-bookmark"
           :data-state="isPromptBookmarked ? 'on' : 'off'"
-          :aria-label="isPromptBookmarked ? 'Odstrániť z uložených' : 'Uložiť prompt'"
+          :aria-label="isPromptBookmarked ? t('card.bookmarkRemove') : t('card.bookmarkAdd')"
           @click="togglePromptBookmark"
         >
           <Icon
@@ -85,7 +86,7 @@ async function copy() {
           @click="copy"
         >
           <Icon :name="copied ? 'lucide:check' : 'lucide:copy'" class="h-3.5 w-3.5" />
-          <span>{{ copied ? 'Skopírované' : 'Kopírovať' }}</span>
+          <span>{{ copied ? t('card.copied') : t('card.copyPrompt') }}</span>
         </button>
       </div>
     </div>

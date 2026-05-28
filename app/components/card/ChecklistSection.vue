@@ -6,6 +6,7 @@ const props = defineProps<{
   items: ChecklistItem[]
 }>()
 
+const { t } = useI18n()
 const { isChecked, toggle } = useProgress()
 </script>
 
@@ -15,7 +16,7 @@ const { isChecked, toggle } = useProgress()
     data-testid="card-checklist"
   >
     <h3 class="mb-3 font-heading text-base text-ink">
-      Ako zistíte, že ste návod pochopili
+      {{ t('card.sections.mastery') }}
     </h3>
     <ul class="space-y-2">
       <li v-for="item in items" :key="item.id">

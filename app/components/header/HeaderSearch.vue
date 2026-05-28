@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useCardRoute } from '../../composables/useCardRoute'
 
-const { query, results, loading } = useSearch('sk')
+const { t, locale } = useI18n()
+const { query, results, loading } = useSearch(() => (locale.value === 'en' ? 'en' : 'sk'))
 const cardRoute = useCardRoute()
 const open = ref(false)
 const inputRef = ref<HTMLInputElement | null>(null)
+
+const placeholder = computed(() => t('search.placeholder'))
 
 function onFocus() {
   open.value = true
@@ -49,7 +52,7 @@ function onKeydown(e: KeyboardEvent) {
         ref="inputRef"
         v-model="query"
         type="search"
-        placeholder="Vyhľadávať návody…"
+        :placeholder="placeholder"
         class="h-9 w-full rounded-lg border border-ink/15 bg-white pl-8 pr-8 text-sm text-ink placeholder:text-ink/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
         data-testid="search-input"
         autocomplete="off"
@@ -62,7 +65,7 @@ function onKeydown(e: KeyboardEvent) {
         type="button"
         class="absolute right-2 top-1/2 -translate-y-1/2 rounded p-0.5 text-ink/40 hover:text-ink"
         data-testid="search-clear"
-        aria-label="Vymazať"
+        :aria-label="t('card.close')"
         @mousedown.prevent
         @click="onClear"
       >
@@ -76,7 +79,7 @@ function onKeydown(e: KeyboardEvent) {
       data-testid="search-results"
     >
       <div v-if="loading" class="px-3 py-2 text-xs text-ink/60">
-        Vyhľadávam…
+        …
       </div>
       <ul v-else-if="results.length > 0">
         <li v-for="hit in results" :key="hit.slug">
@@ -98,7 +101,7 @@ function onKeydown(e: KeyboardEvent) {
         class="px-3 py-2 text-xs text-ink/60"
         data-testid="search-empty"
       >
-        Žiadne výsledky.
+        {{ t('search.noResults', { query }) }}
       </div>
     </div>
   </div>

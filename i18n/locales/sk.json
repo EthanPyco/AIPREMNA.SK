@@ -1,0 +1,110 @@
+{
+  "brand": {
+    "name": "AI PREMNA",
+    "tagline": "AI PRE NÁS"
+  },
+  "nav": {
+    "cheatsheet": "Ťahák promptov",
+    "lastUsed": "Naposledy otvorené",
+    "bookmarks": "Uložené",
+    "impactMap": "Mapa dopadu"
+  },
+  "search": {
+    "placeholder": "Vyhľadávať návody…",
+    "noResults": "Žiadne výsledky pre „{query}\""
+  },
+  "locale": {
+    "sk": "SK",
+    "en": "EN"
+  },
+  "home": {
+    "title": "Ušetrite čas s",
+    "titleHighlight": "AI asistentom",
+    "subtitle": "Interaktívna cesta k umelej inteligencii pre slovenských učiteľov. Objavte, ako vám AI môže pomôcť v triede aj v kabinete.",
+    "ctaStart": "Začať objavovať",
+    "ctaCheatsheet": "Ťahák promptov"
+  },
+  "roadmap": {
+    "loading": "Načítavam roadmapu…",
+    "tiers": {
+      "foundation": {
+        "title": "Základy a Príprava",
+        "tagline": "Všetko, čo potrebujete vedieť pred prvým promptom."
+      },
+      "usecases": {
+        "title": "Prípady použitia",
+        "tagline": "Praktické scenáre pre vašu každodennú prácu."
+      },
+      "tools": {
+        "title": "Konkrétne nástroje",
+        "tagline": "Hĺbkové pohľady na najlepšie AI aplikácie."
+      }
+    },
+    "categories": {
+      "ai_overenie_odpovedi": "Overenie odpovedí AI",
+      "akademicka_integrita": "Akademická integrita",
+      "context_engineering": "Kontextové inžinierstvo",
+      "gdpr": "GDPR a ochrana údajov",
+      "prompt_engineering": "Promptové inžinierstvo",
+      "vyber_nastrojov": "Výber nástrojov",
+      "administrativa": "Administratíva",
+      "aktivity_na_hodinu": "Aktivity na hodinu",
+      "pisomky": "Písomky a testovanie",
+      "sumarizacia_uciva": "Sumarizácia učiva",
+      "tvorba_materialov": "Tvorba materiálov",
+      "chatboti": "Chatboti",
+      "generacia_obrazkov": "Generácia obrázkov",
+      "ucebne_pomocky": "Učebné pomôcky",
+      "Designer": "Dizajn a prezentácie"
+    }
+  },
+  "card": {
+    "loading": "Načítavam…",
+    "close": "Zavrieť",
+    "bookmarkAdd": "Uložiť",
+    "bookmarkRemove": "Odstrániť z uložených",
+    "copyPrompt": "Skopírovať prompt",
+    "copied": "Skopírované",
+    "fallbackBadge": "Tento návod ešte nemá preklad v zvolenom jazyku — zobrazujeme záložnú verziu.",
+    "sections": {
+      "goal": "Cieľ",
+      "workflow": "Postup krok za krokom",
+      "prompts": "Prompty",
+      "humanLoop": "Človek v slučke",
+      "mastery": "Ako zistíte, že ste návod pochopili",
+      "optional": "Voliteľné rozšírenie"
+    }
+  },
+  "pages": {
+    "cheatsheet": {
+      "title": "Ťahák promptov",
+      "subtitle": "Rýchle prompty na skopírovanie, prehľadávateľné a kategorizované.",
+      "filterPlaceholder": "Filtrovať prompty…",
+      "tabPrompts": "Hlavný ťahák",
+      "tabGlossary": "Slovník pojmov",
+      "empty": "Nenašli sa žiadne prompty.",
+      "glossaryEmpty": "Slovník pojmov je zatiaľ prázdny."
+    },
+    "bookmarks": {
+      "title": "Uložené",
+      "subtitle": "Vaše uložené návody a prompty.",
+      "tabAll": "Všetko",
+      "tabCards": "Návody",
+      "tabPrompts": "Prompty",
+      "empty": "Zatiaľ nemáte žiadne uložené položky.",
+      "removeCard": "Odstrániť",
+      "openCard": "Otvoriť návod"
+    },
+    "lastUsed": {
+      "title": "Naposledy otvorené",
+      "subtitle": "Návody, ktoré ste si v poslednom čase prezerali aspoň 10 sekúnd.",
+      "empty": "Zatiaľ tu nič nie je. Pozrite si nejaký návod aspoň 10 sekúnd a objaví sa tu.",
+      "clearAll": "Vyčistiť históriu",
+      "openCard": "Otvoriť"
+    },
+    "impactMap": {
+      "title": "Mapa dopadu a úsilia",
+      "subtitle": "Ktoré AI prípady použitia priniesli najväčší úžitok za najmenej úsilia."
+    }
+  }
+}

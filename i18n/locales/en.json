@@ -1,0 +1,110 @@
+{
+  "brand": {
+    "name": "AI PREMNA",
+    "tagline": "AI FOR US"
+  },
+  "nav": {
+    "cheatsheet": "Prompt cheatsheet",
+    "lastUsed": "Recently opened",
+    "bookmarks": "Saved",
+    "impactMap": "Impact map"
+  },
+  "search": {
+    "placeholder": "Search guides…",
+    "noResults": "No results for „{query}\""
+  },
+  "locale": {
+    "sk": "SK",
+    "en": "EN"
+  },
+  "home": {
+    "title": "Save time with an",
+    "titleHighlight": "AI assistant",
+    "subtitle": "An interactive journey into AI for Slovak teachers. Discover how AI can help you in the classroom and the staff room.",
+    "ctaStart": "Start exploring",
+    "ctaCheatsheet": "Prompt cheatsheet"
+  },
+  "roadmap": {
+    "loading": "Loading roadmap…",
+    "tiers": {
+      "foundation": {
+        "title": "Foundations & Preparation",
+        "tagline": "Everything you need to know before your first prompt."
+      },
+      "usecases": {
+        "title": "Use cases",
+        "tagline": "Practical scenarios for your everyday work."
+      },
+      "tools": {
+        "title": "Specific tools",
+        "tagline": "In-depth looks at the best AI applications."
+      }
+    },
+    "categories": {
+      "ai_overenie_odpovedi": "AI answer verification",
+      "akademicka_integrita": "Academic integrity",
+      "context_engineering": "Context engineering",
+      "gdpr": "GDPR & data protection",
+      "prompt_engineering": "Prompt engineering",
+      "vyber_nastrojov": "Tool selection",
+      "administrativa": "Administration",
+      "aktivity_na_hodinu": "In-class activities",
+      "pisomky": "Tests & assessment",
+      "sumarizacia_uciva": "Summarizing material",
+      "tvorba_materialov": "Material creation",
+      "chatboti": "Chatbots",
+      "generacia_obrazkov": "Image generation",
+      "ucebne_pomocky": "Teaching aids",
+      "Designer": "Design & presentations"
+    }
+  },
+  "card": {
+    "loading": "Loading…",
+    "close": "Close",
+    "bookmarkAdd": "Save",
+    "bookmarkRemove": "Remove from saved",
+    "copyPrompt": "Copy prompt",
+    "copied": "Copied",
+    "fallbackBadge": "This guide doesn't have a translation in the selected language yet — showing the fallback version.",
+    "sections": {
+      "goal": "Goal",
+      "workflow": "Step-by-step workflow",
+      "prompts": "Prompts",
+      "humanLoop": "Human in the loop",
+      "mastery": "How to know you've mastered this guide",
+      "optional": "Optional extension"
+    }
+  },
+  "pages": {
+    "cheatsheet": {
+      "title": "Prompt cheatsheet",
+      "subtitle": "Quick prompts to copy, searchable and categorized.",
+      "filterPlaceholder": "Filter prompts…",
+      "tabPrompts": "Main cheatsheet",
+      "tabGlossary": "Glossary",
+      "empty": "No prompts found.",
+      "glossaryEmpty": "The glossary is empty for now."
+    },
+    "bookmarks": {
+      "title": "Saved",
+      "subtitle": "Your saved guides and prompts.",
+      "tabAll": "All",
+      "tabCards": "Guides",
+      "tabPrompts": "Prompts",
+      "empty": "You don't have any saved items yet.",
+      "removeCard": "Remove",
+      "openCard": "Open guide"
+    },
+    "lastUsed": {
+      "title": "Recently opened",
+      "subtitle": "Guides you've recently viewed for at least 10 seconds.",
+      "empty": "Nothing here yet. View a guide for at least 10 seconds and it'll appear here.",
+      "clearAll": "Clear history",
+      "openCard": "Open"
+    },
+    "impactMap": {
+      "title": "Impact-Effort map",
+      "subtitle": "Which AI use cases delivered the most value for the least effort."
+    }
+  }
+}

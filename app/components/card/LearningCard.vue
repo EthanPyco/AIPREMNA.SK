@@ -17,6 +17,7 @@ const emit = defineEmits<{
   (e: 'close'): void
 }>()
 
+const { t } = useI18n()
 const title = computed(() => props.guide?.title ?? '')
 const sections = computed(() => props.guide?.sections ?? {})
 const prompts = computed(() => props.guide?.prompts ?? [])
@@ -138,7 +139,7 @@ onMounted(() => {
                     class="font-heading text-xl text-ink"
                     data-testid="card-title"
                   >
-                    {{ title || 'Načítavam…' }}
+                    {{ title || t('card.loading') }}
                   </DialogTitle>
                 </div>
                 <div class="flex items-center gap-1">
@@ -148,7 +149,7 @@ onMounted(() => {
                     class="rounded-md p-1.5 text-ink/60 hover:bg-ink/[0.05] hover:text-primary"
                     data-testid="card-bookmark"
                     :data-state="isBookmarked ? 'on' : 'off'"
-                    :aria-label="isBookmarked ? 'Odstrániť z uložených' : 'Uložiť'"
+                    :aria-label="isBookmarked ? t('card.bookmarkRemove') : t('card.bookmarkAdd')"
                     @click="onToggleBookmark"
                   >
                     <Icon
@@ -160,7 +161,7 @@ onMounted(() => {
                     type="button"
                     class="rounded-md p-1.5 text-ink/60 hover:bg-ink/[0.05] hover:text-ink"
                     data-testid="card-close"
-                    aria-label="Zavrieť"
+                    :aria-label="t('card.close')"
                     @click="emit('close')"
                   >
                     <Icon name="lucide:x" class="h-5 w-5" />
@@ -174,19 +175,19 @@ onMounted(() => {
                   class="mb-3 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800"
                   data-testid="card-fallback-badge"
                 >
-                  Tento návod ešte nemá preklad v zvolenom jazyku — zobrazujeme záložnú verziu.
+                  {{ t('card.fallbackBadge') }}
                 </p>
 
                 <CardSectionImpl
                   v-if="guide?.goal"
-                  heading="Cieľ"
+                  :heading="t('card.sections.goal')"
                   :body="guide.goal"
                   testid="card-goal"
                 />
 
                 <CardSectionImpl
                   v-if="sections.workflow"
-                  heading="Postup krok za krokom"
+                  :heading="t('card.sections.workflow')"
                   :body="sections.workflow"
                   testid="card-workflow"
                 />
@@ -196,7 +197,7 @@ onMounted(() => {
                   class="my-4 rounded-xl border border-ink/10 bg-white p-5"
                   data-testid="card-prompts"
                 >
-                  <h3 class="mb-2 font-heading text-base text-ink">Prompty</h3>
+                  <h3 class="mb-2 font-heading text-base text-ink">{{ t('card.sections.prompts') }}</h3>
                   <PromptWindowImpl
                     v-for="p in prompts"
                     :key="p.index"
@@ -210,7 +211,7 @@ onMounted(() => {
 
                 <CardSectionImpl
                   v-if="sections.humanLoop"
-                  heading="Človek v slučke"
+                  :heading="t('card.sections.humanLoop')"
                   :body="sections.humanLoop"
                   variant="warning"
                   testid="card-human-loop"
@@ -223,14 +224,14 @@ onMounted(() => {
                 />
                 <CardSectionImpl
                   v-else-if="sections.mastery"
-                  heading="Ako zistíte, že ste návod pochopili"
+                  :heading="t('card.sections.mastery')"
                   :body="sections.mastery"
                   testid="card-mastery"
                 />
 
                 <CardSectionImpl
                   v-if="sections.optional"
-                  heading="Voliteľné rozšírenie"
+                  :heading="t('card.sections.optional')"
                   :body="sections.optional"
                   variant="muted"
                   testid="card-optional"

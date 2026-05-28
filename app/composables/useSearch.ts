@@ -1,4 +1,4 @@
-import { ref, watch } from 'vue'
+import { ref, watch, computed, type Ref } from 'vue'
 
 export interface SearchDoc {
   slug: string
@@ -55,12 +55,22 @@ function highlight(text: string, query: string): string {
   return text.replace(re, '<mark>$1</mark>')
 }
 
-export const useSearch = (locale: 'sk' | 'en' = 'sk') => {
+type LocaleInput = 'sk' | 'en' | Ref<'sk' | 'en'> | (() => 'sk' | 'en')
+
+function readLocale(input: LocaleInput): 'sk' | 'en' {
+  if (typeof input === 'string') return input
+  if (typeof input === 'function') return input()
+  return input.value
+}
+
+export const useSearch = (localeInput: LocaleInput = 'sk') => {
   const query = ref('')
   const results = ref<SearchHit[]>([])
   const loading = ref(false)
   const ready = ref(false)
   let timer: ReturnType<typeof setTimeout> | null = null
+
+  const currentLocale = computed<'sk' | 'en'>(() => readLocale(localeInput))
 
   async function runSearch(q: string) {
     if (!q.trim()) {
@@ -69,7 +79,7 @@ export const useSearch = (locale: 'sk' | 'en' = 'sk') => {
     }
     loading.value = true
     try {
-      const { index, docs } = await loadIndex(locale)
+      const { index, docs } = await loadIndex(currentLocale.value)
       ready.value = true
       const hits = await index.search(q, { limit: 8 })
       results.value = (hits as number[]).map((i) => {
@@ -87,7 +97,7 @@ export const useSearch = (locale: 'sk' | 'en' = 'sk') => {
     }
   }
 
-  watch(query, (q) => {
+  watch([query, currentLocale], ([q]) => {
     if (timer) clearTimeout(timer)
     timer = setTimeout(() => {
       runSearch(q).catch(() => {})
@@ -95,7 +105,7 @@ export const useSearch = (locale: 'sk' | 'en' = 'sk') => {
   })
 
   async function prefetch() {
-    await loadIndex(locale)
+    await loadIndex(currentLocale.value)
     ready.value = true
   }
 

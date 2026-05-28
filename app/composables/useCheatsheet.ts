@@ -1,3 +1,4 @@
+import { computed, type Ref } from 'vue'
 import type { GlossaryTerm } from '~~/shared/parser/extractGlossary'
 
 export interface CheatsheetPrompt {
@@ -15,9 +16,18 @@ export interface CheatsheetData {
   glossary: GlossaryTerm[]
 }
 
-export const useCheatsheet = (locale: 'sk' | 'en' = 'sk') => {
-  return useFetch<CheatsheetData>(`/api/cheatsheet?locale=${locale}`, {
-    key: `cheatsheet:${locale}`,
+type LocaleInput = 'sk' | 'en' | Ref<'sk' | 'en'> | (() => 'sk' | 'en')
+
+function readLocale(input: LocaleInput): 'sk' | 'en' {
+  if (typeof input === 'string') return input
+  if (typeof input === 'function') return input()
+  return input.value
+}
+
+export const useCheatsheet = (localeInput: LocaleInput = 'sk') => {
+  const localeFn = () => readLocale(localeInput)
+  return useFetch<CheatsheetData>(() => `/api/cheatsheet?locale=${localeFn()}`, {
+    key: () => `cheatsheet:${localeFn()}`,
     default: () => ({ prompts: [], glossary: [] }),
   })
 }

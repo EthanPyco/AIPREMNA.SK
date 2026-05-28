@@ -1,27 +1,16 @@
-import { useStorage } from '@vueuse/core'
-import { onMounted, ref } from 'vue'
+import { computed } from 'vue'
 
 export type Locale = 'sk' | 'en'
 
 const STORAGE_KEY = 'aipremna:locale'
 
 export const useLocale = () => {
-  const locale = useState<Locale>('aipremna-locale', () => 'sk')
-  const hydrated = useState<boolean>('aipremna-locale-hydrated', () => false)
+  const { locale: i18nLocale, setLocale: i18nSetLocale } = useI18n()
 
-  onMounted(() => {
-    if (hydrated.value) return
-    try {
-      const v = window.localStorage.getItem(STORAGE_KEY)
-      if (v === 'sk' || v === 'en') locale.value = v
-    } catch {
-      /* ignore */
-    }
-    hydrated.value = true
-  })
+  const locale = computed<Locale>(() => (i18nLocale.value === 'en' ? 'en' : 'sk'))
 
-  function setLocale(next: Locale) {
-    locale.value = next
+  async function setLocale(next: Locale) {
+    await i18nSetLocale(next)
     if (import.meta.client) {
       try {
         window.localStorage.setItem(STORAGE_KEY, next)
@@ -33,6 +22,19 @@ export const useLocale = () => {
 
   function toggle() {
     setLocale(locale.value === 'sk' ? 'en' : 'sk')
+  }
+
+  if (import.meta.client) {
+    onMounted(() => {
+      try {
+        const stored = window.localStorage.getItem(STORAGE_KEY)
+        if ((stored === 'sk' || stored === 'en') && stored !== locale.value) {
+          i18nSetLocale(stored)
+        }
+      } catch {
+        /* ignore */
+      }
+    })
   }
 
   return { locale, setLocale, toggle }
