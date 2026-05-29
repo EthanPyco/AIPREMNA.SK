@@ -49,7 +49,7 @@
 
       <div v-for="(items, category) in tier2Grouped" :key="category" class="mb-20 last:mb-0">
         <h4 class="font-heading font-black text-[11px] uppercase tracking-[0.3em] text-gray-600 mb-8 flex items-center gap-4">
-          <span>{{ category.replace(/_/g, ' ') }}</span>
+          <span>{{ formatCategory(category) }}</span>
           <div class="h-px flex-1 bg-gray-100"></div>
         </h4>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -143,6 +143,26 @@ const { data: slovakContent } = await useSlovakContent()
 const tier1 = computed(() => (slovakContent.value || []).filter(f => f.path.startsWith('/initial_info/')))
 const tier2 = computed(() => (slovakContent.value || []).filter(f => f.path.startsWith('/jednotlive_usecases/')))
 const tier3 = computed(() => (slovakContent.value || []).filter(f => f.path.startsWith('/jednotlive_tools/')))
+
+const CATEGORY_MAP = {
+  'administrativa': 'Administratíva',
+  'aktivity_na_hodinu': 'Aktivity na hodinu',
+  'pisomky': 'Písomky a skúšanie',
+  'sumarizacia_uciva': 'Sumarizácia učiva',
+  'tvorba_materialov': 'Tvorba materiálov',
+  'chatboti': 'Chatboti',
+  'Designer': 'Dizajn a prezentácie',
+  'generacia_obrazkov': 'Generovanie obrázkov',
+  'ucebne_pomocky': 'Učebné pomôcky',
+  'ai_overenie_odpovedi': 'Overovanie odpovedí',
+  'akademicka_integrita': 'Akademická integrita',
+  'context_engineering': 'Kontextové inžinierstvo',
+  'gdpr': 'GDPR a bezpečnosť',
+  'prompt_engineering': 'Promptové inžinierstvo',
+  'vyber_nastrojov': 'Výber nástrojov'
+}
+
+const formatCategory = (cat) => CATEGORY_MAP[cat] || cat.replace(/_/g, ' ')
 
 const tier2Grouped = computed(() => {
   const groups = {}
