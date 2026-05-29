@@ -3,9 +3,9 @@
     <div ref="headerInnerRef" class="h-20 flex items-center px-4 md:px-8">
       <!-- Logo -->
       <NuxtLink to="/" class="flex items-center gap-3 group">
-        <img src="/logo.png" alt="AIPREMNA" class="h-14 w-auto" />
+        <img src="/logo_no_text.png" alt="AI PRE MŇA" class="h-14 w-auto" />
         <div class="hidden sm:block">
-          <h1 class="font-heading font-bold text-base leading-tight tracking-tight uppercase">AI PREMNA</h1>
+          <h1 class="font-heading font-bold text-base leading-tight tracking-tight uppercase">AI PRE MŇA</h1>
           <p class="text-[11px] text-brand-secondary font-bold tracking-[0.2em] uppercase">AI PRE NÁS</p>
         </div>
       </NuxtLink>
