@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    '@vercel/analytics/nuxt'
+    '@vercel/analytics/nuxt',
+    ['unplugin-icons/nuxt', { /* options */ }]
   ],
   googleFonts: {
     families: {

@@ -92,7 +92,7 @@
         >
           <div class="bg-white aspect-square flex flex-col items-center justify-center p-4 rounded-[2rem] shadow-sm hover:shadow-lg transition-all border border-gray-50 text-center group-hover:border-brand-accent/50">
             <div class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center mb-3 group-hover:bg-brand-accent/10 transition-colors">
-              <LayoutIcon class="w-5 h-5 text-gray-400 group-hover:text-brand-accent" />
+              <component :is="getToolIcon(guide.path)" class="w-5 h-5 text-gray-400 group-hover:text-brand-accent" />
             </div>
             <span class="font-heading font-bold text-[9px] uppercase tracking-tighter text-brand-dark leading-tight">{{ guide.title }}</span>
           </div>
@@ -111,6 +111,30 @@ import {
   ChevronRight as ChevronRightIcon,
   Layout as LayoutIcon
 } from '@lucide/vue'
+
+// Tool Logos from unplugin-icons
+import LogosOpenaiIcon from '~icons/logos/openai-icon'
+import LogosClaudeIcon from '~icons/logos/claude-icon'
+import LogosMicrosoftIcon from '~icons/logos/microsoft-icon'
+import SimpleIconsDeepseek from '~icons/simple-icons/deepseek'
+import LogosGoogleGemini from '~icons/logos/google-gemini'
+import SimpleIconsX from '~icons/simple-icons/x'
+import SimpleIconsCanva from '~icons/simple-icons/canva'
+import LogosGoogleIcon from '~icons/logos/google-icon'
+
+const getToolIcon = (path) => {
+  const p = path.toLowerCase()
+  if (p.includes('chatgpt')) return LogosOpenaiIcon
+  if (p.includes('claude')) return LogosClaudeIcon
+  if (p.includes('copilot')) return LogosMicrosoftIcon
+  if (p.includes('deepseek')) return SimpleIconsDeepseek
+  if (p.includes('gemini')) return LogosGoogleGemini
+  if (p.includes('grok')) return SimpleIconsX
+  if (p.includes('canva')) return SimpleIconsCanva
+  if (p.includes('notebook_lm')) return LogosGoogleIcon
+  if (p.includes('nano_banana')) return LogosGoogleIcon
+  return LayoutIcon
+}
 
 const emit = defineEmits(['node-click'])
 
