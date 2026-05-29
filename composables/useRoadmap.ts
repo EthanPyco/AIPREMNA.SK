@@ -41,6 +41,24 @@ export const useRoadmap = () => {
     const useCases = slovakContent.value.filter(f => f.path.startsWith('/jednotlive_usecases/'))
     const tools = slovakContent.value.filter(f => f.path.startsWith('/jednotlive_tools/'))
 
+    const CATEGORY_MAP: Record<string, string> = {
+      'administrativa': 'Administratíva',
+      'aktivity_na_hodinu': 'Aktivity na hodinu',
+      'pisomky': 'Písomky a skúšanie',
+      'sumarizacia_uciva': 'Sumarizácia učiva',
+      'tvorba_materialov': 'Tvorba materiálov',
+      'chatboti': 'Chatboti',
+      'Designer': 'Dizajn a prezentácie',
+      'generacia_obrazkov': 'Generovanie obrázkov',
+      'ucebne_pomocky': 'Učebné pomôcky',
+      'ai_overenie_odpovedi': 'Overovanie odpovedí',
+      'akademicka_integrita': 'Akademická integrita',
+      'context_engineering': 'Kontextové inžinierstvo',
+      'gdpr': 'GDPR a bezpečnosť',
+      'prompt_engineering': 'Promptové inžinierstvo',
+      'vyber_nastrojov': 'Výber nástrojov'
+    }
+
     const processLeaves = (items: any[], parentId: string, startX: number, y: number, color: string) => {
       const categories: Record<string, any[]> = {}
       items.forEach(item => {
@@ -53,10 +71,11 @@ export const useRoadmap = () => {
       Object.entries(categories).forEach(([catName, catItems], catIndex) => {
         const catId = `cat-${parentId}-${catName}`
         const catX = startX + (catIndex * 300) - ((Object.keys(categories).length - 1) * 150)
+        const label = CATEGORY_MAP[catName] || catName.replace(/_/g, ' ')
 
         nodes.push({
           id: catId,
-          data: { label: catName.replace(/_/g, ' ').toUpperCase() },
+          data: { label: label.toUpperCase() },
           position: { x: catX, y: y },
           style: { border: `2px dashed ${color}`, borderRadius: '8px', padding: '8px', fontSize: '10px', width: 150, textAlign: 'center', color: '#666' },
         })

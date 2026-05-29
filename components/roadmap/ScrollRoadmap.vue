@@ -49,7 +49,7 @@
 
       <div v-for="(items, category) in tier2Grouped" :key="category" class="mb-20 last:mb-0">
         <h4 class="font-heading font-black text-[11px] uppercase tracking-[0.3em] text-gray-600 mb-8 flex items-center gap-4">
-          <span>{{ category.replace(/_/g, ' ') }}</span>
+          <span>{{ formatCategory(category) }}</span>
           <div class="h-px flex-1 bg-gray-100"></div>
         </h4>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -92,7 +92,7 @@
         >
           <div class="bg-white aspect-square flex flex-col items-center justify-center p-4 rounded-[2rem] shadow-sm hover:shadow-lg transition-all border border-gray-50 text-center group-hover:border-brand-accent/50">
             <div class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center mb-3 group-hover:bg-brand-accent/10 transition-colors">
-              <LayoutIcon class="w-5 h-5 text-gray-400 group-hover:text-brand-accent" />
+              <component :is="getToolIcon(guide.path)" class="w-5 h-5 text-gray-400 group-hover:text-brand-accent" />
             </div>
             <span class="font-heading font-bold text-[9px] uppercase tracking-tighter text-brand-dark leading-tight">{{ guide.title }}</span>
           </div>
@@ -112,6 +112,30 @@ import {
   Layout as LayoutIcon
 } from '@lucide/vue'
 
+// Tool Logos from unplugin-icons
+import LogosOpenaiIcon from '~icons/logos/openai-icon'
+import LogosClaudeIcon from '~icons/logos/claude-icon'
+import LogosMicrosoftIcon from '~icons/logos/microsoft-icon'
+import SimpleIconsDeepseek from '~icons/simple-icons/deepseek'
+import LogosGoogleGemini from '~icons/logos/google-gemini'
+import SimpleIconsX from '~icons/simple-icons/x'
+import SimpleIconsCanva from '~icons/simple-icons/canva'
+import LogosGoogleIcon from '~icons/logos/google-icon'
+
+const getToolIcon = (path) => {
+  const p = path.toLowerCase()
+  if (p.includes('chatgpt')) return LogosOpenaiIcon
+  if (p.includes('claude')) return LogosClaudeIcon
+  if (p.includes('copilot')) return LogosMicrosoftIcon
+  if (p.includes('deepseek')) return SimpleIconsDeepseek
+  if (p.includes('gemini')) return LogosGoogleGemini
+  if (p.includes('grok')) return SimpleIconsX
+  if (p.includes('canva')) return SimpleIconsCanva
+  if (p.includes('notebook_lm')) return LogosGoogleIcon
+  if (p.includes('nano_banana')) return LogosGoogleIcon
+  return LayoutIcon
+}
+
 const emit = defineEmits(['node-click'])
 
 const { data: slovakContent } = await useSlovakContent()
@@ -119,6 +143,26 @@ const { data: slovakContent } = await useSlovakContent()
 const tier1 = computed(() => (slovakContent.value || []).filter(f => f.path.startsWith('/initial_info/')))
 const tier2 = computed(() => (slovakContent.value || []).filter(f => f.path.startsWith('/jednotlive_usecases/')))
 const tier3 = computed(() => (slovakContent.value || []).filter(f => f.path.startsWith('/jednotlive_tools/')))
+
+const CATEGORY_MAP = {
+  'administrativa': 'Administratíva',
+  'aktivity_na_hodinu': 'Aktivity na hodinu',
+  'pisomky': 'Písomky a skúšanie',
+  'sumarizacia_uciva': 'Sumarizácia učiva',
+  'tvorba_materialov': 'Tvorba materiálov',
+  'chatboti': 'Chatboti',
+  'Designer': 'Dizajn a prezentácie',
+  'generacia_obrazkov': 'Generovanie obrázkov',
+  'ucebne_pomocky': 'Učebné pomôcky',
+  'ai_overenie_odpovedi': 'Overovanie odpovedí',
+  'akademicka_integrita': 'Akademická integrita',
+  'context_engineering': 'Kontextové inžinierstvo',
+  'gdpr': 'GDPR a bezpečnosť',
+  'prompt_engineering': 'Promptové inžinierstvo',
+  'vyber_nastrojov': 'Výber nástrojov'
+}
+
+const formatCategory = (cat) => CATEGORY_MAP[cat] || cat.replace(/_/g, ' ')
 
 const tier2Grouped = computed(() => {
   const groups = {}
